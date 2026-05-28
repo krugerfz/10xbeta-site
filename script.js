@@ -12,11 +12,12 @@ function drawChevrons(svg) {
 document.querySelectorAll('svg.chevfield').forEach(drawChevrons);
 
 // ── Hero product cross-fade (home only) ──
+// Skips cycling entirely if there's only one slide.
 (function cycleHero() {
   const stage = document.getElementById('hero-stage');
   if (!stage) return;
   const slides = stage.querySelectorAll('.cyc');
-  if (!slides.length) return;
+  if (slides.length <= 1) return;
   const dotsWrap = document.getElementById('hero-dots');
   if (dotsWrap) {
     slides.forEach((_, i) => {
