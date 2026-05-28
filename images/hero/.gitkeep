@@ -1,1 +1,7 @@
-
+Drop transparent product PNGs here for the home hero cross-fade.
+Filenames the site expects (lowercase, hyphens):
+  spiro-wave.png
+  k-o2.png
+  cryo-medica.png
+  validose.png
+Update index.html if you use different names.
