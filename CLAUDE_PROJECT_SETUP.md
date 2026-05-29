@@ -91,6 +91,11 @@ current repo state, decisions locked, open items for next session.
   the top in `:root`.
 
 ## Brand tokens (locked)
+- **Canonical brand reference:** `design_guidelines.md` at the root of this
+  repo, copied verbatim from `krugerfz/vs-os` (Charlene Walton, brand owner).
+  Layer 1 (Brand Foundation) applies in full to this marketing site. The
+  document's orientation banner at the top spells out what does and does not
+  apply — read it before invoking any token or pattern from the source.
 - Navy `#061A2E`. Navy-2 (cards) `#0A2440`. Blue (accent) `#0387D1`. White, plus
   grays defined in `styles.css` `:root`.
 - Fonts: Barlow (headings, weights 400-800), Inter (body, weights 400-600).
@@ -129,6 +134,8 @@ current repo state, decisions locked, open items for next session.
 ## Contacts
 - Marcel Botha, CEO. `marcel.botha@10xbeta.com`. +1 617 852 7555.
 - Frederick Kruger, COO. `frederick.kruger@10xbeta.com`. +1 917 573 6502.
+- Charlene Walton, Brand & Visual Designer. `charlene.walton@10xbeta.com`.
+  Owner of `design_guidelines.md`.
 - 10XBeta HQ: 63 Flushing Ave, Bldg 303, Ste 807, Brooklyn NY 11205.
 
 ## Out of scope for this project
@@ -136,16 +143,19 @@ current repo state, decisions locked, open items for next session.
 - PPTX deck building (that work lives in a different surface).
 - Database design, backend code, API design.
 - Custom domain DNS configuration (the team handles).
+- Changes to brand-level decisions in `design_guidelines.md` Layer 1 — those go
+  back to Charlene in the `vs-os` repo and are mirrored here.
 
 ===
 
 ## Knowledge files
 
 None needed at setup. The repo itself is the durable knowledge source. Claude
-reads `SESSION_LOG.md` and `README.md` at session start to get current context.
+reads `SESSION_LOG.md` and `README.md` at session start to get current context,
+and `design_guidelines.md` for brand-level questions.
 
-If at some point a recurring reference doc becomes useful (e.g., a brand identity
-PDF, a competitive site analysis), add it to the repo (e.g., `docs/brand.md`)
+If at some point a recurring reference doc becomes useful (e.g., a competitive
+site analysis, a content rewrite spec), add it to the repo (e.g., `docs/...`)
 rather than to Claude.ai project knowledge. That way it stays version-controlled
 and visible to everyone with repo access.
 
