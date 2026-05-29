@@ -54,7 +54,7 @@ Frederick Kruger COO frederick.kruger@10xbeta.com +1 917 573 6502.
    - `index.html` (home, hero cross-fade)
    - `develop.html` `manufacture.html` `ai.html` `work.html` `venture.html` `about.html` `contact.html`
    - `README.md` (developer-facing)
-3. (This commit) Session 002 log.
+3. **`59b7b15d`** Session 002 log.
 
 ### Architecture decisions
 - **Real anchor-tag nav** (`<a href="/develop">`), not JS. Active state via `aria-current="page"`.
@@ -65,35 +65,126 @@ Frederick Kruger COO frederick.kruger@10xbeta.com +1 917 573 6502.
 - **Each page has `<title>` + meta description.** `lang=en`, viewport meta.
 - **`vercel.json` cleanUrls: true** so `/develop` resolves (not `/develop.html`).
 
+---
+
+## Session 003 — 2026-05-28 — First images wired, then hero redesign
+
+**Status:** complete (capability-stack hero shipped, awaiting Frederick's reaction +
+remaining work images)
+**Owner:** Frederick Kruger (COO)
+
+### Produced — two commits to `main`
+
+1. **`ddcb4169`** First real images wired:
+   - `Spiro_01.png` (1MB transparent) uploaded to `/images/hero/`, wired into the hero
+     `.cyc` slot as a single static product (no cycle, since only one image).
+   - `platform_01.png` (2MB) uploaded to `/images/platform/`, wired into the AI page
+     Platform OS slot as a `.screen` (rounded card with shadow + border).
+   - Added `.prodimg` and `.screen` classes to `styles.css`.
+   - `script.js` updated to guard `cycleHero` so it skips the interval when
+     `slides.length <= 1` (prevents the single-slide fade flash).
+
+2. **`00f8651f`** Hero redesign after Frederick said the single product on navy was
+   not landing:
+   - Replaced hero-right with new **Capability Stack** SVG/CSS visual: five
+     translucent navy layer-cards (Hardware / App / Platform / AI / Manufacturing),
+     each with a thin-stroke blue icon and 3px blue left border, animating in
+     sequentially (stagger ~0.13s, total ~0.48s + foot), capped by a small
+     "ONE TEAM. ONE ROOF." caption fading in at 0.85s.
+   - New CSS classes added: `.cap-stack`, `.cap-stack .layer`, `.cap-stack .lico`,
+     `.cap-stack .llabel`, `.cap-stack .stack-foot`, `@keyframes layerIn`.
+   - `Spiro_01.png` moved off the hero and into the **Work grid as the Spiro Wave
+     card thumbnail** (referenced from its existing `/images/hero/Spiro_01.png` path;
+     no file relocation needed). Added `.workcard .wimg img` CSS to render product
+     images cleanly inside the existing card chrome.
+   - Spiro card now appears on both `index.html` (home grid, first card of 3) and
+     `work.html` (Work grid, first card of 6).
+
+### Key learnings & design pivot
+- **Single transparent product PNG on dark background + radial glow = dated 2018-era
+  SaaS aesthetic.** Works only with a hero-quality cutout; anything less reads as
+  awkward. For medtech / hardware lab / venture studio sites, capability-forward
+  imagery beats product-forward imagery in the hero. The brand spine
+  ("vertically integrated, five layers, one roof") is itself a visual — show it.
+- **Spiro_01.png works much better as a small thumbnail than as a hero feature.**
+  Cutout imperfections forgive at small size; product-as-grid-item is appropriate
+  for a "selected work" card.
+- **No live web research available this session** (GitHub MCP tools only;
+  `web_search` not in this surface's tool set). Hero redesign was informed by
+  Claude's training knowledge of current B2B technical site design patterns
+  (Lattice, Hardware Club, Octant Bio, Form Bio, Convelo, Inflect, Cradle).
+  Worth flagging next session if true web research is needed — start the session
+  in a surface that has search access.
+
 ### Current repo state
 
 ```
 /
-├── index.html  develop.html  manufacture.html  ai.html
-├── work.html   venture.html  about.html        contact.html
-├── styles.css  script.js     vercel.json       .gitignore
-├── README.md   SESSION_LOG.md
+├── index.html              ✅ home, NEW capability-stack hero
+├── develop.html            ✅
+├── manufacture.html        ✅
+├── ai.html                 ✅ platform_01.png wired as .screen
+├── work.html               ✅ Spiro_01.png wired into Spiro card
+├── venture.html            ✅
+├── about.html              ✅
+├── contact.html            ✅
+├── styles.css              ✅ now includes .cap-stack + .screen + .workcard img
+├── script.js               ✅ cycleHero guarded for single-slide case
+├── vercel.json             ✅
+├── .gitignore              ✅
+├── README.md               ✅
+├── SESSION_LOG.md          ✅ Sessions 001 + 002 + 003 logged
 └── /images/
-   ├── hero/.gitkeep    work/.gitkeep    lab/.gitkeep    platform/.gitkeep
+   ├── hero/Spiro_01.png        ✅ 1MB (now consumed by Work grid only)
+   ├── work/.gitkeep            ⏳ awaiting K-O2, PARADIGM, Cryo Medica, Validose, Gynocular
+   ├── lab/.gitkeep             ⏳ awaiting lab-interior.jpg, team.jpg
+   └── platform/platform_01.png ✅ 2MB
 ```
-
-### Still placeholder
-
-All images = labeled dashed boxes. Hero cycles four `.prodph` divs with `<br>`-separated labels.
-To wire real images: replace each `.prodph`/`.ph`/`.wimg` div with `<img src="/images/...">`.
-Expected filenames are listed in each `.gitkeep`.
 
 ### Open items / next session
 
-1. **Frederick:** import repo to Vercel (no build, no framework preset) → testing URL.
-2. **Frederick:** upload images to `/images/{hero,work,lab,platform}`. Hero PNGs need transparent
-   backgrounds.
-3. **Claude:** read repo to discover filenames, swap placeholders for `<img>` tags, push.
-4. (Optional) scrub em-dashes from services v3 + AI v1 decks.
-5. (Optional) hover-to-play product loops on Work grid (MP4/WebM, not GIF).
-6. (Optional) Framer copy rewrite spec if team prefers Framer over static HTML.
+1. **Frederick's reaction to capability stack hero.** Things to judge:
+   - Density (5 cards may feel busy — could drop to 3: Hardware/Platform/Manufacturing)
+   - Icon clarity at 22px (AI node-network + Hardware chip are the riskiest)
+   - Animation pace
+   - Spiro thumbnail on white in Work grid (cutout halo will be more visible
+     here than it was in hero)
+2. **Vercel deploy** — confirm Frederick imported repo to Vercel and got a
+   testing URL. (Was open at end of Session 002.)
+3. **Remaining work images** — upload to `/images/work/` with lowercase-hyphen
+   filenames (`k-o2.jpg`, `paradigm.jpg`, `cryo-medica.jpg`, `validose.jpg`,
+   `gynocular.jpg`). JPGs fine, backgrounds OK. Claude will wire all five in
+   one push.
+4. **Lab/team images** — upload to `/images/lab/` (`lab-interior.jpg` for home
+   Why-us split, `team.jpg` for About page).
+5. **If capability stack does not land** — alternative hero directions to try:
+   wide facility/lab photograph with dark gradient overlay; typography-only
+   hero with chevron background only; abstract animated technical pattern
+   (mesh gradient + nodes); bento grid of small tiles.
+6. (Optional, carried from Session 002) Scrub em-dashes from services v3 +
+   AI v1 decks for consistency with MFG deck.
+7. (Optional) Hover-to-play product video loops on Work grid (MP4/WebM, not GIF).
 
-### Notes on current live site being replaced
+### Decisions locked this session
+
+- **Hero pattern is now SVG-based Capability Stack** (5 layers, sequential
+  fade-in, "ONE TEAM. ONE ROOF." caption beneath). The previous single-product
+  hero pattern is deprecated.
+- **Work card thumbnails use white background with the product PNG inside**
+  via `.workcard .wimg img { max-width: 100%; max-height: 100%; object-fit: contain; }`.
+  Markup pattern: `<div class="wimg" style="background:#fff;"><img src="..."></div>`.
+- **Spiro_01.png stays at `/images/hero/Spiro_01.png`** even though it's
+  consumed by the Work grid. Acceptable repo hygiene compromise — moving the
+  file would require delete + create operations and break any future hero
+  re-introduction. The path is referenced explicitly from both home and work
+  page Spiro cards.
+- **`script.js` cycleHero guarded** for `slides.length <= 1` — when more hero
+  images arrive, multiple `.cyc` divs in the markup will re-enable cycling
+  automatically (no JS change required).
+
+---
+
+## Notes on current live site being replaced
 
 - Live `www.10xbeta.com` (Framer) leads with Venture Studio / HealthTech identity,
   Fund→Build→Manufacture→Co-Invest order. Has broken "0 companies / 0+ pipeline" Framer data bug.
