@@ -78,7 +78,7 @@ h3 { font-size: 26px; }
 .hero .desc { font-size: 17px; color: var(--dim); margin-top: 26px; max-width: 620px; line-height: 1.6; }
 .chevfield { position: absolute; top: 0; right: 0; width: 44%; height: 100%; opacity: 0.45; pointer-events: none; }
 
-/* ── HERO LAYOUT WITH CYCLING PRODUCT ── */
+/* ── HERO LAYOUT WITH PRODUCT STAGE (legacy, kept for fallback) ── */
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; position: relative; z-index: 2; }
 .hero-stage { position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center; }
 .hero-stage .cyc {
@@ -94,8 +94,6 @@ h3 { font-size: 26px; }
 }
 .hero-stage .prodph .pht { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
 .hero-stage .prodph .phd { font-size: 12px; line-height: 1.45; color: var(--dim2); max-width: 80%; }
-
-/* ── REAL PRODUCT IMAGE (hero) ── */
 .hero-stage .prodimg {
   width: 92%; max-width: 500px; aspect-ratio: 1/1; border-radius: 12px;
   background: radial-gradient(circle at 50% 45%, rgba(3,135,209,0.22), rgba(3,135,209,0) 65%);
@@ -107,10 +105,43 @@ h3 { font-size: 26px; }
   filter: drop-shadow(0 12px 32px rgba(0,0,0,0.4));
 }
 
+/* ── CAPABILITY STACK (new hero-right visual) ── */
+.cap-stack { width: 92%; max-width: 400px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+.cap-stack .layer {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(10,36,64,0.55);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(3,135,209,0.22);
+  border-left: 3px solid #0387D1;
+  border-radius: 8px;
+  padding: 14px 18px;
+  opacity: 0;
+  animation: layerIn 0.7s ease-out forwards;
+}
+.cap-stack .layer:nth-child(1) { animation-delay: 0.15s; }
+.cap-stack .layer:nth-child(2) { animation-delay: 0.28s; }
+.cap-stack .layer:nth-child(3) { animation-delay: 0.41s; }
+.cap-stack .layer:nth-child(4) { animation-delay: 0.54s; }
+.cap-stack .layer:nth-child(5) { animation-delay: 0.67s; }
+@keyframes layerIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cap-stack .lico { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+.cap-stack .lico svg { width: 100%; height: 100%; stroke: var(--blue); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.cap-stack .llabel { font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--white); letter-spacing: 0.01em; }
+.cap-stack .stack-foot {
+  text-align: center; margin-top: 18px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+  color: var(--blue); opacity: 0;
+  animation: layerIn 0.7s ease-out forwards;
+  animation-delay: 0.85s;
+}
+
 .hero-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 7px; z-index: 3; }
 .hero-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); transition: background 0.3s; }
 .hero-dots span.on { background: var(--blue); }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-stage { min-height: 280px; margin-top: 30px; } }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-stage { min-height: 280px; margin-top: 30px; } .cap-stack { max-width: 100%; } }
 
 .hero-ctas { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
 .btn {
@@ -218,7 +249,8 @@ h3 { font-size: 26px; }
 /* ── WORK GRID ── */
 .workgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .workcard { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.workcard .wimg { background: var(--ph-bg); border-bottom: 1px solid var(--border); height: 170px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.workcard .wimg { background: var(--ph-bg); border-bottom: 1px solid var(--border); height: 170px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px; }
+.workcard .wimg img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 .workcard .wbody { padding: 20px 22px; }
 .workcard .wtag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); }
 .workcard h4 { font-size: 20px; margin: 8px 0 8px; }
