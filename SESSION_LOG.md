@@ -1,7 +1,26 @@
 # 10XBeta Marketing Site — Session Log
 
+> **⚠️ READ FIRST IF YOU ARE A NEW CLAUDE SESSION**
+>
+> - This is the **static marketing website** for `10xbeta.com` — repo `krugerfz/10xbeta-site`.
+> - It is **separate** from `krugerfz/vs-os` (Platform OS) and shares **none** of its infrastructure.
+> - **No database. No Supabase. No backend. No auth. No `session_log` table.** This site is
+>   plain HTML + CSS + JS, served as static files from Vercel.
+> - **Do NOT query the vs-os Supabase project** (`aocwdelrdmonddsvvtys`) for context on this
+>   repo. Those module sessions (OE, VEN, NDC, FUND, DASH, PLATFORM) are a different project
+>   on a different track and have nothing to do with this site.
+> - **This file (`SESSION_LOG.md`) IS the session log** for this repo. Read it top-to-bottom
+>   when picking up a session. The most recent session is at the bottom.
+> - **Default opening from Frederick:** `"10xbeta-site session"` or similar. Treat that as
+>   the cue to (a) read this file, (b) read `README.md` for tech-stack orientation, and
+>   (c) optionally `GET` the latest repo state for any files mentioned in the most recent
+>   session's "open items."
+> - **Tech stack:** static HTML + CSS + JS, no build step, deployed to Vercel with
+>   `vercel.json` cleanUrls. See `README.md` for layout.
+
 This repo holds the marketing website (separate from `krugerfz/vs-os`, which is Platform OS).
-Sessions logged here in the same structured style as Platform OS module sessions.
+Sessions logged here in the same structured style as Platform OS module sessions, but with no
+DB persistence — this markdown file is the only durable session record.
 
 ---
 
