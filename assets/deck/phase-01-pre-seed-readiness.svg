@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <!-- 10XBeta · Productized Services · PHASE 01 — Pre-Seed Readiness -->
+  <!-- Concept: a validated, defined concept emerging from iterative discovery -->
+
+  <defs>
+    <pattern id="g_fine" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 L 0 40" fill="none" stroke="#0F2D4F" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="g_coarse" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M 200 0 L 0 0 L 0 200" fill="none" stroke="#1A3551" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="chev" width="22" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 4 8 L 11 15 L 4 22" fill="none" stroke="#0387D1" stroke-width="1.5"/>
+    </pattern>
+    <linearGradient id="chev_fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.32"/>
+    </linearGradient>
+    <mask id="chev_mask">
+      <rect width="1600" height="900" fill="url(#chev_fade)"/>
+    </mask>
+  </defs>
+
+  <!-- Navy background -->
+  <rect width="1600" height="900" fill="#061A2E"/>
+
+  <!-- Blueprint grids -->
+  <rect width="1600" height="900" fill="url(#g_fine)" opacity="0.6"/>
+  <rect width="1600" height="900" fill="url(#g_coarse)"/>
+
+  <!-- Chevron pattern fading in from the right -->
+  <rect width="1600" height="900" fill="url(#chev)" mask="url(#chev_mask)"/>
+
+  <!-- Quarter-arc brand pattern · top-right -->
+  <g opacity="0.16" fill="none" stroke="#0387D1" stroke-width="1.5">
+    <circle cx="1600" cy="0" r="300"/>
+    <circle cx="1600" cy="0" r="220"/>
+    <circle cx="1600" cy="0" r="140"/>
+  </g>
+
+  <!-- Quarter-arc brand pattern · bottom-left (balance) -->
+  <g opacity="0.10" fill="none" stroke="#0387D1" stroke-width="1.5">
+    <circle cx="0" cy="900" r="230"/>
+    <circle cx="0" cy="900" r="160"/>
+  </g>
+
+  <!-- Iteration ghosts (concept refinement) -->
+  <rect x="475" y="255" width="650" height="410" rx="24" fill="none"
+        stroke="#0387D1" stroke-width="1.5" stroke-dasharray="4 8"
+        opacity="0.13" transform="rotate(-2.5 800 460)"/>
+  <rect x="487" y="267" width="626" height="386" rx="22" fill="none"
+        stroke="#0387D1" stroke-width="1.5" stroke-dasharray="4 8"
+        opacity="0.22" transform="rotate(-1.1 800 460)"/>
+
+  <!-- Final defined concept -->
+  <rect x="500" y="280" width="600" height="360" rx="20"
+        fill="#0A2440" fill-opacity="0.55"
+        stroke="#0387D1" stroke-width="2.5"/>
+
+  <!-- Internal architecture -->
+  <line x1="540" y1="400" x2="1060" y2="400" stroke="#0387D1" stroke-width="1" opacity="0.4"/>
+  <line x1="540" y1="520" x2="1060" y2="520" stroke="#0387D1" stroke-width="1" opacity="0.4"/>
+  <line x1="800" y1="300" x2="800" y2="620" stroke="#0387D1" stroke-width="1" opacity="0.25" stroke-dasharray="3 6"/>
+
+  <!-- Component nodes -->
+  <g fill="#0387D1">
+    <circle cx="620" cy="340" r="4"/>
+    <circle cx="980" cy="340" r="4"/>
+    <circle cx="620" cy="460" r="4"/>
+    <circle cx="980" cy="460" r="4"/>
+    <circle cx="800" cy="580" r="5"/>
+  </g>
+
+  <!-- Annotation markers (6 readiness pillars) -->
+  <g font-family="Barlow, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+     font-size="13" font-weight="700" fill="#E5E9EC"
+     text-anchor="middle" letter-spacing="1.8">
+
+    <!-- Top-left -->
+    <line x1="650" y1="206" x2="650" y2="275" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="650" cy="186" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="650" cy="186" r="5" fill="#0387D1"/>
+    <text x="650" y="155">USER NEED</text>
+
+    <!-- Top-right -->
+    <line x1="950" y1="206" x2="950" y2="275" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="950" cy="186" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="950" cy="186" r="5" fill="#0387D1"/>
+    <text x="950" y="155">MARKET FIT</text>
+
+    <!-- Mid-left -->
+    <line x1="382" y1="380" x2="495" y2="380" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="365" cy="380" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="365" cy="380" r="5" fill="#0387D1"/>
+    <text x="365" y="346">REG. PATHWAY</text>
+
+    <!-- Lower-left -->
+    <line x1="382" y1="540" x2="495" y2="540" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="365" cy="540" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="365" cy="540" r="5" fill="#0387D1"/>
+    <text x="365" y="506">IP LANDSCAPE</text>
+
+    <!-- Mid-right -->
+    <line x1="1218" y1="380" x2="1105" y2="380" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="1235" cy="380" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="1235" cy="380" r="5" fill="#0387D1"/>
+    <text x="1235" y="346">TECH FEASIBILITY</text>
+
+    <!-- Lower-right -->
+    <line x1="1218" y1="540" x2="1105" y2="540" stroke="#0387D1" stroke-width="1" opacity="0.55"/>
+    <circle cx="1235" cy="540" r="16" fill="#061A2E" stroke="#0387D1" stroke-width="2"/>
+    <circle cx="1235" cy="540" r="5" fill="#0387D1"/>
+    <text x="1235" y="506">TEAM</text>
+  </g>
+
+  <!-- Phase progress · bottom-left -->
+  <g transform="translate(80, 820)">
+    <text font-family="Barlow, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+          font-size="11" font-weight="700" letter-spacing="3" fill="#0387D1" y="0">PHASE 01 OF 04</text>
+    <g transform="translate(0, 18)">
+      <rect x="0" y="0" width="80" height="4" fill="#0387D1"/>
+      <rect x="88" y="0" width="80" height="4" fill="none" stroke="#0387D1" stroke-width="1" opacity="0.35"/>
+      <rect x="176" y="0" width="80" height="4" fill="none" stroke="#0387D1" stroke-width="1" opacity="0.35"/>
+      <rect x="264" y="0" width="80" height="4" fill="none" stroke="#0387D1" stroke-width="1" opacity="0.35"/>
+    </g>
+  </g>
+</svg>
