@@ -2166,12 +2166,13 @@ function moveCrystal(x, y, duration = 1.2) {
 // the section boundaries of the new VO:
 //   2  Signal chaos      13-29s
 //   3  Opportunity Engine 30-47s
-//   4  Venture            48-60s
-//   5  Lab + MFG          61-71s
-//   6  Parallel intel     72-84s
-//   7  Investable co      85-93s
-//   8  Compounding        94-107s
-//   9  Endcard            108-116s
+//   4  Venture            48-63s
+//   5  Lab + MFG          64-74s
+//   6  Parallel intel     75-89s
+//   7  Investable co      90-98s
+//   8  Compounding        99-117s
+//   9  Endcard tagline    118-122s
+//  10  Closing CTA        123-129s
 const timeline = [
   // ─── Section 2 (13-29s): Signals → foundation → intel layer → convergence ───
   { t: 13.0, action: () => {
@@ -2238,7 +2239,7 @@ const timeline = [
     showEl('crystal', 'show');
   }},
 
-  // ─── Section 4 (48-60s): Venture — pressure-test against $100M bar ───
+  // ─── Section 4 (48-63s): Venture — pressure-test against $100M bar ───
   { t: 48.0, action: () => {
     setSceneLabel('Scene 4 / Venture validation');
     showEl('mod-ven', 'show');
@@ -2248,13 +2249,13 @@ const timeline = [
   { t: 49.0, action: () => {
     setCaption('SPECIALIZED AGENTS <span class="dot">·</span> CAPABILITY <span class="dot">·</span> VALUATION <span class="dot">·</span> READINESS');
   }},
-  { t: 51.0, action: () => {
+  { t: 52.0, action: () => {
     moveCrystal(620, 120, 1.5);
   }},
-  { t: 52.5, action: () => {
+  { t: 53.5, action: () => {
     energize('mod-ven');
   }},
-  { t: 53.5, action: () => {
+  { t: 55.0, action: () => {
     const gate = document.getElementById('filter-gate');
     gate.style.left = '820px';
     gate.style.top = '30px';
@@ -2265,21 +2266,21 @@ const timeline = [
     showEl('filter-label', 'show');
     hideCaption();
   }},
-  { t: 54.5, action: () => {
+  { t: 56.0, action: () => {
     setCaption('<span class="accent">$100M+</span> OUTCOME <span class="dot">·</span> INSTITUTIONAL BAR');
   }},
-  { t: 56.5, action: () => {
+  { t: 58.5, action: () => {
     const c = document.getElementById('crystal');
     c.classList.add('fail');
     moveCrystal(800, 120, 0.6);
   }},
-  { t: 57.2, action: () => {
+  { t: 59.2, action: () => {
     const c = document.getElementById('crystal');
     burstAt(824, 220 + 130);
     c.style.opacity = '0';
     c.style.transform = 'scale(0.4)';
   }},
-  { t: 58.0, action: () => {
+  { t: 60.0, action: () => {
     const c = document.getElementById('crystal');
     c.classList.remove('fail');
     c.style.opacity = '0';
@@ -2292,7 +2293,7 @@ const timeline = [
       c.style.transform = 'scale(1)';
     }, 50);
   }},
-  { t: 59.0, action: () => {
+  { t: 61.5, action: () => {
     const gate = document.getElementById('filter-gate');
     gate.classList.add('passed');
     const label = document.getElementById('filter-label');
@@ -2301,8 +2302,8 @@ const timeline = [
     moveCrystal(900, 120, 1.0);
   }},
 
-  // ─── Section 5 (61-71s): Lab + Manufacturing ───
-  { t: 61.0, action: () => {
+  // ─── Section 5 (64-74s): Lab + Manufacturing ───
+  { t: 64.0, action: () => {
     setSceneLabel('Scene 5 / Lab + Manufacturing');
     showEl('mod-lab', 'show');
     showEl('connect-2', 'show');
@@ -2311,36 +2312,36 @@ const timeline = [
     showEl('filter-label', 'show', false);
     setHud('hud-agents', '27+');
   }},
-  { t: 62.0, action: () => {
+  { t: 65.0, action: () => {
     setCaption('LAB AGENTS <span class="dot">·</span> PROTOTYPING <span class="accent">MONTHS → WEEKS</span>');
     const labCad = document.querySelector('#mod-lab .lab-cad');
     if (labCad) labCad.classList.add('show');
     const tl = document.querySelector('#mod-lab .timeline-collapse');
     if (tl) tl.classList.add('show');
   }},
-  { t: 64.0, action: () => {
+  { t: 67.0, action: () => {
     moveCrystal(1040, 120, 1.2);
   }},
-  { t: 65.0, action: () => {
+  { t: 68.0, action: () => {
     energize('mod-lab');
   }},
-  { t: 66.5, action: () => {
+  { t: 69.5, action: () => {
     showEl('mod-mfg', 'show');
     showEl('connect-3', 'show');
     const sn = document.getElementById('supply-nodes');
     if (sn) sn.classList.add('show');
     hideCaption();
   }},
-  { t: 67.5, action: () => {
+  { t: 70.5, action: () => {
     setCaption('MFG AGENTS <span class="dot">·</span> SUPPLY CHAIN <span class="dot">·</span> <span class="accent">PARTNERS ALIGNED</span>');
     moveCrystal(1460, 120, 1.2);
   }},
-  { t: 68.7, action: () => {
+  { t: 71.7, action: () => {
     energize('mod-mfg');
   }},
 
-  // ─── Section 6 (72-84s): NDC + Fund + Fin — forty-plus agents in parallel ───
-  { t: 72.0, action: () => {
+  // ─── Section 6 (75-89s): NDC + Fund + Fin — forty-plus agents in parallel ───
+  { t: 75.0, action: () => {
     setSceneLabel('Scene 6 / Parallel intelligence');
     hideCaption();
     showEl('mod-ndc', 'show');
@@ -2348,28 +2349,28 @@ const timeline = [
     energize('mod-ndc');
     setHud('hud-agents', '40+');
   }},
-  { t: 72.5, action: () => {
+  { t: 75.5, action: () => {
     showEl('mod-fund', 'show');
     showEl('cv-fund', 'show');
     energize('mod-fund');
   }},
-  { t: 73.0, action: () => {
+  { t: 76.0, action: () => {
     showEl('mod-fin', 'show');
     showEl('cv-fin', 'show');
     energize('mod-fin');
   }},
-  { t: 76.0, action: () => {
+  { t: 78.0, action: () => {
     setCaption('FORTY-PLUS AGENTS <span class="dot">·</span> WORKING <span class="accent">IN PARALLEL</span> <span class="dot">·</span> EVERY DAY');
   }},
-  { t: 80.0, action: () => {
+  { t: 83.0, action: () => {
     showCallout('40+', 'AI Agents Active', '60,000+ API calls / day', 1560, 540, 4000);
   }},
 
-  // ─── Section 7 (85-93s): Investable company emerges ───
-  { t: 85.0, action: () => {
+  // ─── Section 7 (90-98s): Investable company emerges ───
+  { t: 90.0, action: () => {
     spawnConvergence(36, 1500);
   }},
-  { t: 85.5, action: () => {
+  { t: 90.5, action: () => {
     setSceneLabel('Scene 7 / Investable company');
     hideCaption();
     ['mod-oe','mod-ven','mod-lab','mod-mfg','mod-ndc','mod-fund','mod-fin'].forEach(id => {
@@ -2384,15 +2385,15 @@ const timeline = [
     c.style.opacity = '0';
     setCameraScale(0.92, 2000);
   }},
-  { t: 86.5, action: () => {
+  { t: 91.5, action: () => {
     spawnConvergence(24, 900);
   }},
-  { t: 87.5, action: () => {
+  { t: 92.5, action: () => {
     showEl('company', 'show');
   }},
 
-  // ─── Section 8 (94-107s): AI layer compounds with every iteration ───
-  { t: 94.0, action: () => {
+  // ─── Section 8 (99-117s): AI layer compounds with every iteration ───
+  { t: 99.0, action: () => {
     setSceneLabel('Scene 8 / Compounding system');
     setCameraScale(0.85, 2200);
     ['mod-oe','mod-ven','mod-lab','mod-mfg'].forEach(id => {
@@ -2411,45 +2412,50 @@ const timeline = [
     showEl('neural-net', 'show');
     showEl('compound-arrow', 'show');
   }},
-  { t: 95.5, action: () => {
+  { t: 101.0, action: () => {
     setCaption('AI LAYER <span class="accent">COMPOUNDS</span> <span class="dot">·</span> WITH EVERY COMPANY <span class="dot">·</span> WITH EVERY ITERATION');
   }},
-  { t: 98.0, action: () => {
+  { t: 104.0, action: () => {
     const f = document.getElementById('foundation');
     if (f) f.classList.add('thicken');
   }},
-  { t: 101.0, action: () => {
+  { t: 109.0, action: () => {
     showCallout('MONTHS', 'of analyst work', 'completed every day', 300, 540, 3500);
   }},
-  { t: 103.0, action: () => {
+  { t: 113.0, action: () => {
     showEl('partner-instance', 'show');
   }},
 
-  // ─── Section 9 (108-116s): Endcard ───
-  { t: 108.0, action: () => {
+  // ─── Section 9 (118-122s): Endcard reveal — "10XBeta. Hardware company that builds with AI." ───
+  { t: 118.0, action: () => {
     setSceneLabel('Scene 9 / Endcard');
     hideCaption();
     showEl('endcard', 'show');
     showEl('hud-stats', 'show', false);
   }},
 
-  { t: 116.0, action: () => {
+  // ─── Section 10 (123-129s): Closing CTA — VO continues over endcard ───
+  { t: 123.0, action: () => {
+    setSceneLabel('Scene 10 / Closing');
+  }},
+
+  { t: 129.0, action: () => {
     setSceneLabel('Complete');
   }}
 ];
 
 // ─── Time architecture ─────────────────────────────────────────────────────
 //  ▸ Music plays at native 1.0x speed, starts at elapsed = 0.
-//  ▸ VO plays at 1.2x speed, starts at elapsed = VO_DELAY (1.5s music pre-roll).
+//  ▸ VO plays at 1.2x speed, starts at elapsed = VO_DELAY (2.0s music pre-roll).
 //  ▸ Animation timeline t values are in 1x VO seconds (= voTime).
 //      voTime = (elapsed - VO_DELAY) * PLAYBACK_RATE
 //  ▸ Music file is produced to be ~4s longer than VO at 1.2x, so it covers
-//    the 1.5s pre-roll AND ~2.5s tail after VO ends.
+//    the 2s pre-roll AND ~2s tail after VO ends.
 // ───────────────────────────────────────────────────────────────────────────
 const PLAYBACK_RATE   = 1.2;    // VO speed-up
-const VO_DELAY        = 1.5;    // real seconds of music-only pre-roll
-const VO_END_TIME     = 116;    // 1x VO seconds — when narration content ends
-const TOTAL_DURATION  = 101;    // real seconds — stops the tick loop after music ends (~100.7s)
+const VO_DELAY        = 2.0;    // real seconds of music-only pre-roll
+const VO_END_TIME     = 129;    // 1x VO seconds — when narration content ends
+const TOTAL_DURATION  = 112;    // real seconds — stops the tick loop after music ends (~111.5s)
 
 const AUDIO_BASE      = 'audio/';
 const MUSIC_TRACK     = AUDIO_BASE + 'music-bg.mp3';
@@ -2542,7 +2548,7 @@ function stopNarration() {
 // Called every tick with the real-time elapsed seconds and the current voTime.
 function checkAudioCues(elapsed, voTime) {
   if (!audioOn) return;
-  // VO starts after the 1.5s music pre-roll
+  // VO starts after the 2s music pre-roll
   if (!narrationStarted && elapsed >= VO_DELAY) {
     playNarration();
   }
@@ -2550,13 +2556,13 @@ function checkAudioCues(elapsed, voTime) {
   if (!musicDucked && elapsed >= VO_DELAY) {
     duckMusic();
   }
-  // Restore music level when VO content ends (music continues for ~2.5s tail)
+  // Restore music level when VO content ends (music continues for ~2s tail)
   if (!musicRestored && voTime >= VO_END_TIME) {
     restoreMusic();
   }
 }
 
-// Intro events fire on voTime (1x VO seconds). Section 1 = 1-12s in 1x VO time:
+// Intro events fire on voTime (1x VO seconds). Section 1 = 0-12s in 1x VO time:
 //  logo fade-in → orbit dance → logo migrates to corner before Section 2 (signals).
 const introTimeline = [
   { t: 0.5, action: () => {
@@ -2639,10 +2645,10 @@ function tick(now) {
   elapsed = (now - startTime) / 1000;
   // voTime = 1x VO audio position. Animation events use this scale so the
   // section numbers in `timeline[]` are literal VO seconds.
-  // Stays at 0 during the 1.5s music-only pre-roll.
+  // Stays at 0 during the 2s music-only pre-roll.
   const voTime = elapsed >= VO_DELAY ? (elapsed - VO_DELAY) * PLAYBACK_RATE : 0;
 
-  timerDisplay.textContent = `${formatTime(elapsed)} / 1:41`;
+  timerDisplay.textContent = `${formatTime(elapsed)} / 1:52`;
 
   checkAudioCues(elapsed, voTime);
 
@@ -2747,11 +2753,11 @@ function restart() {
   hideCaption();
   generateSignals();
   setSceneLabel('Scene — / Ready');
-  timerDisplay.textContent = '0:00 / 1:41';
+  timerDisplay.textContent = '0:00 / 1:52';
 }
 
 document.getElementById('btn-play').addEventListener('click', () => {
-  if (elapsed > 120) restart();
+  if (elapsed > 100) restart();
   play();
 });
 document.getElementById('btn-restart').addEventListener('click', () => {
