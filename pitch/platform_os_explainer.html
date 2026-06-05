@@ -1241,6 +1241,69 @@ html, body {
 }
 .intel-layer-label.show { opacity: 0.9; }
 
+/* Intro orbit — dots circling the 10XBeta logo during Marcel's first line */
+.intro-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  z-index: 7;
+  pointer-events: none;
+}
+.intro-orbit.show { opacity: 1; }
+.orbit-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  animation: orbit-rotate var(--speed, 8s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.orbit-dot {
+  position: absolute;
+  top: calc(var(--r, 200px) * -1);
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color, var(--accent-blue));
+  box-shadow:
+    0 0 12px var(--color, var(--accent-blue)),
+    0 0 24px var(--color, var(--accent-blue));
+  animation: orbit-dot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes orbit-dot-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.4); }
+}
+
+/* Signal chip flash — random glow pulses while signals are active.
+   Uses background + box-shadow only (not transform) so it stacks cleanly
+   with chipDrift's transform-based scatter animation. */
+.signal-chip {
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.signal-chip.flash {
+  background: rgba(3,135,209,0.65) !important;
+  border-color: rgba(255,255,255,0.9) !important;
+  box-shadow:
+    0 0 24px rgba(3,135,209,0.9),
+    0 0 48px rgba(3,135,209,0.55),
+    0 0 80px rgba(3,135,209,0.3) !important;
+  color: #fff !important;
+}
+
 /* Heritage scene — opening narrative (5s-13s) supporting Marcel's first line */
 .heritage-scene {
   position: absolute;
@@ -1409,6 +1472,27 @@ html, body {
         </g>
       </svg>
       <span class="sub sub-platform">Platform OS</span>
+    </div>
+
+    <div class="intro-orbit" id="intro-orbit">
+      <div class="orbit-track" style="--r: 200px; --speed: 8s; --delay: 0s;">
+        <div class="orbit-dot" style="--color: var(--accent-blue);"></div>
+      </div>
+      <div class="orbit-track" style="--r: 250px; --speed: 11s; --delay: -2s;">
+        <div class="orbit-dot" style="--color: var(--c-oe);"></div>
+      </div>
+      <div class="orbit-track" style="--r: 300px; --speed: 9s; --delay: -4s;">
+        <div class="orbit-dot" style="--color: var(--accent-blue);"></div>
+      </div>
+      <div class="orbit-track" style="--r: 230px; --speed: 13s; --delay: -1s;">
+        <div class="orbit-dot" style="--color: #06B6D4;"></div>
+      </div>
+      <div class="orbit-track" style="--r: 280px; --speed: 10s; --delay: -3s;">
+        <div class="orbit-dot" style="--color: var(--c-oe);"></div>
+      </div>
+      <div class="orbit-track" style="--r: 350px; --speed: 7s; --delay: -5s;">
+        <div class="orbit-dot" style="--color: white;"></div>
+      </div>
     </div>
 
     <div class="scene" id="scene-1">
@@ -1858,6 +1942,34 @@ function deactivateSignals() {
   chips.forEach(c => c.classList.remove('active'));
 }
 
+// Signal flash — randomly glow 1-3 chips while signals are running
+let signalFlashTimer = null;
+function startSignalFlash() {
+  if (signalFlashTimer) return;
+  const tick = () => {
+    const field = document.getElementById('signal-field');
+    if (!field) return;
+    const chips = field.querySelectorAll('.signal-chip.active');
+    if (chips.length > 0) {
+      const numToFlash = 1 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < numToFlash; i++) {
+        const chip = chips[Math.floor(Math.random() * chips.length)];
+        chip.classList.add('flash');
+        setTimeout(() => chip.classList.remove('flash'), 500 + Math.random() * 300);
+      }
+    }
+    signalFlashTimer = setTimeout(tick, 250 + Math.random() * 400);
+  };
+  tick();
+}
+function stopSignalFlash() {
+  if (signalFlashTimer) {
+    clearTimeout(signalFlashTimer);
+    signalFlashTimer = null;
+  }
+  document.querySelectorAll('.signal-chip.flash').forEach(c => c.classList.remove('flash'));
+}
+
 function buildSupplyNodes() {
   const container = document.getElementById('supply-nodes');
   if (container.dataset.built) return;
@@ -2050,11 +2162,23 @@ function moveCrystal(x, y, duration = 1.2) {
   c.style.top = y + 'px';
 }
 
+// Main timeline. All `t` values are 1x VO seconds (= voTime) and align to
+// the section boundaries of the new VO:
+//   2  Signal chaos      13-29s
+//   3  Opportunity Engine 30-47s
+//   4  Venture            48-60s
+//   5  Lab + MFG          61-71s
+//   6  Parallel intel     72-84s
+//   7  Investable co      85-93s
+//   8  Compounding        94-107s
+//   9  Endcard            108-116s
 const timeline = [
-  { t: 10.0, action: () => {
+  // ─── Section 2 (13-29s): Signals → foundation → intel layer → convergence ───
+  { t: 13.0, action: () => {
     setSceneLabel('Scene 1 / Signal chaos');
     setActive('scene-1', true);
     activateSignals();
+    startSignalFlash();
     setCaption('MEDTECH LANDSCAPE <span class="dot">·</span> <span class="accent">MILLIONS OF SIGNALS</span>');
     showEl('hud-stats', 'show');
     setHud('hud-signals', '12,000+');
@@ -2063,48 +2187,49 @@ const timeline = [
     setHud('hud-theses', '0');
   }},
 
-  { t: 17.0, action: () => {
+  { t: 20.0, action: () => {
     setSceneLabel('Scene 2 / Foundation reveal');
     stage.classList.add('bg-on');
     showEl('foundation', 'up');
     hideCaption();
   }},
-  { t: 18.5, action: () => {
-    setCaption('25 YEARS · FOUNDER OPERATING EXPERIENCE <span class="dot">·</span> 15 YEARS · PHYSICAL DEVICE DEVELOPMENT');
+  { t: 21.5, action: () => {
+    setCaption('25 YEARS <span class="dot">·</span> FOUNDER <span class="dot">·</span> OPERATOR <span class="dot">·</span> <span class="accent">CONNECTED HARDWARE</span>');
   }},
 
-  { t: 29.0, action: () => {
-    // A.I. intelligence layer reveals (during Marcel's "encoded into an A.I. intelligence layer" line)
+  { t: 25.0, action: () => {
+    // "all encoded into an A.I. layer" — intel layer reveals
     showEl('intel-layer', 'show');
     showEl('intel-label', 'show');
   }},
-  { t: 31.0, action: () => {
+  { t: 26.5, action: () => {
     setCaption('<span class="accent">A.I. INTELLIGENCE LAYER</span> <span class="dot">·</span> SIGNALS INTO CONVICTION');
   }},
-  { t: 34.0, action: () => {
-    // Signals converge to OE position (during "...turns signals into conviction")
+  { t: 28.0, action: () => {
+    // "turns signals into conviction" — signals converge to OE position
+    stopSignalFlash();
     convergeSignalsToOE();
   }},
 
-  { t: 36.0, action: () => {
+  // ─── Section 3 (30-47s): Opportunity Engine ───
+  { t: 30.0, action: () => {
     setSceneLabel('Scene 3 / Opportunity Engine');
     showEl('intel-layer', 'show', false);
     showEl('intel-label', 'show', false);
     showEl('mod-oe', 'show');
     hideCaption();
     setCameraScale(1.04, 3000);
-    // HUD: agents come online; per-day rates lock in at steady-state
     setHud('hud-agents', '11+');
     setHud('hud-api', '60,000');
     setHud('hud-theses', '35+');
   }},
-  { t: 37.0, action: () => {
+  { t: 32.0, action: () => {
     setCaption('AUTONOMOUS AGENTS <span class="dot">·</span> SCANNING <span class="dot">·</span> SCORING <span class="dot">·</span> <span class="accent">DECISION-GRADE THESES</span>');
   }},
-  { t: 39.5, action: () => {
+  { t: 35.0, action: () => {
     showCallout('11+', 'OE Agents', '24/7 · Scoring · Synthesizing', 360, 540, 3500);
   }},
-  { t: 42.0, action: () => {
+  { t: 38.0, action: () => {
     energize('mod-oe');
     const c = document.getElementById('crystal');
     c.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -2113,22 +2238,23 @@ const timeline = [
     showEl('crystal', 'show');
   }},
 
-  { t: 53.0, action: () => {
+  // ─── Section 4 (48-60s): Venture — pressure-test against $100M bar ───
+  { t: 48.0, action: () => {
     setSceneLabel('Scene 4 / Venture validation');
     showEl('mod-ven', 'show');
     showEl('connect-1', 'show');
     hideCaption();
   }},
-  { t: 54.0, action: () => {
+  { t: 49.0, action: () => {
     setCaption('SPECIALIZED AGENTS <span class="dot">·</span> CAPABILITY <span class="dot">·</span> VALUATION <span class="dot">·</span> READINESS');
   }},
-  { t: 56.0, action: () => {
+  { t: 51.0, action: () => {
     moveCrystal(620, 120, 1.5);
   }},
-  { t: 57.3, action: () => {
+  { t: 52.5, action: () => {
     energize('mod-ven');
   }},
-  { t: 58.5, action: () => {
+  { t: 53.5, action: () => {
     const gate = document.getElementById('filter-gate');
     gate.style.left = '820px';
     gate.style.top = '30px';
@@ -2139,21 +2265,21 @@ const timeline = [
     showEl('filter-label', 'show');
     hideCaption();
   }},
-  { t: 59.0, action: () => {
+  { t: 54.5, action: () => {
     setCaption('<span class="accent">$100M+</span> OUTCOME <span class="dot">·</span> INSTITUTIONAL BAR');
   }},
-  { t: 61.5, action: () => {
+  { t: 56.5, action: () => {
     const c = document.getElementById('crystal');
     c.classList.add('fail');
     moveCrystal(800, 120, 0.6);
   }},
-  { t: 62.2, action: () => {
+  { t: 57.2, action: () => {
     const c = document.getElementById('crystal');
     burstAt(824, 220 + 130);
     c.style.opacity = '0';
     c.style.transform = 'scale(0.4)';
   }},
-  { t: 63.0, action: () => {
+  { t: 58.0, action: () => {
     const c = document.getElementById('crystal');
     c.classList.remove('fail');
     c.style.opacity = '0';
@@ -2166,7 +2292,7 @@ const timeline = [
       c.style.transform = 'scale(1)';
     }, 50);
   }},
-  { t: 64.0, action: () => {
+  { t: 59.0, action: () => {
     const gate = document.getElementById('filter-gate');
     gate.classList.add('passed');
     const label = document.getElementById('filter-label');
@@ -2175,74 +2301,75 @@ const timeline = [
     moveCrystal(900, 120, 1.0);
   }},
 
-  { t: 73.0, action: () => {
+  // ─── Section 5 (61-71s): Lab + Manufacturing ───
+  { t: 61.0, action: () => {
     setSceneLabel('Scene 5 / Lab + Manufacturing');
     showEl('mod-lab', 'show');
     showEl('connect-2', 'show');
     hideCaption();
     showEl('filter-gate', 'show', false);
     showEl('filter-label', 'show', false);
-    // HUD updates — only agents count grows; rates already at steady-state
     setHud('hud-agents', '27+');
   }},
-  { t: 74.0, action: () => {
+  { t: 62.0, action: () => {
     setCaption('LAB AGENTS <span class="dot">·</span> PROTOTYPING <span class="accent">MONTHS → WEEKS</span>');
     const labCad = document.querySelector('#mod-lab .lab-cad');
     if (labCad) labCad.classList.add('show');
     const tl = document.querySelector('#mod-lab .timeline-collapse');
     if (tl) tl.classList.add('show');
   }},
-  { t: 76.0, action: () => {
+  { t: 64.0, action: () => {
     moveCrystal(1040, 120, 1.2);
   }},
-  { t: 77.2, action: () => {
+  { t: 65.0, action: () => {
     energize('mod-lab');
   }},
-  { t: 79.0, action: () => {
+  { t: 66.5, action: () => {
     showEl('mod-mfg', 'show');
     showEl('connect-3', 'show');
     const sn = document.getElementById('supply-nodes');
     if (sn) sn.classList.add('show');
     hideCaption();
   }},
-  { t: 80.0, action: () => {
+  { t: 67.5, action: () => {
     setCaption('MFG AGENTS <span class="dot">·</span> SUPPLY CHAIN <span class="dot">·</span> <span class="accent">PARTNERS ALIGNED</span>');
     moveCrystal(1460, 120, 1.2);
   }},
-  { t: 81.2, action: () => {
+  { t: 68.7, action: () => {
     energize('mod-mfg');
   }},
 
-  { t: 86.0, action: () => {
+  // ─── Section 6 (72-84s): NDC + Fund + Fin — forty-plus agents in parallel ───
+  { t: 72.0, action: () => {
     setSceneLabel('Scene 6 / Parallel intelligence');
     hideCaption();
     showEl('mod-ndc', 'show');
     showEl('cv-ndc', 'show');
     energize('mod-ndc');
-    // HUD: full system live; only agent count changes
     setHud('hud-agents', '40+');
   }},
-  { t: 86.5, action: () => {
+  { t: 72.5, action: () => {
     showEl('mod-fund', 'show');
     showEl('cv-fund', 'show');
     energize('mod-fund');
   }},
-  { t: 87.0, action: () => {
+  { t: 73.0, action: () => {
     showEl('mod-fin', 'show');
     showEl('cv-fin', 'show');
     energize('mod-fin');
   }},
-  { t: 87.5, action: () => {
-    setCaption('DOZENS OF AGENTS <span class="dot">·</span> WORKING <span class="accent">IN PARALLEL</span> <span class="dot">·</span> EVERY DAY');
+  { t: 76.0, action: () => {
+    setCaption('FORTY-PLUS AGENTS <span class="dot">·</span> WORKING <span class="accent">IN PARALLEL</span> <span class="dot">·</span> EVERY DAY');
   }},
-  { t: 89.5, action: () => {
+  { t: 80.0, action: () => {
     showCallout('40+', 'AI Agents Active', '60,000+ API calls / day', 1560, 540, 4000);
   }},
 
-  { t: 95.5, action: () => {
+  // ─── Section 7 (85-93s): Investable company emerges ───
+  { t: 85.0, action: () => {
     spawnConvergence(36, 1500);
   }},
-  { t: 97.0, action: () => {
+  { t: 85.5, action: () => {
     setSceneLabel('Scene 7 / Investable company');
     hideCaption();
     ['mod-oe','mod-ven','mod-lab','mod-mfg','mod-ndc','mod-fund','mod-fin'].forEach(id => {
@@ -2257,14 +2384,15 @@ const timeline = [
     c.style.opacity = '0';
     setCameraScale(0.92, 2000);
   }},
-  { t: 97.8, action: () => {
+  { t: 86.5, action: () => {
     spawnConvergence(24, 900);
   }},
-  { t: 98.5, action: () => {
+  { t: 87.5, action: () => {
     showEl('company', 'show');
   }},
 
-  { t: 105.0, action: () => {
+  // ─── Section 8 (94-107s): AI layer compounds with every iteration ───
+  { t: 94.0, action: () => {
     setSceneLabel('Scene 8 / Compounding system');
     setCameraScale(0.85, 2200);
     ['mod-oe','mod-ven','mod-lab','mod-mfg'].forEach(id => {
@@ -2279,52 +2407,53 @@ const timeline = [
       const el = document.getElementById(id);
       if (el) el.style.opacity = '0.4';
     });
-    // Hide company emergence shape
     document.getElementById('company').classList.remove('show');
-    // Neural net constellation lights up
     showEl('neural-net', 'show');
     showEl('compound-arrow', 'show');
-    // Steady-state — no HUD changes; compounding is shown by the orbit + foundation thickening
   }},
-  { t: 106.0, action: () => {
+  { t: 95.5, action: () => {
     setCaption('AI LAYER <span class="accent">COMPOUNDS</span> <span class="dot">·</span> WITH EVERY COMPANY <span class="dot">·</span> WITH EVERY ITERATION');
   }},
-  { t: 108.0, action: () => {
+  { t: 98.0, action: () => {
     const f = document.getElementById('foundation');
     if (f) f.classList.add('thicken');
   }},
-  { t: 110.0, action: () => {
+  { t: 101.0, action: () => {
     showCallout('MONTHS', 'of analyst work', 'completed every day', 300, 540, 3500);
   }},
-  { t: 111.0, action: () => {
+  { t: 103.0, action: () => {
     showEl('partner-instance', 'show');
   }},
 
-  { t: 123.0, action: () => {
+  // ─── Section 9 (108-116s): Endcard ───
+  { t: 108.0, action: () => {
     setSceneLabel('Scene 9 / Endcard');
     hideCaption();
     showEl('endcard', 'show');
     showEl('hud-stats', 'show', false);
   }},
 
-  { t: 145.0, action: () => {
+  { t: 116.0, action: () => {
     setSceneLabel('Complete');
   }}
 ];
 
-const INTRO_DURATION = 5.0;
-const PLAYBACK_RATE = 1.2;  // 1.2x speed-up — applied to audio playbackRate + visual timeline checks
+// ─── Time architecture ─────────────────────────────────────────────────────
+//  ▸ Music plays at native 1.0x speed, starts at elapsed = 0.
+//  ▸ VO plays at 1.2x speed, starts at elapsed = VO_DELAY (1.5s music pre-roll).
+//  ▸ Animation timeline t values are in 1x VO seconds (= voTime).
+//      voTime = (elapsed - VO_DELAY) * PLAYBACK_RATE
+//  ▸ Music file is produced to be ~4s longer than VO at 1.2x, so it covers
+//    the 1.5s pre-roll AND ~2.5s tail after VO ends.
+// ───────────────────────────────────────────────────────────────────────────
+const PLAYBACK_RATE   = 1.2;    // VO speed-up
+const VO_DELAY        = 1.5;    // real seconds of music-only pre-roll
+const VO_END_TIME     = 116;    // 1x VO seconds — when narration content ends
+const TOTAL_DURATION  = 101;    // real seconds — stops the tick loop after music ends (~100.7s)
 
-// Audio file paths — drop ElevenLabs MP3s into ./audio/ with these names
-const AUDIO_BASE = 'audio/';
-const MUSIC_TRACK = AUDIO_BASE + 'music-bg.mp3';
-
-// Two-track audio: VO and music, equal length (both 2:30).
-// Music ducks at MUSIC_DUCK_AT (just before VO speech) and restores at MUSIC_RESTORE_AT (when VO ends).
+const AUDIO_BASE      = 'audio/';
+const MUSIC_TRACK     = AUDIO_BASE + 'music-bg.mp3';
 const NARRATION_TRACK = AUDIO_BASE + 'narration.mp3';
-const NARRATION_START = 0;     // when to start playing narration audio
-const MUSIC_DUCK_AT = 4.5;     // seconds — when to fade music down (just before VO speech)
-const MUSIC_RESTORE_AT = 136;  // seconds (~2:16) — when to fade music back up (after VO ends)
 
 let audioOn = true;
 let narrationStarted = false;
@@ -2336,14 +2465,14 @@ function preloadAudio() {
   const vo = new Audio(NARRATION_TRACK);
   vo.preload = 'auto';
   vo.volume = 1.0;
-  vo.playbackRate = PLAYBACK_RATE;
+  vo.playbackRate = PLAYBACK_RATE;  // VO is sped up
   audioCache['narration'] = vo;
 
   const music = new Audio(MUSIC_TRACK);
   music.preload = 'auto';
   music.volume = 0;
-  music.loop = true;
-  music.playbackRate = PLAYBACK_RATE;
+  music.loop = false;               // music ends naturally; no loop
+  music.playbackRate = 1.0;         // music plays at native speed
   audioCache['music'] = music;
 }
 preloadAudio();
@@ -2410,28 +2539,37 @@ function stopNarration() {
   stopAllAudio();
 }
 
-function checkNarration(elapsedSec) {
+// Called every tick with the real-time elapsed seconds and the current voTime.
+function checkAudioCues(elapsed, voTime) {
   if (!audioOn) return;
-  if (!narrationStarted && elapsedSec >= NARRATION_START) {
+  // VO starts after the 1.5s music pre-roll
+  if (!narrationStarted && elapsed >= VO_DELAY) {
     playNarration();
   }
-  if (!musicDucked && elapsedSec >= MUSIC_DUCK_AT) {
+  // Duck music when VO starts
+  if (!musicDucked && elapsed >= VO_DELAY) {
     duckMusic();
   }
-  if (!musicRestored && elapsedSec >= MUSIC_RESTORE_AT) {
+  // Restore music level when VO content ends (music continues for ~2.5s tail)
+  if (!musicRestored && voTime >= VO_END_TIME) {
     restoreMusic();
   }
 }
 
+// Intro events fire on voTime (1x VO seconds). Section 1 = 1-12s in 1x VO time:
+//  logo fade-in → orbit dance → logo migrates to corner before Section 2 (signals).
 const introTimeline = [
-  { t: 0.3, action: () => {
+  { t: 0.5, action: () => {
     setSceneLabel('Scene 0 / Intro');
     document.getElementById('brand-mark').classList.remove('intro-init');
     document.getElementById('brand-mark').classList.add('intro-pose');
   }},
-  { t: 13.0, action: () => {
-    // Logo migrates to top-left during Marcel's "Now we built the system that builds the companies"
+  { t: 2.5, action: () => {
+    document.getElementById('intro-orbit').classList.add('show');
+  }},
+  { t: 11.0, action: () => {
     document.getElementById('brand-mark').classList.remove('intro-pose');
+    document.getElementById('intro-orbit').classList.remove('show');
   }}
 ];
 
@@ -2499,24 +2637,27 @@ function tick(now) {
   if (!playing) return;
   if (!startTime) startTime = now - elapsed * 1000;
   elapsed = (now - startTime) / 1000;
-  const effectiveTime = elapsed * PLAYBACK_RATE;
+  // voTime = 1x VO audio position. Animation events use this scale so the
+  // section numbers in `timeline[]` are literal VO seconds.
+  // Stays at 0 during the 1.5s music-only pre-roll.
+  const voTime = elapsed >= VO_DELAY ? (elapsed - VO_DELAY) * PLAYBACK_RATE : 0;
 
-  timerDisplay.textContent = `${formatTime(elapsed)} / 2:05`;
+  timerDisplay.textContent = `${formatTime(elapsed)} / 1:41`;
 
-  checkNarration(effectiveTime);
+  checkAudioCues(elapsed, voTime);
 
-  while (introExecutedIndex < introTimeline.length && introTimeline[introExecutedIndex].t <= effectiveTime) {
+  // Both intro events and main timeline events fire on voTime.
+  while (introExecutedIndex < introTimeline.length && introTimeline[introExecutedIndex].t <= voTime) {
     try { introTimeline[introExecutedIndex].action(); } catch (e) { console.error('Intro action error', e); }
     introExecutedIndex++;
   }
 
-  const sceneTime = effectiveTime - INTRO_DURATION;
-  while (executedIndex < timeline.length && timeline[executedIndex].t <= sceneTime) {
+  while (executedIndex < timeline.length && timeline[executedIndex].t <= voTime) {
     try { timeline[executedIndex].action(); } catch (e) { console.error('Timeline action error', e); }
     executedIndex++;
   }
 
-  if (effectiveTime < 156) {
+  if (elapsed < TOTAL_DURATION) {
     rafId = requestAnimationFrame(tick);
   } else {
     playing = false;
@@ -2552,6 +2693,11 @@ function restart() {
   const ilLabel = document.getElementById('intel-label');
   if (il) il.classList.remove('show');
   if (ilLabel) ilLabel.classList.remove('show');
+  // Reset intro-orbit
+  const io = document.getElementById('intro-orbit');
+  if (io) io.classList.remove('show');
+  // Stop any active signal flash timer
+  stopSignalFlash();
 
   document.querySelectorAll('.module').forEach(m => {
     m.classList.remove('show');
@@ -2601,7 +2747,7 @@ function restart() {
   hideCaption();
   generateSignals();
   setSceneLabel('Scene — / Ready');
-  timerDisplay.textContent = '0:00 / 2:00';
+  timerDisplay.textContent = '0:00 / 1:41';
 }
 
 document.getElementById('btn-play').addEventListener('click', () => {
