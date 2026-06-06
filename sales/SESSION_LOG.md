@@ -3,7 +3,7 @@
 > **READ FIRST IF YOU ARE A NEW CLAUDE SESSION**
 >
 > - This is the **sales / business development outreach** workstream for 10XBeta.
-> - Tracks outreach to placement agents, boutique investment banks, and healthcare/medtech transaction advisors who will help portfolio companies with capital raises, strategic partnerships, and eventual M&A or licensing exits.
+> - Tracks outreach to placement agents, boutique investment banks, healthcare/medtech transaction advisors, and (as of Session 002) secondary buyers who will help with portfolio liquidity.
 > - **Separate workstream** from the marketing site work (root-level `SESSION_LOG.md` covers that).
 > - **No database. No Supabase. No backend.** This markdown file IS the durable session record.
 > - **Do NOT query the vs-os Supabase project.** This is not Platform OS work.
@@ -38,7 +38,7 @@ Frederick is initiating outbound to boutique investment banks, placement agents,
 - TripleTree (tripletree.com)
 - Provident Healthcare Partners (providenthp.com)
 - Bourne Partners (bournepartners.com)
-- Edgemont Capital Partners (edgemont.com)
+- Edgemont Capital Partners (edgemont.com) — *reclassified Session 002, see below*
 - Cassel Salpeter & Co (cassel-salpeter.com)
 - Coker Capital Advisors (cokercapital.com)
 - HT Capital Advisors (htcapital.com)
@@ -71,7 +71,7 @@ Note: this session was conducted with GitHub MCP only, no live web access. All a
 - Outcome Capital
 - Leerink Partners
 - HC Wainwright
-- Edgemont Capital Partners
+- Edgemont Capital Partners — *Session 002 update: confirmed to be 80% M&A, see Session 002*
 
 **Likely weak fit for hardware specifically (healthcare-adjacent but biotech/services/pharma lean):**
 - Locust Walk (biotech licensing focus)
@@ -213,3 +213,109 @@ where we left off.
 ```
 
 If picking up in a Claude.ai surface with web search, the natural first task is the verification pass on all 26 firms. That output goes into the firm tracker (item 2 in Open items).
+
+---
+
+## Session 002 — 2026-06-02 — Edgemont call feedback + secondaries pivot
+
+**Status:** intelligence update from first real conversation; strategic question raised for resolution next session
+**Owner:** Frederick Kruger (COO)
+
+### What happened
+
+Frederick spoke with **Edgemont Capital Partners** (the first real conversation from the placement-agent target list). Two pieces of intel emerged that materially change the working model:
+
+1. **Edgemont is ~80% M&A advisory** (sell-side). They are an **exit advisor**, not a placement agent. This reclassifies them in our firm map.
+2. **Edgemont recommended Revelation Partners** (revelation-partners.com) specifically for **secondaries**. This opens a firm category that was not on the original radar: dedicated secondary buyers who purchase positions from existing shareholders.
+
+### Edgemont reclassification
+
+Move Edgemont from "Healthcare and medtech transaction boutiques" (where Session 001 placed it) to a new **"M&A / exit advisors"** category. They remain a valuable long-term relationship since 10XBeta portfolio companies will eventually exit, but they're not the firm for early-stage capital raises. **Adjust outreach framing for Edgemont** specifically to exit-focused (no longer capital placement / strategic partnership). Keep the warm relationship; loop back when a portfolio company approaches exit readiness.
+
+### New target: Revelation Partners
+
+- URL: https://revelation-partners.com
+- Recommendation source: Edgemont Capital Partners (warm intro available — ask explicitly when reaching out)
+- Specialty: healthcare-focused secondaries
+- **Verification needed:** confirm they cover medtech device positions specifically, not just biotech/services secondaries
+
+### New firm category: Secondaries
+
+These are dedicated secondary buyers who purchase equity positions from existing shareholders, separate from primary capital rounds. Relevant for 10XBeta because the studio holds equity in portfolio companies and needs liquidity to recycle capital into new ventures without waiting 7-10 years for full exits.
+
+**Healthcare and biotech-focused:**
+- **Revelation Partners** (revelation-partners.com) — Edgemont's recommendation, top priority
+- **NewView Capital** (newviewcap.com) — growth-stage secondaries, healthcare exposure
+- **Industry Ventures** (industryventures.com) — major secondary buyer, broad sector including healthcare
+- **Saints Capital** (saintsvc.com) — direct secondary buyer, growth-stage
+
+**Generalist large secondaries (do healthcare among other sectors):**
+- Lexington Partners (lexingtonpartners.com) — largest secondary firm globally
+- Coller Capital (collercapital.com)
+- HarbourVest Partners (harbourvest.com)
+- AlpInvest (alpinvest.com, Carlyle subsidiary)
+- Pomona Capital (pomonacapital.com) — secondary fund of funds
+
+**Recommended outreach order**: lead with Revelation Partners (Edgemont intro). Add Industry Ventures and NewView Capital as parallel outreach. Hold the large generalists unless secondaries become a major workstream.
+
+### Strategic question raised — secondaries vs. primary rounds
+
+The structural issue Frederick is wrestling with: **primary-round investors typically resist seeing their capital leave the company to buy out existing shareholders**. They want their capital to grow the company. This creates tension with 10XBeta's recycle-capital play. Two paths to resolve:
+
+**Path A — Make secondaries acceptable inside the primary round (integrated):**
+- Studio's sale becomes a known, capped, board-approved part of the round
+- Typically 10-20% of round goes to secondary, rest is primary
+- Pricing aligned with round valuation (no discount)
+- Pro: clean, transparent, no separate buyer needed
+- Con: hard at Series A, primary investors push back; works better at Series B+ with traction; requires lead investor buy-in and founder alignment
+
+**Path B — Standalone secondaries (outside the primary round):**
+- Sell positions to dedicated secondary buyers (Revelation et al.) between rounds
+- No interference with primary cap raise timeline
+- Usually priced at 5-20% discount to most recent primary round
+- Needs ROFR waiver from company / board approval
+- Pro: timing flexibility, no investor friction
+- Con: pricing discount; signaling risk if mistimed (looks like studio is bailing)
+
+### Working hypothesis (to confirm with Marcel)
+
+Most venture studios run a **hybrid**: strip sales during primary rounds (small, capped, integrated — reads as alignment) plus standalone secondaries between rounds for older positions where the studio is comfortable with a discount in exchange for liquidity.
+
+For 10XBeta's near-term needs on portfolio companies that are 3+ years old, **Path B (standalone via Revelation and similar) is probably the more practical play**. The discount is real, but it's the cost of certainty and timing flexibility.
+
+**Decision needed:** Frederick to discuss with Marcel and lock in 10XBeta's standard play. Something like "integrated when we can, standalone when we need" — said explicitly so the messaging to each firm is consistent.
+
+### Tailored outreach message needed for secondary buyers
+
+The Session 001 placement-agent message doesn't fit secondary buyers. Secondary buyers want to hear about:
+- Portfolio composition (number of companies, sectors, stages)
+- Holding periods (how long studio has held positions)
+- Willingness to discount and approximate target discount range
+- Expected deal sizes per position
+
+**Open item:** draft secondary-buyer-specific contact-form message and LinkedIn variant. Use the Revelation outreach as the test case.
+
+### Open items for next session (priority order)
+
+1. **Resolve the strategic question with Marcel.** Lock in 10XBeta's standard play on secondaries (Path A, B, or hybrid). Update the working model accordingly.
+2. **Request warm intro from Edgemont to Revelation Partners.** This is the highest-value next action. Boutique IB → secondary buyer referrals carry significant weight.
+3. **Draft secondary-buyer outreach message** (contact form + LinkedIn variant). The Session 001 placement-agent message doesn't apply directly.
+4. **Update the firm map** (in `sales/firm-tracker.md` once it exists, or as a standalone doc):
+   - Move Edgemont to new "M&A / exit advisors" category
+   - Add "Secondaries" as new category with Revelation, Industry Ventures, NewView Capital, Saints Capital as primary targets
+   - Re-prioritize the overall outreach sequence with secondaries as a parallel workstream
+5. **Verify Revelation's medtech device coverage** (not just biotech). Check tombstones / portfolio for medical device companies specifically.
+6. **Carry forward all Session 001 open items** that remain incomplete: verification pass on all firms, build firm tracker, identify named contacts, send LinkedIn connections, submit forms, draft follow-up DM, identify named deals for "Specific" LinkedIn variant.
+
+### Decisions and constraints locked this session
+
+- **Edgemont is an M&A / exit advisor, not a placement agent.** Long-term relationship valuable but different use case. Do not include them in future capital-placement outreach.
+- **Secondaries are a parallel workstream** to placement-agent outreach, not a replacement. Both need to happen.
+- **Real conversation feedback overrides Claude's training-data assessments every time.** Treat each call as an update to the firm map. Update the log when intel comes in.
+- **Edgemont referral to Revelation is the highest-value next action.** Use the warm intro.
+
+### Frederick's preferences re-confirmed this session
+
+- Strategic ambiguity is fine to surface without immediate resolution — give frameworks, let Frederick decide with Marcel.
+- Real conversation intel beats training-data assessment. Update the log promptly.
+- Multiple parallel workstreams are okay if the categories are kept distinct in the log.
