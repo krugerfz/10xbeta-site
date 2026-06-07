@@ -12,7 +12,8 @@
 > - **Operational independence:** Frederick handles all internal communication on his own schedule. Do not insert "consult with [colleague]" or "discuss with [colleague]" as a recommended next step in any session output. Surface frameworks and decisions; Frederick owns who he talks to and when.
 > - **Companion artifacts:**
 >   - `sales/capital-strategy.html` — 17-slide brand-aligned strategy presentation (Tracks 1-3)
->   - `sales/portco-capital-playbook.md` — stage-by-stage operational playbook for portfolio company capital
+>   - `sales/portco-capital-playbook.md` — stage-by-stage operational playbook for portco capital
+>   - `sales/network-buildout.md` — who can help build the named investor and buyer network
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -38,24 +39,15 @@ Frederick is initiating outbound to boutique investment banks, placement agents,
 5. **Castle Placement** (castleplacement.com) — generalist placement agent
 6. **NewHarbor Venture Partners** (newharborvp.com) — venture-focused advisory
 
-### Expansion list produced (~20 additional firms)
+### Expansion list and verification checklist
 
-Full list retained in earlier version of this session log. Key priority firms for **Series A+ portco raises** are Outcome Capital, Leerink Partners, HC Wainwright. Edgemont reclassified to M&A / exit advisor (Session 002).
-
-### Verification checklist (run on every firm before contacting)
-
-For each firm, check four things on their website. Firm needs to clear at least 2 of 4 to be worth time. 3 or 4 = priority.
-
-1. **Recent transactions / deals / tombstones page.** Medical device companies in the last 24 months. 3+ = strong fit.
-2. **Sectors / focus / practices page.** Explicit medical devices, medtech, or diagnostics listing.
-3. **Team page.** Senior bankers with prior roles at Medtronic, J&J, BD, Boston Scientific, Stryker, Abbott, or notable medtech VCs.
-4. **News / press / blog.** Thought leadership on regulated hardware.
+Full list and the 4-question verification checklist retained in earlier sessions. Priority firms for **Series A+ portco raises** are Outcome Capital, Leerink Partners, HC Wainwright. Edgemont reclassified to M&A / exit advisor (Session 002).
 
 ### Outreach materials produced this session
 
 *Note: these are stage-appropriate only for Series A+ portcos. For pre-seed and seed portcos, see `portco-capital-playbook.md` for the correct channels.*
 
-**Contact-form messages (~500 char and ~1100 char versions), LinkedIn connection requests (Direct / Curious / Specific variants)** — retained in earlier version. Use for placement-agent firms (Series A+ context). Pre-seed / seed channels need different outreach materials (open item).
+Contact-form messages (~500 char and ~1100 char versions), LinkedIn connection requests (Direct / Curious / Specific variants). Use for placement-agent firms (Series A+ context). Pre-seed / seed channels need different outreach materials (open item).
 
 ### Open items from Session 001 still active
 
@@ -90,10 +82,6 @@ Moved from "Healthcare and medtech transaction boutiques" to "M&A / exit advisor
 - **NewView Capital, Industry Ventures, Saints Capital** — healthcare-exposed secondary buyers
 - **Lexington Partners, Coller Capital, HarbourVest, AlpInvest, Pomona Capital** — generalist large secondaries (hold unless workstream scales)
 
-### Strategic question raised (resolved in Session 003)
-
-Path A (integrate secondaries into primary rounds) vs. Path B (standalone secondaries). Resolved Session 003 into two-lane model.
-
 ### Open items from Session 002 still active
 
 1. Request warm intro from Edgemont to Revelation Partners. Highest-value next action.
@@ -122,18 +110,6 @@ Path A (integrate secondaries into primary rounds) vs. Path B (standalone second
 
 Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards Lifesciences, Baxter. Each has corporate dev / strategic investments and innovation arm.
 
-### Per-portco strategic mapping
-
-| Portco | Primary strategic targets |
-|---|---|
-| Spiro Wave | ResMed, Philips, Drager, Vyaire, Medtronic |
-| K-O2 | Philips, GE HealthCare, Drager, Baxter |
-| PARADIGM | Medtronic, Philips, Baxter, federal primes |
-| Cryo Medica | Medtronic, J&J, Boston Scientific, Stryker |
-| Validose | Pharma cos, BD, Insulet, Tandem |
-| Gynocular | Hologic, Cooper Companies, BD |
-| RedZone | DoD primes, North Atlantic Industries, emergency med OEMs |
-
 ### Three-workstream picture
 
 | Workstream | Goal | Firms |
@@ -153,20 +129,6 @@ Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards Lifesciences, Ba
 
 The pitch isn't the individual POC. It's the productized studio capability — Platform OS workflow (OE → Lab → IP) as a scouting + de-risking machine. Strategics see thousands of POCs; they see almost nobody with a productized pipeline.
 
-### Realistic strategics assessment
-
-Harder than tech, easier than pharma. Friction sources include multiple gatekeeping layers, slow decision cycles, pre-clinical engagement reluctance, build-vs-buy variance. What works: warm intros, industry events (JPM #1), innovation arms, consistent visibility over 18-36 months.
-
-### 10XBeta-specific assessment
-
-**Working:** studio model is differentiating, 16 years + 150+ products, Brooklyn Navy Yard, ARPA-H + DoD validation, Spiro Wave story unmatched.
-
-**Missing:** domain credibility at strategics (no ex-Medtronic / ex-J&J / ex-Stryker on advisory board), second "ready-ready" portco beyond Spiro Wave.
-
-### Creative deal structures (not consolation prizes)
-
-Strategic-funded de-risking, pipeline subscription / first look, co-development partnerships, licensing / OEM (most common outcome), acquihire.
-
 ### Tactical priorities (next 90-180 days)
 
 Advisory board build, JPM 2027 prep starting October 2026, quarterly portfolio update launch, lead with Spiro Wave, innovation arms first for younger portcos.
@@ -180,15 +142,9 @@ Advisory board build, JPM 2027 prep starting October 2026, quarterly portfolio u
 
 ### What happened
 
-Produced `sales/capital-strategy.html` (15-slide brand-aligned presentation covering the three tracks). Frederick caught a misframing in Slide 5: it positioned placement agents as the channel for portfolio company primary raises generally. **Placement agents only work at Series A+ ($10M+ deal sizes). Pre-seed and seed portcos are funded through entirely different channels.**
+Frederick caught a misframing in Slide 5 of `capital-strategy.html`: it positioned placement agents as the channel for portfolio company primary raises generally. **Placement agents only work at Series A+ ($10M+ deal sizes). Pre-seed and seed portcos are funded through entirely different channels.**
 
-This correction expands Track 1a from a single-channel strategy into a **stage-by-stage capital strategy** that maps each portco lifecycle stage to its actual funding sources.
-
-### Why the original framing was wrong
-
-- Placement agent economics: 5-7% fee on capital raised. On a $2M seed = $120K, barely covers banker time. Most won't engage below ~$10M.
-- Pre-seed and seed portcos are funded by grants, angels, sector-specific seed VCs, accelerators, and strategic CVCs that go early (J&J Innovation primarily).
-- Treating channels as interchangeable wastes relationship capital on firms that can't help and misses real pre-seed/seed opportunities entirely.
+This correction expanded Track 1a from a single-channel strategy into a stage-by-stage capital strategy that maps each portco lifecycle stage to its actual funding sources.
 
 ### Stage-by-stage strategy (six stages)
 
@@ -196,49 +152,78 @@ Full operational detail in `sales/portco-capital-playbook.md`. Summary:
 
 | Stage | Capital | Primary channels |
 |---|---|---|
-| **Stage 0 — Pre-formation** | Studio internal | Platform OS workflow (OE → Lab → IP) |
-| **Stage 1 — Pre-Seed** | $250K-$1.5M | Studio equity, sector angels, SBIR Phase I, accelerators (MedTech Innovator) |
-| **Stage 2 — Seed** | $1.5M-$5M | Seed medtech VCs, SBIR Phase II, ARPA-H, J&J Innovation, foundation grants |
-| **Stage 3 — Series A** | $5M-$20M | Medtech VCs, large CVCs, ARPA-H Phase II, **placement agents emerge** |
-| **Stage 4 — Series B** | $15M-$50M | Growth VCs, all big-eight CVCs, **placement agents central**, Lane 2 secondaries possible |
-| **Stage 5 — Series C / Growth** | $30M-$100M+ | Late-stage / growth equity, crossover investors, full-service IBs |
-| **Stage 6 — Exit** | Variable | M&A bankers (Edgemont et al.), strategic acquirers, IPO underwriters |
+| Stage 0 — Pre-formation | Studio internal | Platform OS workflow |
+| Stage 1 — Pre-Seed | $250K-$1.5M | Studio equity, sector angels, SBIR Phase I, accelerators |
+| Stage 2 — Seed | $1.5M-$5M | Seed medtech VCs, SBIR Phase II, ARPA-H, J&J Innovation, foundation grants |
+| Stage 3 — Series A | $5M-$20M | Medtech VCs, large CVCs, **placement agents emerge** |
+| Stage 4 — Series B | $15M-$50M | Growth VCs, all big-eight CVCs, **placement agents central** |
+| Stage 5 — Series C / Growth | $30M-$100M+ | Late-stage / growth equity, crossover, full-service IBs |
+| Stage 6 — Exit | Variable | M&A bankers (Edgemont et al.), strategic acquirers, IPO underwriters |
 
-### Cross-cutting strategies
+### Deck restructured (capital-strategy.html, 17 slides)
 
-- **Non-dilutive capital (grants):** SBIR, ARPA-H, BARDA, DoD, NIH, plus foundations (Gates, Wellcome, RWJF, Helmsley). Highest-leverage capital available. Recommendation: fractional grants writer for the portfolio.
-- **Strategic CVCs across stages:** J&J Innovation goes earliest (sometimes sub-$1M). Most big-eight CVCs are Series A+. JLABS / Stryker Connected / Medtronic Hugo etc. are innovation arms with lower bars.
-- **Studio's angel network:** 15-25 named sector-specific angels who write $25K-$100K checks, kept warm with quarterly updates. Built deliberately, not opportunistically.
-- **Platform OS as capital lever:** reduces pre-seed need, de-risks seed/A, differentiates studio pitch, enables strategic-funded de-risking deals.
+- Slide 5: Stage Map (5-column visual)
+- Slide 6: Pre-Seed and Seed Playbook (NEW)
+- Slide 7: Series A and Beyond Playbook (refined original slide)
+- Slides 8-17: renumbered from original 6-15
 
-### Deck restructuring (capital-strategy.html, commit this session)
+---
 
-- Slide 4 (Track 1 overview): Track 1a card description updated to reflect stage-by-stage approach.
-- Slide 5: replaced with **Stage Map** — 5-column visual showing capital range, time, and primary sources for each stage.
-- New Slide 6: **Pre-Seed and Seed Playbook** — grants, angels, early VCs, early CVCs, accelerators.
-- New Slide 7: **Series A and Beyond Playbook** — placement agents (refined version of original Slide 5).
-- Slides 8-17: renumbered from original 6-15.
-- Deck grew from 15 to 17 slides.
+## Session 006 — 2026-06-07 — Network buildout: who can help
+
+**Status:** new dimension added — the network construction problem alongside the strategy
+**Owner:** Frederick Kruger (COO)
+
+### What happened
+
+Frederick asked the meta-question: who can actually help 10XBeta build out the pre-seed, seed, Series A, Series B, and secondary buyer network the strategy requires? Session 005 produced the *what* (stages and channels); Session 006 produces the *who* (specific connectors, hires, and resources).
+
+Produced `sales/network-buildout.md` capturing the full answer.
+
+### Five leverage sources for network construction
+
+1. **Internal warm sources** — existing portco investors, board members, team networks. Free, highest quality, slow. Probably 30-60 named relationships already accessible from existing portco boards.
+2. **Paid external help** — fractional advisors, ex-strategic-exec advisory board, fundraising agencies, placement agents on retainer. Fast scale, costs equity or cash.
+3. **Industry events and accelerators** — MedTech Innovator (alumni network of 500+), JPM Healthcare Conference (highest-leverage annual), AdvaMed, MedTech Strategist events.
+4. **Strategic introductions via portco boards** — 7 portcos × 5 board members × 50 networkable contacts = ~1,750 potential intros. Quarterly ask.
+5. **Direct outreach** — LinkedIn / cold email. Free, slowest, lowest hit rate. Already covered by Session 001 materials.
+
+### Top three highest-leverage moves
+
+1. **Fractional Head of Capital Strategy.** Ex-VP at healthcare investment bank (Leerink, HC Wainwright, Piper Sandler), or ex-Partner at medtech VC. $8-15K/month for 1-2 days/week. Unlocks 100+ warm investor relationships day one.
+2. **Ex-strategic-exec advisory board recruitment** (Session 004 priority, elevated). 2-3 from Medtronic, J&J, Stryker, Boston Scientific at 0.25-0.5% equity each. Plus 1 ex-medtech VC + 1 ex-healthcare banker for cross-network coverage.
+3. **Portco investor map first.** `portco-investor-map.md` listing every existing investor in every portco with current contact status. Reveals which stages already have density vs. real gaps. Free, fastest, gates everything else.
+
+### Stage-specific network targets (full lists in `network-buildout.md`)
+
+| Stage | Target # | Key connector |
+|---|---|---|
+| Pre-Seed / Seed | 25-30 | MedTech Innovator alumni network, fractional advisor, J&J Innovation as early-strategic anchor |
+| Series A | 15-20 | Outcome Capital as the hub, existing portco boards, ex-medtech-VC advisor |
+| Series B | 10-15 | Series A investors (natural follow-on), Leerink / Piper Sandler / Jefferies |
+| Secondary buyers | 5-10 | Edgemont → Revelation in motion, M&A advisors, existing portco VCs |
+
+**End-state target at 6 months:** 50+ named investor relationships across stages, 5+ secondary buyer relationships, 3+ ex-strategic execs on advisory board, 1 active fractional advisor, JPM 2027 calendar full.
 
 ### Open items going forward
 
-1. **Per-portco capital plans.** Take each of the 7 portcos through the playbook and produce a 1-page capital plan for the next 12 months. Validates the current stage mapping in the playbook.
-2. **Stage tags in firm tracker.** When `sales/firm-tracker.md` gets built (Session 001 open item), include stage tags (pre-seed, seed, Series A+, etc.) so the right firm is approached for the right portco.
-3. **Grants strategy resource.** Identify and onboard a fractional grants writer or advisor. SBIR + ARPA-H pipeline systematization.
-4. **Angel network systematization.** Build the named list of 15-25 sector-aligned angels. CRM or markdown file. Quarterly cadence.
-5. **Pre-seed / seed outreach materials.** The Session 001 placement-agent outreach message doesn't apply to early-stage VCs, angels, or CVC seed teams. Different framing needed for each channel.
-6. **Verify the firms listed in the playbook.** Some pre-seed/seed VCs and CVCs may have merged, rebranded, or shifted focus since Claude's training cutoff. Standard verification pass before initiating outreach.
+1. **Build `portco-investor-map.md`** — every existing investor in every portco with current status. Gates everything else.
+2. **Hire decision** — fractional advisor vs fundraising agency vs direct hire for primary capital-strategy resource. Default recommendation: fractional advisor.
+3. **Advisory board recruitment** — identify 5-10 candidates for ex-strategic-exec advisory board.
+4. **Verify firms in `network-buildout.md`** — some may have merged, rebranded, or shifted focus since training cutoff.
+5. **Network metrics cadence** — monthly review of # named relationships, # active conversations, # warm intros pending.
+6. **Carry forward Sessions 001-005 open items** still active.
 
 ### Decisions and constraints locked this session
 
-- **Stage matters more than firm type.** A firm that's perfect for a Series A portco is wrong for a pre-seed portco. Track 1a is now stage-aware, not firm-type-aware.
-- **Non-dilutive capital is core, not supplementary.** Especially for defense/biodefense/public-health indications (RedZone, PARADIGM model). Recommend grants writer resource for the studio.
-- **Studio angel network is a strategic asset.** Build it deliberately with named angels and quarterly cadence. Not just opportunistic outreach.
-- **Placement agents are Series A+ only.** Do not pitch them as the channel for portco fundraising generally.
-- **Original Track 1a outreach (Session 001) remains valid** — placement-agent relationships built now pay off when portcos hit Series A scale. Just don't conflate that with pre-seed/seed capital.
+- **Network construction is its own workstream**, parallel to the strategy work. Strategy says "raise from pre-seed VCs" — network buildout says "here's how you actually meet them."
+- **A fractional Head of Capital Strategy is the single highest-leverage external hire.** One person with the right background unlocks 100+ relationships in weeks vs. months of direct outreach.
+- **Existing portco boards are an underutilized intro asset.** Systematic quarterly ask across all portco boards should be added to operating cadence.
+- **MedTech Innovator alumni access is a high-leverage entry point**, even if 10XBeta itself doesn't need acceleration.
+- **Don't build the network all at once.** Map internal first — 30-60 names already exist before paying for any external help.
 
 ### Frederick's preferences re-confirmed this session
 
-- Catches strategic misframing quickly and pushes back hard. Treat every Claude framing as provisional until tested.
-- Wants operational playbooks (the `.md` companion) not just strategic decks.
-- Three deliverables in parallel (deck restructure + playbook + log) is the right scope, not too much.
+- Asks meta-questions that expand the framework ("who can help" expanded the strategy from what-to-do to how-to-execute).
+- Wants specific named candidates and firms, not generic categories. Three-tier framework with named firms in each tier.
+- Verification responsibility stays with Frederick; Claude flags uncertainty rather than overclaiming.
