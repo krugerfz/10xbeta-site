@@ -23,66 +23,58 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--body); color: var(--text); background: var(--navy); overflow: hidden; height: 100vh; -webkit-font-smoothing: antialiased; }
 .deck { position: relative; width: 100vw; height: 100vh; }
-.slide { position: absolute; inset: 0; padding: 60px 80px; display: none; flex-direction: column; background: var(--white); overflow: auto; }
+.slide { position: absolute; inset: 0; padding: 56px 76px; display: none; flex-direction: column; background: var(--white); overflow: auto; }
 .slide.active { display: flex; }
 .slide.dark { background: var(--navy); color: var(--white); }
 .slide.cover { background: var(--navy); color: var(--white); justify-content: center; position: relative; overflow: hidden; }
 .chevron-bg { position: absolute; top: 0; right: 0; width: 50%; height: 100%; opacity: 0.35; pointer-events: none; }
-.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
 .eyebrow.muted { color: var(--muted); }
-h1 { font-family: var(--head); font-weight: 800; font-size: 76px; line-height: 1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 20px; }
+h1 { font-family: var(--head); font-weight: 800; font-size: 72px; line-height: 1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 20px; }
 .dark h1, .cover h1 { color: var(--white); }
-h2 { font-family: var(--head); font-weight: 800; font-size: 42px; line-height: 1.08; letter-spacing: -0.015em; color: var(--navy); margin-bottom: 20px; }
+h2 { font-family: var(--head); font-weight: 800; font-size: 36px; line-height: 1.08; letter-spacing: -0.015em; color: var(--navy); margin-bottom: 12px; }
 .dark h2 { color: var(--white); }
-h3 { font-family: var(--head); font-weight: 700; font-size: 22px; line-height: 1.2; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.01em; }
+h3 { font-family: var(--head); font-weight: 700; font-size: 20px; line-height: 1.2; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.01em; }
 .dark h3 { color: var(--blue); }
-p { font-size: 17px; line-height: 1.6; margin-bottom: 14px; }
-p.lede { font-size: 21px; line-height: 1.5; color: var(--muted); margin-bottom: 22px; font-weight: 400; }
+p { font-size: 16px; line-height: 1.55; margin-bottom: 12px; }
+p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 18px; font-weight: 400; }
 .dark p.lede { color: var(--dim); }
-.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 20px; }
-.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
-.parity { display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: stretch; margin-top: 28px; }
-.parity-card { background: var(--sunken); padding: 28px 28px 24px; border-top: 4px solid var(--blue); border-radius: 0 0 6px 6px; }
-.parity-card .label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--blue); text-transform: uppercase; margin-bottom: 14px; }
-.parity-card h3 { font-size: 26px; margin-bottom: 14px; }
-.parity-card ul { list-style: none; padding: 0; }
-.parity-card ul li { font-size: 14px; color: var(--text); padding: 6px 0; border-bottom: 1px solid var(--border); line-height: 1.4; }
-.parity-card ul li:last-child { border-bottom: none; }
-.parity-equals { font-family: var(--head); font-weight: 800; font-size: 56px; color: var(--blue); align-self: center; line-height: 1; }
-.portco-card { border-left: 4px solid var(--blue); padding: 22px 26px; background: var(--sunken); border-radius: 0 8px 8px 0; }
-.dark .portco-card { background: var(--navy-2); }
-.portco-card .label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
-.portco-card h3 { font-size: 24px; margin-bottom: 8px; }
-.dark .portco-card h3 { color: var(--white); }
-.portco-card .stage { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
-.dark .portco-card .stage { color: var(--dim); }
-.portco-card p { font-size: 14px; margin-bottom: 8px; color: var(--text); }
-.dark .portco-card p { color: var(--dim2); }
-.tier-list { list-style: none; padding: 0; margin-top: 8px; }
-.tier-list li { padding: 6px 0; border-top: 1px solid var(--border); font-size: 13px; line-height: 1.5; color: var(--text); }
-.tier-list li strong { display: block; font-family: var(--head); font-weight: 700; color: var(--navy); font-size: 14px; letter-spacing: -0.01em; margin-bottom: 2px; }
-.dark .tier-list li { color: var(--dim2); border-color: rgba(255,255,255,0.08); }
-.dark .tier-list li strong { color: var(--white); }
-ul.checklist { list-style: none; margin-top: 10px; }
-ul.checklist li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 15px; line-height: 1.5; }
-ul.checklist li::before { content: '\203A'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 18px; top: -2px; }
-.dark ul.checklist li { color: var(--dim2); }
-.dark ul.checklist li strong { color: var(--white); }
-.role-block { background: var(--sunken); padding: 18px 22px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; margin-bottom: 14px; }
-.dark .role-block { background: var(--navy-2); }
-.role-block .role { font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.01em; text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; }
-.dark .role-block .role { color: var(--blue); }
-.role-block p { font-size: 14px; margin: 0; line-height: 1.5; color: var(--text); }
-.dark .role-block p { color: var(--dim2); }
-.timeline-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; position: relative; }
-.timeline-row::before { content: ''; position: absolute; top: 8px; left: 5%; right: 5%; height: 2px; background: var(--blue); opacity: 0.3; }
-.timeline-week { text-align: left; position: relative; z-index: 1; padding-top: 26px; }
-.timeline-week::before { content: ''; position: absolute; top: 0; left: 0; width: 16px; height: 16px; background: var(--blue); border-radius: 50%; border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--blue); }
-.dark .timeline-week::before { border-color: var(--navy); }
-.timeline-week .week-label { font-family: var(--head); font-weight: 700; font-size: 14px; color: var(--blue); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
-.timeline-week ul { list-style: none; padding: 0; }
-.timeline-week ul li { font-size: 13px; line-height: 1.5; padding: 3px 0; color: var(--text); }
-.dark .timeline-week ul li { color: var(--dim2); }
+.cols-3-track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+.track-card { border-left: 4px solid var(--blue); padding: 18px 22px; background: var(--sunken); border-radius: 0 6px 6px 0; }
+.track-card .label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.track-card h3 { font-size: 19px; margin-bottom: 8px; }
+.track-card p { font-size: 14px; line-height: 1.5; margin-bottom: 0; color: var(--text); }
+.track-card.future { opacity: 0.55; border-left-color: var(--dim2); }
+.portco-layout { display: grid; grid-template-columns: 1.55fr 1fr; gap: 32px; margin-top: 14px; flex: 1; min-height: 0; }
+.tier-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 700; margin-bottom: 8px; margin-top: 16px; }
+.tier-label:first-child { margin-top: 0; }
+.firm-table { width: 100%; border-collapse: collapse; }
+.firm-table tr { border-top: 1px solid var(--border); }
+.firm-table tr:first-child { border-top: 2px solid var(--blue); }
+.firm-table td { padding: 7px 0; vertical-align: top; font-size: 13px; line-height: 1.4; }
+.firm-table td:first-child { font-family: var(--head); font-weight: 700; color: var(--navy); width: 36%; padding-right: 12px; letter-spacing: -0.005em; }
+.firm-table td:nth-child(2) { color: var(--blue); font-weight: 700; width: 22%; font-family: var(--head); white-space: nowrap; padding-right: 12px; }
+.firm-table td:last-child { color: var(--text); }
+.detail-block { background: var(--sunken); padding: 16px 20px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; margin-bottom: 14px; }
+.detail-block .detail-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+.detail-block ul { list-style: none; padding: 0; }
+.detail-block ul li { font-size: 13px; line-height: 1.5; padding: 3px 0; color: var(--text); }
+.detail-block ul li strong { color: var(--navy); font-weight: 700; }
+.detail-block p { font-size: 13px; margin: 0; color: var(--text); line-height: 1.5; }
+.detail-block.muted-block p { color: var(--muted); font-style: italic; }
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.action-card { background: var(--sunken); padding: 18px 22px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; }
+.dark .action-card { background: var(--navy-2); }
+.action-card .role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 700; margin-bottom: 6px; }
+.action-card h3 { font-size: 17px; margin-bottom: 8px; }
+.dark .action-card h3 { color: var(--white); }
+.action-card p { font-size: 13px; margin: 0; line-height: 1.5; color: var(--text); }
+.dark .action-card p { color: var(--dim2); }
+.numbered { counter-reset: item; list-style: none; }
+.numbered li { counter-increment: item; position: relative; padding-left: 48px; margin-bottom: 14px; font-size: 15px; line-height: 1.55; }
+.numbered li::before { content: counter(item, decimal-leading-zero); position: absolute; left: 0; top: -2px; font-family: var(--head); font-weight: 800; font-size: 22px; color: var(--blue); letter-spacing: -0.02em; }
+.dark .numbered li { color: var(--dim2); }
+.dark .numbered li strong { color: var(--white); }
 .nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(6, 26, 46, 0.92); color: var(--white); padding: 10px 18px; border-radius: 24px; font-family: var(--body); font-size: 13px; font-weight: 600; z-index: 100; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
 .nav button { background: transparent; border: none; color: var(--white); cursor: pointer; padding: 4px 10px; font-size: 18px; transition: color 0.15s; }
 .nav button:hover { color: var(--blue); }
@@ -92,13 +84,8 @@ ul.checklist li::before { content: '\203A'; position: absolute; left: 0; color: 
 .logo { position: absolute; top: 28px; right: 36px; font-family: var(--head); font-weight: 800; font-size: 20px; letter-spacing: -0.04em; color: var(--navy); }
 .dark .logo, .cover .logo { color: var(--white); }
 .logo .x { color: var(--blue); }
-.slide-num { position: absolute; bottom: 30px; right: 36px; font-size: 12px; color: var(--muted); font-family: var(--body); font-weight: 600; letter-spacing: 0.1em; }
+.slide-num { position: absolute; bottom: 28px; right: 36px; font-size: 12px; color: var(--muted); font-family: var(--body); font-weight: 600; letter-spacing: 0.1em; }
 .dark .slide-num, .cover .slide-num { color: var(--dim); }
-.callout { background: var(--sunken); border-left: 4px solid var(--blue); padding: 18px 22px; margin-top: 22px; border-radius: 0 6px 6px 0; }
-.dark .callout { background: var(--navy-2); }
-.callout p { margin: 0; font-size: 15px; color: var(--text); font-style: italic; line-height: 1.55; }
-.dark .callout p { color: var(--dim2); }
-.internal-badge { display: inline-block; background: var(--blue); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 18px; }
 </style>
 </head>
 <body>
@@ -110,334 +97,262 @@ ul.checklist li::before { content: '\203A'; position: absolute; left: 0; color: 
     <svg class="chevron-bg" viewBox="0 0 400 600" preserveAspectRatio="none"></svg>
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
     <div style="position: relative; z-index: 2;">
-      <span class="internal-badge">Internal &middot; Team Alignment</span>
       <div class="eyebrow">Short-Term Capital Focus &middot; Q3 2026</div>
       <h1>RedZone.<br>Validose.<br>Seed close.</h1>
-      <p style="font-size: 21px; color: var(--dim); max-width: 740px; margin-top: 24px; line-height: 1.5;">
-        Funding our active portcos is the operational priority for the next 90 days. As important as finding new lab work.
+      <p style="font-size: 19px; color: var(--dim); max-width: 720px; margin-top: 22px; line-height: 1.5;">
+        Detailed capital sources, check sizes, and execution mechanics for the next 90 days.
       </p>
       <p style="font-size: 12px; color: var(--blue); margin-top: 56px; letter-spacing: 0.16em; font-weight: 700; text-transform: uppercase;">
-        Frederick Kruger, COO &middot; June 2026
+        Frederick Kruger, COO &middot; Internal &middot; June 2026
       </p>
     </div>
-    <div class="slide-num">01 / 10</div>
+    <div class="slide-num">01 / 06</div>
   </section>
 
-  <!-- Slide 2: The shift -->
-  <section class="slide">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow muted">The Shift</div>
-    <h2>Capital work is core work.</h2>
-    <p class="lede" style="max-width: 920px;">
-      We lead with finding new opportunities. Opportunity Engine. Lab POCs. IP filings. New portcos. That work continues. And it sits alongside, not above, the work of funding the portcos that exist.
-    </p>
-    <div class="parity">
-      <div class="parity-card">
-        <div class="label">What we have always done</div>
-        <h3>Lab Work</h3>
-        <ul>
-          <li>Opportunity Engine identifies gaps</li>
-          <li>Lab tools build POCs in weeks</li>
-          <li>IP module files claims</li>
-          <li>New portcos spin out</li>
-          <li>Studio incubation continues</li>
-        </ul>
-      </div>
-      <div class="parity-equals">=</div>
-      <div class="parity-card">
-        <div class="label">What we are also doing now</div>
-        <h3>Capital Work</h3>
-        <ul>
-          <li>RedZone seed close in 90 days</li>
-          <li>Validose seed close in 90 days</li>
-          <li>Strategic CVCs as anchor investors</li>
-          <li>SPV close mechanics</li>
-          <li>Pitch and data-room materials</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-num">02 / 10</div>
-  </section>
-
-  <!-- Slide 3: What's at stake -->
-  <section class="slide dark">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">What's At Stake</div>
-    <h2>Two portcos. Same moment.</h2>
-    <div class="cols-2" style="margin-top: 28px;">
-      <div class="portco-card">
-        <div class="label">Active &middot; Seed</div>
-        <h3>RedZone</h3>
-        <div class="stage">Defense / field medicine &middot; $1.5M-$4M target</div>
-        <p><strong style="color: var(--white);">Existing federal traction.</strong> DoD SOCOM backing, ARPA-H engagement. Equity round needs to close on equity, not on grants.</p>
-        <p><strong style="color: var(--white);">Close mechanism.</strong> AngelList SPV under the 10XBeta syndicate. 506(b) private, single close then wire.</p>
-        <p><strong style="color: var(--white);">Without close.</strong> Federal traction stalls. Defense pipeline slows. Studio's most institutionally-validated portco loses momentum.</p>
-      </div>
-      <div class="portco-card">
-        <div class="label">Active &middot; Seed</div>
-        <h3>Validose</h3>
-        <div class="stage">Drug delivery / adherence &middot; $1.5M-$4M target</div>
-        <p><strong style="color: var(--white);">Strategics-fit indication.</strong> Drug delivery sits directly in pharma's adjacency. Pharma CVCs are the natural anchor.</p>
-        <p><strong style="color: var(--white);">Close mechanism.</strong> SPV-based close, lead investor plus syndicate fill.</p>
-        <p><strong style="color: var(--white);">Without close.</strong> First external capital event doesn't happen. Validation gates regulatory path and team build.</p>
-      </div>
-    </div>
-    <div class="callout">
-      <p>Both close in next 90 days, or neither does. The work doesn't split.</p>
-    </div>
-    <div class="slide-num">03 / 10</div>
-  </section>
-
-  <!-- Slide 4: The strategy in one frame -->
+  <!-- Slide 2: Three tracks context -->
   <section class="slide">
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
     <div class="eyebrow muted">Where This Sits</div>
-    <h2>One workstream inside a larger strategy.</h2>
-    <p style="font-size: 16px; color: var(--muted); max-width: 920px;">
-      The studio has a three-track capital strategy. Only one part of it is active execution right now. The rest is medium and long-term work that does not compete for current attention.
-    </p>
-    <div class="cols-3" style="margin-top: 28px;">
-      <div class="portco-card" style="border-left-color: var(--blue); background: var(--sunken);">
-        <div class="label">Track 1 &middot; Active Now</div>
-        <h3 style="color: var(--navy);">Portfolio Capital</h3>
-        <p style="color: var(--text);"><strong>Seed close (Track 1a)</strong> is the entire short-term focus.</p>
-        <p style="color: var(--text);">Strategic CVCs at seed (Track 1c collapsed in).</p>
-        <p style="color: var(--text);">Secondaries (Track 1b) for mature positions, parallel.</p>
-      </div>
-      <div class="portco-card" style="border-left-color: var(--dim2); background: var(--sunken); opacity: 0.6;">
-        <div class="label">Track 2 &middot; 12 months</div>
-        <h3 style="color: var(--navy);">10XBeta Round</h3>
-        <p style="color: var(--text);">Studio-level priced round. Materials drafted in background. Active launch Q2 2027.</p>
-      </div>
-      <div class="portco-card" style="border-left-color: var(--dim2); background: var(--sunken); opacity: 0.6;">
-        <div class="label">Track 3 &middot; 24-36 months</div>
-        <h3 style="color: var(--navy);">Fund I</h3>
-        <p style="color: var(--text);">Institutional fund. Gated on signal. Not in current execution.</p>
-      </div>
-    </div>
-    <div class="callout">
-      <p>The full strategy lives in `sales/capital-strategy.html`. This deck is just about the next 90 days.</p>
-    </div>
-    <div class="slide-num">04 / 10</div>
-  </section>
-
-  <!-- Slide 5: RedZone playbook -->
-  <section class="slide">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">RedZone &middot; Seed Playbook</div>
-    <h2>Equity-first. Defense-tech VCs lead.</h2>
-    <div class="cols-2" style="margin-top: 22px;">
-      <div>
-        <h3>Capital sources (in priority)</h3>
-        <ul class="tier-list">
-          <li><strong>Defense-tech VCs (lead)</strong>Founders Fund, 8VC, Lux Capital, Marlinspike, Razor's Edge, Shield Capital, A* Capital, General Catalyst (defense)</li>
-          <li><strong>Strategic CVCs at seed</strong>Lockheed Martin Ventures, RTX Ventures, Boeing HorizonX. Plus J&amp;J Innovation, BD Strategic Investments on the medical side.</li>
-          <li><strong>Medtech-defense crossover</strong>F-Prime, HealthQuest, Polaris</li>
-          <li><strong>Angels via SPV close</strong>10XBeta syndicate, defense-aligned angels, ex-Anduril / ex-SpaceX operators</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Background &middot; not the path to close</h3>
-        <ul class="checklist">
-          <li>Existing ARPA-H engagement continues</li>
-          <li>DoD SOCOM, CDMRP, AFWERX where active</li>
-          <li>SBIR Phase II if Phase I in hand</li>
-        </ul>
-        <p style="font-size: 14px; color: var(--muted); margin-top: 10px; font-style: italic;">
-          Grants extend runway when they land. They do not gate the round close.
-        </p>
-        <h3 style="margin-top: 22px;">Close mechanism</h3>
-        <ul class="checklist">
-          <li>AngelList SPV under 10XBeta syndicate</li>
-          <li>506(b) private, known-LP self-certification</li>
-          <li>Single close, then wire</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-num">05 / 10</div>
-  </section>
-
-  <!-- Slide 6: Validose playbook -->
-  <section class="slide">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">Validose &middot; Seed Playbook</div>
-    <h2>Strategics-at-seed. Pharma CVCs are the anchor.</h2>
-    <div class="cols-2" style="margin-top: 22px;">
-      <div>
-        <h3>Capital sources (in priority)</h3>
-        <ul class="tier-list">
-          <li><strong>Pharma corporate VCs (priority)</strong>Pfizer Ventures, Eli Lilly Ventures, GSK Ventures, Novartis Venture Fund, Sanofi Ventures, AbbVie Ventures, Bayer Leaps, AstraZeneca Innovation, Boehringer Ingelheim</li>
-          <li><strong>Strategic medtech CVCs</strong>BD Strategic Investments (highest medtech fit), J&amp;J Innovation, Olympus Innovation</li>
-          <li><strong>Drug-delivery seed VCs</strong>BioInnovation Capital, F-Prime, DCVC Bio, Sofinnova (early), Sands Capital, Andera Partners</li>
-          <li><strong>Angels via SPV close</strong>Pharma execs, drug-delivery industry operators, indication-specific angels</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Background &middot; runway extension only</h3>
-        <ul class="checklist">
-          <li>NIH SBIR Phase I (institute by indication)</li>
-          <li>Foundation grants (JDRF, Helmsley, ADA, AHA depending on lead indication)</li>
-        </ul>
-        <p style="font-size: 14px; color: var(--muted); margin-top: 10px; font-style: italic;">
-          Apply in parallel if indication fits. Do not time round to these.
-        </p>
-        <h3 style="margin-top: 22px;">Close mechanism</h3>
-        <ul class="checklist">
-          <li>SPV-based syndicate close</li>
-          <li>Lead investor most likely a pharma CVC or drug-delivery seed VC</li>
-          <li>Strategic CVCs collapse Track 1c relationship-building into the round itself</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-num">06 / 10</div>
-  </section>
-
-  <!-- Slide 7: How the team can help -->
-  <section class="slide dark">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">How Everyone Helps</div>
-    <h2>Capital work is a whole-studio effort.</h2>
-    <div class="cols-2" style="margin-top: 24px;">
-      <div>
-        <div class="role-block">
-          <div class="role">Engineering &amp; Lab Teams</div>
-          <p>Be ready for technical due-diligence calls with investors. Maintain a one-pager per portco that translates the engineering to investor-readable terms. Demo readiness on 48-hour notice.</p>
-        </div>
-        <div class="role-block">
-          <div class="role">Brand &amp; Design</div>
-          <p>Pitch deck templates and investor data-room presentation. Brand consistency across pitch materials, one-pagers, and any new investor-facing collateral. Standard format so every portco pitch looks like the studio.</p>
-        </div>
-        <div class="role-block">
-          <div class="role">Operations &amp; Finance</div>
-          <p>SPV legal mechanics, investor data room, financial models for both portcos. Cap table maintenance. Standard subscription docs and side-letter templates.</p>
-        </div>
-      </div>
-      <div>
-        <div class="role-block">
-          <div class="role">Portco Leadership</div>
-          <p>Investor calls. Materials review and approval. Be the technical and commercial voice in conversations. Frederick runs the investor-process side; portco CEOs run the substance.</p>
-        </div>
-        <div class="role-block">
-          <div class="role">Every team member</div>
-          <p>If you know someone at the priority strategics &mdash; J&amp;J Innovation, BD Strategic Investments, Lockheed Martin Ventures, RTX Ventures, any of the pharma CVCs &mdash; surface it. Warm intros beat cold by 10x. One name from your network is worth weeks of cold outreach.</p>
-        </div>
-        <div class="role-block">
-          <div class="role">Frederick (COO)</div>
-          <p>Capital outreach lead, SPV-close coordination, weekly capital review on Mondays. Single point of accountability for both seed closes.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide-num">07 / 10</div>
-  </section>
-
-  <!-- Slide 8: This isn't a tradeoff -->
-  <section class="slide">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow muted">The Mental Model</div>
-    <h2>Lab work creates portcos. Capital work matures them.</h2>
+    <h2>One active workstream inside a longer-term strategy.</h2>
     <p class="lede" style="max-width: 920px;">
-      The studio model needs both. Discovery without funding is interesting science. Funding without discovery is a fund, not a studio. We do both because each compounds the other.
+      The studio runs a three-track capital strategy. Each track answers a different question. Only Track 1 is in active execution right now.
     </p>
-    <div class="cols-2" style="margin-top: 24px;">
-      <div>
-        <h3>What lab work produces</h3>
-        <ul class="checklist">
-          <li>New gaps identified through Opportunity Engine</li>
-          <li>POCs built in weeks, not months</li>
-          <li>Provisional patents filed</li>
-          <li>New portcos spun out, founder shares for studio</li>
-          <li>The pipeline that fills 12-24 months from now</li>
-        </ul>
+    <div class="cols-3-track">
+      <div class="track-card">
+        <div class="label">Track 1 &middot; Active</div>
+        <h3>Portfolio Capital</h3>
+        <p style="margin-bottom: 8px;"><strong>Question:</strong> how do active portcos get funded?</p>
+        <p style="margin-bottom: 8px;"><strong>This quarter:</strong> RedZone and Validose seed closes.</p>
+        <p><strong>Mechanic:</strong> strategic CVCs at seed + sector VCs + SPV close. Strategics-as-seed collapses long-term relationship-building into the round itself.</p>
       </div>
-      <div>
-        <h3>What capital work produces</h3>
-        <ul class="checklist">
-          <li>Active portcos reach clinical-grade prototypes</li>
-          <li>Regulatory pathways get resourced</li>
-          <li>Teams scale beyond founding</li>
-          <li>Studio's existing equity matures toward exit</li>
-          <li>Validation that the model works</li>
-        </ul>
+      <div class="track-card future">
+        <div class="label">Track 2 &middot; ~12 months</div>
+        <h3>10XBeta Priced Round</h3>
+        <p style="margin-bottom: 8px;"><strong>Question:</strong> how does the studio fund itself for the next 24-36 months?</p>
+        <p><strong>Mechanic:</strong> studio-level equity round. Target: studio-focused funds + strategic CVCs + family offices. Materials drafted in background, active launch Q2 2027.</p>
+      </div>
+      <div class="track-card future">
+        <div class="label">Track 3 &middot; 24-36 months</div>
+        <h3>10XBeta Fund I</h3>
+        <p style="margin-bottom: 8px;"><strong>Question:</strong> how does the studio deploy institutional capital across portcos at scale?</p>
+        <p><strong>Mechanic:</strong> institutional fund. Gated on signal (realized exit, anchor LP, or quantitative track record). Not in current execution.</p>
       </div>
     </div>
-    <div class="callout">
-      <p>Without lab work, the studio dries up over time. Without capital work, the studio's portfolio stalls. Neither is optional and neither is &quot;the main thing&quot;. Both equally weighted.</p>
-    </div>
-    <div class="slide-num">08 / 10</div>
+    <div class="slide-num">02 / 06</div>
   </section>
 
-  <!-- Slide 9: 90-day milestones -->
+  <!-- Slide 3: RedZone -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">RedZone &middot; Seed Close</div>
+    <h2>Defense-tech VC lead. Strategic CVC anchor.</h2>
+    <div class="portco-layout">
+      <div>
+        <div class="tier-label">Lead Candidates &middot; Defense-Tech VCs</div>
+        <table class="firm-table">
+          <tr><td>Founders Fund</td><td>$1M-$5M</td><td>Anduril relationship; dual-use thesis. Warm intro via ex-Anduril operators now at VCs.</td></tr>
+          <tr><td>8VC</td><td>$500K-$2M</td><td>Active defense-tech investor; sector pattern match.</td></tr>
+          <tr><td>Lux Capital</td><td>$1M-$3M</td><td>Deep tech + defense; can lead a seed.</td></tr>
+          <tr><td>Shield Capital</td><td>$250K-$1M</td><td>Pure defense focus; smaller checks but signaling value.</td></tr>
+          <tr><td>Marlinspike Partners</td><td>$500K-$1.5M</td><td>Explicitly defense-focused fund.</td></tr>
+          <tr><td>Razor's Edge Ventures</td><td>$500K-$2M</td><td>Defense-tech specialist.</td></tr>
+        </table>
+
+        <div class="tier-label">Strategic CVCs at Seed</div>
+        <table class="firm-table">
+          <tr><td>Lockheed Martin Ventures</td><td>$500K-$2M</td><td>Field medicine fits LM dual-use thesis. Most accessible defense prime CVC.</td></tr>
+          <tr><td>RTX Ventures</td><td>$500K-$2M</td><td>Combat medicine fits emerging RTX defense health interest.</td></tr>
+          <tr><td>J&amp;J Innovation</td><td>$500K-$2M</td><td>Trauma / emergency med fits thesis. Only big-eight medtech CVC that writes sub-$1M.</td></tr>
+          <tr><td>BD Strategic Investments</td><td>$500K-$1M</td><td>Trauma equipment + defense medical interest.</td></tr>
+        </table>
+
+        <div class="tier-label">Background (Not Path to Close)</div>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">
+          ARPA-H, DoD SOCOM, BARDA, AFWERX, CDMRP continue producing runway. Existing relationships only. New grant applications don't gate the round.
+        </p>
+      </div>
+      <div>
+        <div class="detail-block">
+          <div class="detail-label">Round</div>
+          <ul>
+            <li><strong>Target:</strong> $1.5M-$4M</li>
+            <li><strong>Lead size:</strong> $1M-$3M</li>
+            <li><strong>Syndicate fill:</strong> $500K-$2M via SPV</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Mechanism</div>
+          <ul>
+            <li>AngelList SPV under 10XBeta syndicate</li>
+            <li>506(b) private, known-LP self-certification</li>
+            <li>Single close, then wire</li>
+            <li>SPV already configured; verify multiple-close mechanics</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Timeline</div>
+          <ul>
+            <li><strong>Weeks 1-4:</strong> outreach + lead conversations</li>
+            <li><strong>Weeks 5-8:</strong> term sheet + strategic CVC commitments</li>
+            <li><strong>Weeks 9-12:</strong> SPV close + wire</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Warm Intro Paths</div>
+          <ul>
+            <li>Ex-Anduril operators at VC funds (5+ active)</li>
+            <li>ARPA-H program officers (existing relationship)</li>
+            <li>DoD SOCOM contacts (existing relationship)</li>
+            <li>Hardware Club / Founders Fund alumni</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </section>
+
+  <!-- Slide 4: Validose -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Validose &middot; Seed Close</div>
+    <h2>Pharma CVCs are the anchor. BD is the highest strategic fit.</h2>
+    <div class="portco-layout">
+      <div>
+        <div class="tier-label">Lead Candidates &middot; Pharma Corporate VCs</div>
+        <table class="firm-table">
+          <tr><td>Pfizer Ventures</td><td>$1M-$5M</td><td>Active in early-stage drug delivery.</td></tr>
+          <tr><td>Eli Lilly Ventures</td><td>$1M-$5M</td><td>Writes seed for delivery platforms.</td></tr>
+          <tr><td>GSK Ventures</td><td>$1M-$5M</td><td>Pharma CVC, regular seed activity.</td></tr>
+          <tr><td>Bayer Leaps</td><td>$5M-$25M</td><td>Breakthrough thesis; larger seed checks possible.</td></tr>
+          <tr><td>Novartis Venture Fund</td><td>$2M-$10M</td><td>More selective but does early-stage delivery.</td></tr>
+          <tr><td>AbbVie Ventures</td><td>$1M-$5M</td><td>Pharma CVC seed activity.</td></tr>
+          <tr><td>Sanofi Ventures</td><td>$1M-$5M</td><td>Pharma CVC; drug delivery thesis fit.</td></tr>
+          <tr><td>Boehringer Ingelheim VF</td><td>$500K-$2M</td><td>Pharma CVC, often smaller early checks.</td></tr>
+        </table>
+
+        <div class="tier-label">Strategic Medtech CVCs</div>
+        <table class="firm-table">
+          <tr><td>BD Strategic Investments</td><td>$1M-$3M</td><td>Highest strategic fit. BD is a drug-delivery device leader. Could lead or co-lead.</td></tr>
+          <tr><td>J&amp;J Innovation</td><td>$500K-$2M</td><td>Broad medtech fit; sub-$1M check capable.</td></tr>
+          <tr><td>Olympus Innovation Fund</td><td>$1M-$3M</td><td>Active at seed in adjacent device categories.</td></tr>
+        </table>
+
+        <div class="tier-label">Drug-Delivery and Medtech Seed VCs</div>
+        <table class="firm-table">
+          <tr><td>F-Prime Capital</td><td>$1M-$5M</td><td>Strong drug delivery presence.</td></tr>
+          <tr><td>BioInnovation Capital</td><td>$500K-$1.5M</td><td>Seed medtech specialist.</td></tr>
+          <tr><td>DCVC Bio</td><td>$1M-$5M</td><td>Deep-tech bio; drug delivery candidate.</td></tr>
+          <tr><td>Andera Partners</td><td>$500K-$2M</td><td>Drug delivery focus, sometimes seed.</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="detail-block">
+          <div class="detail-label">Round</div>
+          <ul>
+            <li><strong>Target:</strong> $1.5M-$4M</li>
+            <li><strong>Lead size:</strong> $1M-$3M</li>
+            <li><strong>Syndicate fill:</strong> $500K-$2M via SPV</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Mechanism</div>
+          <ul>
+            <li>SPV-based syndicate close</li>
+            <li>506(b) private, known-LP self-certification</li>
+            <li>Single close, then wire</li>
+            <li>Vehicle: 10XBeta AngelList syndicate or separate</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Timeline</div>
+          <ul>
+            <li><strong>Weeks 1-4:</strong> outreach + pharma CVC conversations</li>
+            <li><strong>Weeks 5-8:</strong> term sheet + BD direct path</li>
+            <li><strong>Weeks 9-12:</strong> SPV close + wire</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Warm Intro Paths</div>
+          <ul>
+            <li>Pharma CVC partners (accessible directly on LinkedIn at partner level)</li>
+            <li>BD Strategic Investments (direct outreach worthwhile given fit)</li>
+            <li>Pharma operator network (ex-Insulet, ex-Tandem, ex-DexCom)</li>
+            <li>Indication-specific operator community</li>
+          </ul>
+        </div>
+        <div class="detail-block muted-block">
+          <div class="detail-label">Background</div>
+          <p>NIH SBIR Phase I filed in parallel as runway extension only. Institute by indication. Don't time round to grants.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </section>
+
+  <!-- Slide 5: Team functions needed -->
   <section class="slide dark">
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">90-Day Plan</div>
-    <h2>How the next three months play out.</h2>
-    <div class="timeline-row">
-      <div class="timeline-week">
-        <div class="week-label">Weeks 1-4</div>
-        <ul>
-          <li>Network mapping: who do we know at priority strategics?</li>
-          <li>Outreach to defense-tech VCs (RedZone) and pharma CVCs (Validose)</li>
-          <li>Pitch deck and data room locked</li>
-          <li>SPV mechanics confirmed with AngelList</li>
-          <li>Verify raise target sizes for both portcos</li>
-        </ul>
+    <div class="eyebrow">Cross-Cutting Needs</div>
+    <h2>What each function delivers.</h2>
+    <div class="action-grid">
+      <div class="action-card">
+        <div class="role">Engineering &amp; Lab</div>
+        <h3>DD readiness on 48-hour notice</h3>
+        <p>One-page technical brief per portco that translates engineering to investor-readable terms. Demo prep when calls land. RedZone needs combat-medicine context; Validose needs adherence outcomes data.</p>
       </div>
-      <div class="timeline-week">
-        <div class="week-label">Weeks 5-8</div>
-        <ul>
-          <li>Lead investor terms in negotiation (both portcos)</li>
-          <li>Strategic CVC commitments progressing</li>
-          <li>Technical DD calls running, demos scheduled</li>
-          <li>Angel syndicate building under SPV</li>
-          <li>Outcome Capital relationship initiated for Series A pipeline</li>
-        </ul>
+      <div class="action-card">
+        <div class="role">Brand &amp; Design</div>
+        <h3>Pitch deck + data room lock</h3>
+        <p>Per-portco pitch deck (12-15 slides each) and investor data room presentation. Brand-consistent across both. Standard format so RedZone and Validose pitches read as the same studio.</p>
       </div>
-      <div class="timeline-week">
-        <div class="week-label">Weeks 9-12</div>
-        <ul>
-          <li>Lead term sheets signed</li>
-          <li>SPV close (both portcos)</li>
-          <li>Wire after close</li>
-          <li>Studio operating capacity returns to lab work + Track 2 prep</li>
-        </ul>
+      <div class="action-card">
+        <div class="role">Operations &amp; Finance</div>
+        <h3>SPV mechanics + data room</h3>
+        <p>SPV legal structure (AngelList for RedZone, structure TBD for Validose). Subscription docs, side-letter templates, financial models per portco. Cap table tracking. AngelList multiple-close mechanics verified.</p>
+      </div>
+      <div class="action-card">
+        <div class="role">Portco Leadership</div>
+        <h3>Investor voice on substance</h3>
+        <p>Lead investor calls on technical and commercial questions. Materials review and approval. Frederick runs process; portco CEOs run the substance. Be available for 60-90 minute investor calls.</p>
+      </div>
+      <div class="action-card">
+        <div class="role">Every Team Member</div>
+        <h3>Network paths to priority firms</h3>
+        <p>Check LinkedIn for any connection at: Founders Fund, Lockheed Martin Ventures, RTX Ventures, J&amp;J Innovation, BD Strategic Investments, Pfizer Ventures, Lilly Ventures, GSK Ventures, Novartis VF. Surface to Frederick. One warm intro is worth weeks of cold outreach.</p>
+      </div>
+      <div class="action-card">
+        <div class="role">Frederick (COO)</div>
+        <h3>Process owner, weekly review</h3>
+        <p>Capital outreach lead, SPV coordination across both closes, weekly Monday capital review (30 min). Single point of accountability. Status reported weekly.</p>
       </div>
     </div>
-    <p style="margin-top: 60px; font-size: 16px; color: var(--dim); font-style: italic; max-width: 920px;">
-      Capital review every Monday, 30 minutes. Frederick reports status on both closes weekly.
-    </p>
-    <div class="slide-num">09 / 10</div>
+    <div class="slide-num">05 / 06</div>
   </section>
 
-  <!-- Slide 10: What to do this week -->
+  <!-- Slide 6: Decisions to lock this week -->
   <section class="slide cover">
     <svg class="chevron-bg" viewBox="0 0 400 600" preserveAspectRatio="none"></svg>
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div style="position: relative; z-index: 2; max-width: 1000px;">
-      <div class="eyebrow">This Week</div>
-      <h1 style="font-size: 56px;">Three things from everyone.</h1>
-      <div style="margin-top: 32px;">
-        <div class="role-block" style="background: rgba(255,255,255,0.06); border-left-color: var(--blue);">
-          <div class="role">01 &middot; Your network</div>
-          <p style="color: var(--dim2);">Look at your LinkedIn. Anyone at J&amp;J Innovation, BD Strategic Investments, Lockheed Martin Ventures, RTX Ventures, or pharma CVCs (Pfizer Ventures, Lilly, GSK, Novartis, AbbVie, Bayer Leaps, AstraZeneca)? Tell Frederick by Friday. One name is worth weeks of cold outreach.</p>
-        </div>
-        <div class="role-block" style="background: rgba(255,255,255,0.06); border-left-color: var(--blue);">
-          <div class="role">02 &middot; Your readiness</div>
-          <p style="color: var(--dim2);">If you're on engineering or lab teams: be ready to demo within 48 hours when a DD call lands. If you're on brand or operations: pitch deck and data room get locked this week.</p>
-        </div>
-        <div class="role-block" style="background: rgba(255,255,255,0.06); border-left-color: var(--blue);">
-          <div class="role">03 &middot; Your operating mode</div>
-          <p style="color: var(--dim2);">Capital review is Mondays at 9am. 30 minutes. Status on both closes, blockers surfaced, intros assigned. Until both closes are wired, this meeting is part of the studio's rhythm.</p>
-        </div>
-      </div>
+    <div style="position: relative; z-index: 2; max-width: 1040px;">
+      <div class="eyebrow">Lock This Week</div>
+      <h1 style="font-size: 56px;">Six decisions.</h1>
+      <ol class="numbered" style="margin-top: 28px;">
+        <li><strong style="color: var(--white);">RedZone target raise size.</strong> Lock at $1.5M, $2M, $3M, or $4M. Drives lead-investor profile and syndicate sizing.</li>
+        <li><strong style="color: var(--white);">Validose target raise size.</strong> Same lock. Drives whether pharma CVCs co-invest or one CVC leads outright.</li>
+        <li><strong style="color: var(--white);">Validose lead clinical indication confirmed.</strong> Drives which pharma CVCs are highest-fit (diabetes pulls Lilly + Novo, oncology pulls Pfizer + Merck, etc.).</li>
+        <li><strong style="color: var(--white);">RedZone lead-investor priority list (top 3).</strong> Out of the defense-tech VC list, pick the three to lead with for first-conversation outreach.</li>
+        <li><strong style="color: var(--white);">Validose lead-investor priority list (top 3).</strong> Same, from the pharma CVC list. BD Strategic Investments runs parallel as strategic anchor.</li>
+        <li><strong style="color: var(--white);">AngelList multiple-close mechanics confirmed.</strong> Direct conversation with AngelList. Affects whether we run a single close or staged closes for RedZone SPV.</li>
+      </ol>
     </div>
-    <div class="slide-num">10 / 10</div>
+    <div class="slide-num">06 / 06</div>
   </section>
 
 </div>
 
 <div class="nav">
   <button id="prev" aria-label="Previous slide">&lsaquo;</button>
-  <span class="counter"><span id="current">1</span> / <span id="total">10</span></span>
+  <span class="counter"><span id="current">1</span> / <span id="total">6</span></span>
   <button id="next" aria-label="Next slide">&rsaquo;</button>
   <span class="hint">&larr; &rarr; to navigate &middot; F for fullscreen &middot; Cmd-P to print</span>
 </div>
