@@ -9,6 +9,7 @@
 > - **Do NOT query the vs-os Supabase project.** This is not Platform OS work.
 > - Default opener from Frederick: `"sales session"` or similar. Treat as cue to read this file top-to-bottom, with extra attention to the most recent session's "Open items" list.
 > - **Tools needed:** GitHub MCP for repo edits. Web search is highly valuable for this workstream (firm verification, deal tracking, named-contact research) — open the session in a Claude.ai surface with web search enabled when possible.
+> - **Operational independence:** Frederick handles all internal communication on his own schedule. Do not insert "consult with [colleague]" or "discuss with [colleague]" as a recommended next step in any session output. Surface frameworks and decisions; Frederick owns who he talks to and when.
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -277,7 +278,7 @@ The structural issue Frederick is wrestling with: **primary-round investors typi
 - Pro: timing flexibility, no investor friction
 - Con: pricing discount; signaling risk if mistimed (looks like studio is bailing)
 
-### Working hypothesis (to confirm with Marcel) — UPDATED Session 003
+### Working hypothesis — UPDATED Session 003
 
 Initial Session 002 hypothesis was hybrid. Session 003 refined this with Frederick's equity-concentration insight into a **two-lane model**. See Session 003 below.
 
@@ -293,7 +294,7 @@ The Session 001 placement-agent message doesn't fit secondary buyers. Secondary 
 
 ### Open items for next session (priority order)
 
-1. **Resolve the strategic question with Marcel.** Lock in 10XBeta's standard play on secondaries (Path A, B, or hybrid). Update the working model accordingly.
+1. **Resolve the strategic question.** Lock in 10XBeta's standard play on secondaries (Path A, B, or hybrid). Update the working model accordingly.
 2. **Request warm intro from Edgemont to Revelation Partners.** This is the highest-value next action. Boutique IB → secondary buyer referrals carry significant weight.
 3. **Draft secondary-buyer outreach message** (contact form + LinkedIn variant). The Session 001 placement-agent message doesn't apply directly.
 4. **Update the firm map** (in `sales/firm-tracker.md` once it exists, or as a standalone doc):
@@ -312,7 +313,7 @@ The Session 001 placement-agent message doesn't fit secondary buyers. Secondary 
 
 ### Frederick's preferences re-confirmed this session
 
-- Strategic ambiguity is fine to surface without immediate resolution — give frameworks, let Frederick decide with Marcel.
+- Strategic ambiguity is fine to surface without immediate resolution — give frameworks; Frederick decides.
 - Real conversation intel beats training-data assessment. Update the log promptly.
 - Multiple parallel workstreams are okay if the categories are kept distinct in the log.
 
@@ -320,7 +321,7 @@ The Session 001 placement-agent message doesn't fit secondary buyers. Secondary 
 
 ## Session 003 — 2026-06-06 — Equity-concentration insight + strategics engagement play
 
-**Status:** strategic frameworks expanded, awaiting Marcel discussion + portfolio readiness review
+**Status:** strategic frameworks expanded, awaiting portfolio readiness review
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
@@ -347,7 +348,7 @@ With the equity-concentration insight, the secondary path question resolves to t
 - Pricing: at-round valuation, no discount
 - Timing: tied to next primary round
 
-Working model: "we use both, depending on which company and which position." Confirm with Marcel.
+Working model: "we use both, depending on which company and which position."
 
 ### Strategics engagement — frameworks
 
@@ -355,7 +356,7 @@ The play is **option-creation, not selling**. Frame every strategic conversation
 
 **Three engagement modes (increasing formality):**
 
-1. **Direct personal outreach** — Frederick or Marcel to corporate dev or strategic ventures contacts at target strategics. Informal, no advisor, no NDA up front. Low cost, low signal risk. Best for early relationship-building.
+1. **Direct personal outreach** — Frederick to corporate dev or strategic ventures contacts at target strategics. Informal, no advisor, no NDA up front. Low cost, low signal risk. Best for early relationship-building.
 
 2. **Through a banker** — placement agent runs "non-deal roadshow" to strategics. Formal but non-binding. Adds credibility but signals "we're paying advisors so this is real." Use once placement-agent relationships are established (Outcome Capital is the leading candidate from Session 001).
 
@@ -433,35 +434,30 @@ Three workstreams, three sets of firm relationships, all running in parallel. Ea
 
 ### Open items for next session (priority order)
 
-1. **Resolve with Marcel:**
-   - Confirm the two-lane secondaries model (incubated → Path B, minority → Path A)
-   - Confirm the strategics engagement play and which portfolio companies are most ready
-   - Confirm the three-workstream framework as 10XBeta's standard capital strategy
+1. **Pick 1-2 portfolio companies for strategics conversations.** "Ready" = clinical/commercial validation, distinct product, confident 18-month story. Probable candidates: Spiro Wave, Cryo Medica, RedZone.
 
-2. **Pick 1-2 portfolio companies for strategics conversations.** "Ready" = clinical/commercial validation, distinct product, confident 18-month story. Probable candidates: Spiro Wave, Cryo Medica, RedZone.
+2. **Prepare strategic engagement materials.** "What we're building" overview per selected company. Confident, technical, doesn't ask for anything. Length: 1-2 pages or 5-7 slides max. NOT a pitch deck.
 
-3. **Prepare strategic engagement materials.** "What we're building" overview per selected company. Confident, technical, doesn't ask for anything. Length: 1-2 pages or 5-7 slides max. NOT a pitch deck.
+3. **Identify named contacts at the big-eight strategics.** Strategic ventures / corporate dev leaders at Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards, Baxter. LinkedIn search with title filters.
 
-4. **Identify named contacts at the big-eight strategics.** Strategic ventures / corporate dev leaders at Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards, Baxter. LinkedIn search with title filters.
+4. **Identify entry points at innovation arms.** JLABS, Stryker Connected, Medtronic Hugo Innovation, Boston Scientific Connected, Olympus Innovation Programs. Most have application processes or scouting contacts.
 
-5. **Identify entry points at innovation arms.** JLABS, Stryker Connected, Medtronic Hugo Innovation, Boston Scientific Connected, Olympus Innovation Programs. Most have application processes or scouting contacts.
+5. **Draft strategics-specific outreach message.** Different from placement-agent and secondary-buyer messages. Confidence framing, "what we're building" focus, asks for informational conversation.
 
-6. **Draft strategics-specific outreach message.** Different from placement-agent and secondary-buyer messages. Confidence framing, "what we're building" focus, asks for informational conversation.
-
-7. **Carry forward Session 002 open items** that remain incomplete: warm intro to Revelation via Edgemont, secondary-buyer outreach message, firm tracker, Session 001 verification work, etc.
+6. **Carry forward Session 002 open items** that remain incomplete: warm intro to Revelation via Edgemont, secondary-buyer outreach message, firm tracker, Session 001 verification work, etc.
 
 ### Decisions and constraints locked this session
 
 - **Three parallel workstreams.** Secondaries, strategics, placement agents. Distinct firm types, distinct messages, distinct sequencing. Do not conflate.
 - **Strategics engagement is option-creation, not selling.** Framing matters. Confidence over need.
-- **Two-lane secondaries model** (subject to Marcel confirmation): incubated → Path B, minority → Path A.
+- **Two-lane secondaries model**: incubated → Path B, minority → Path A.
 - **Innovation arms are easier entry points than corporate dev** for early-stage portfolio companies. JLABS, Stryker Connected, etc.
 - **Per-company strategic targeting**, not blanket lists. Each portfolio company has its own 3-5 strategics worth approaching.
 - **Partnerships are far more common than acquisitions** — licensing, OEM, co-marketing should be valid outcomes of strategic conversations, not consolation prizes.
 
 ### Frederick's preferences re-confirmed this session
 
-- Insights from his own thinking (e.g., equity concentration) integrate into the model — Claude should ingest and reframe, not just acknowledge.
+- Insights from Frederick's own thinking (e.g., equity concentration) integrate into the model — Claude should ingest and reframe, not just acknowledge.
 - Strategic frameworks should be actionable, not academic.
 - Multiple parallel workstreams are okay if categories stay distinct.
 - Frederick iterates strategically across messages — log each iteration so the model evolves coherently.
@@ -470,7 +466,7 @@ Three workstreams, three sets of firm relationships, all running in parallel. Ea
 
 ## Session 004 — 2026-06-06 — Platform OS workflow enables strategics pitch
 
-**Status:** strategic positioning refined, new tactical priorities identified, awaiting Marcel review
+**Status:** strategic positioning refined, new tactical priorities identified
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
@@ -543,7 +539,7 @@ These are realistic outcomes of strategic engagement for an early-stage studio. 
 
 ### Tactical priorities (next 90-180 days)
 
-1. **Identify and recruit ex-strategic execs to advisory board.** Two or three from Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD. Frederick and Marcel know who's accessible.
+1. **Identify and recruit ex-strategic execs to advisory board.** Two or three from Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD.
 2. **Plan for JPMorgan Healthcare Conference (January 2027).** Start booking meetings in October 2026. Reach out to existing network for warm intros to specific strategics. Single highest-leverage annual venue.
 3. **Launch quarterly portfolio update** (one page, no fluff). Distribute to strategic ventures and corp dev contacts at the big-eight. What's new, what's progressing, what hit milestones. Compounds visibility.
 4. **Lead with Spiro Wave** in every initial conversation as credibility anchor.
@@ -554,7 +550,7 @@ These are realistic outcomes of strategic engagement for an early-stage studio. 
 
 ### Open items for next session (priority order)
 
-1. **Resolve with Marcel:**
+1. **Resolve:**
    - Confirm Platform OS workflow as the strategic differentiator in the pitch
    - Identify 2-3 ex-strategic exec candidates for advisory board recruitment
    - Confirm portfolio company sequencing (which goes to which strategic, in what order)
@@ -571,7 +567,7 @@ These are realistic outcomes of strategic engagement for an early-stage studio. 
 5. **Carry forward:**
    - Session 001 verification work and firm tracker
    - Session 002 Revelation warm intro request
-   - Session 003 two-lane secondaries Marcel decision
+   - Session 003 two-lane secondaries play
 
 ### Decisions and constraints locked this session
 

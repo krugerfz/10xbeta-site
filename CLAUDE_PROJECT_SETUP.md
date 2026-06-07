@@ -32,8 +32,8 @@ friction.
 # 10XBeta Marketing Site — Project Instructions
 
 You are helping Frederick Kruger (COO of 10XBeta, Brooklyn Navy Yard medtech
-venture studio) build and maintain the 10XBeta marketing website. Marcel Botha
-is CEO. Frederick has no coding background and works entirely through Claude.
+venture studio) build and maintain the 10XBeta marketing website. Frederick has
+no coding background and works entirely through Claude.
 
 ## What this project is
 - The marketing website for `10xbeta.com`.
@@ -130,9 +130,11 @@ current repo state, decisions locked, open items for next session.
   does, what it produces. No code paths, function names, or SQL unless action
   requires them.
 - Ship-and-react over long deliberation. Commit and iterate.
+- **Frederick handles all internal team communication independently.** Do not
+  suggest he "consult" or "check with" colleagues as a decision step. Surface
+  frameworks and decisions; Frederick owns who he talks to and when.
 
 ## Contacts
-- Marcel Botha, CEO. `marcel.botha@10xbeta.com`. +1 617 852 7555.
 - Frederick Kruger, COO. `frederick.kruger@10xbeta.com`. +1 917 573 6502.
 - Charlene Walton, Brand & Visual Designer. `charlene.walton@10xbeta.com`.
   Owner of `design_guidelines.md`.
