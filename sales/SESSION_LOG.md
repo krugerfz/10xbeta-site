@@ -14,6 +14,7 @@
 >   - `sales/capital-strategy.html` — 17-slide brand-aligned strategy presentation (Tracks 1-3)
 >   - `sales/portco-capital-playbook.md` — stage-by-stage operational playbook for portco capital
 >   - `sales/network-buildout.md` — who can help build the named investor and buyer network
+>   - `sales/portco-plans/` — per-portco capital plans (one file per portco)
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -45,7 +46,7 @@ Full list and the 4-question verification checklist retained in earlier sessions
 
 ### Outreach materials produced this session
 
-*Note: these are stage-appropriate only for Series A+ portcos. For pre-seed and seed portcos, see `portco-capital-playbook.md` for the correct channels.*
+*Note: these are stage-appropriate only for Series A+ portcos. For pre-seed and seed portcos, see `portco-capital-playbook.md` and `portco-plans/` for the correct channels.*
 
 Contact-form messages (~500 char and ~1100 char versions), LinkedIn connection requests (Direct / Curious / Specific variants). Use for placement-agent firms (Series A+ context). Pre-seed / seed channels need different outreach materials (open item).
 
@@ -62,93 +63,49 @@ Contact-form messages (~500 char and ~1100 char versions), LinkedIn connection r
 
 ## Session 002 — 2026-06-02 — Edgemont call feedback + secondaries pivot
 
-**Status:** intelligence update from first real conversation
-**Owner:** Frederick Kruger (COO)
-
-### Summary
-
 Frederick spoke with Edgemont Capital Partners. Two pieces of intel:
 
-1. **Edgemont is ~80% M&A advisory** (sell-side). They are an exit advisor, not a placement agent. Reclassified.
-2. **Edgemont recommended Revelation Partners** (revelation-partners.com) for secondaries. Opens a new firm category: dedicated secondary buyers.
+1. **Edgemont is ~80% M&A advisory** — exit advisor, not placement agent. Reclassified.
+2. **Edgemont recommended Revelation Partners** for secondaries. Opens new firm category: dedicated secondary buyers.
 
-### Edgemont reclassification
+New secondaries category includes Revelation (priority), NewView Capital, Industry Ventures, Saints Capital (healthcare-exposed), plus large generalist firms (Lexington, Coller, HarbourVest, AlpInvest, Pomona) held until workstream scales.
 
-Moved from "Healthcare and medtech transaction boutiques" to "M&A / exit advisors." Still a valuable long-term relationship for portco exits. Adjust framing for any future Edgemont outreach to be exit-focused.
-
-### Revelation Partners and the broader secondary buyer market
-
-- **Revelation Partners** — Edgemont's recommendation, top priority (warm intro available)
-- **NewView Capital, Industry Ventures, Saints Capital** — healthcare-exposed secondary buyers
-- **Lexington Partners, Coller Capital, HarbourVest, AlpInvest, Pomona Capital** — generalist large secondaries (hold unless workstream scales)
-
-### Open items from Session 002 still active
-
-1. Request warm intro from Edgemont to Revelation Partners. Highest-value next action.
-2. Draft secondary-buyer-specific outreach message (different from placement-agent message).
-3. Verify Revelation's medtech device coverage specifically.
+**Open items still active:** Revelation warm intro request (highest-value), secondary-buyer outreach message draft, verify Revelation medtech device coverage.
 
 ---
 
 ## Session 003 — 2026-06-06 — Equity-concentration insight + strategics engagement
 
-**Status:** strategic frameworks expanded
-**Owner:** Frederick Kruger (COO)
+### Two-lane secondaries model
 
-### Two-lane secondaries model (resolves Session 002)
-
-- **Lane 1 — Incubated companies (10XBeta majority equity):** Path B standalone secondaries via Revelation et al. Accept 10-20% discount. Liquidity > pricing optimization given concentration.
-- **Lane 2 — Minority / fund positions:** Path A integrated tender at Series B+. At-round valuation, no discount.
+- **Lane 1 — Incubated companies (10XBeta majority equity):** Path B standalone secondaries via Revelation et al. Accept 10-20% discount.
+- **Lane 2 — Minority / fund positions:** Path A integrated tender at Series B+. At-round valuation.
 
 ### Strategics engagement framework
 
-- Play is option-creation, not selling. Frame as "we're building, want to make sure we're building something you'd want to partner with."
-- Three engagement modes: direct outreach, through a banker, through innovation arms.
-- Innovation arms first for early-stage portcos (JLABS, Stryker Connected, Medtronic Hugo Innovation, Boston Scientific Connected, Olympus Innovation).
-
-### Big-eight medtech strategics
-
-Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards Lifesciences, Baxter. Each has corporate dev / strategic investments and innovation arm.
+Option-creation, not selling. Three modes: direct, through a banker, through innovation arms. Innovation arms first for early-stage portcos.
 
 ### Three-workstream picture
 
-| Workstream | Goal | Firms |
-|---|---|---|
-| Secondaries | Recycle studio equity | Revelation, Industry Ventures, NewView |
-| Strategics | Optionality, partnerships, exit paths | Big-eight + innovation arms |
-| Placement agents | Primary capital for portcos at scale | Outcome Capital, Leerink, HC Wainwright |
+Secondaries / Strategics / Placement agents — three parallel sub-tracks under Track 1.
 
 ---
 
 ## Session 004 — 2026-06-06 — Platform OS workflow enables strategics pitch
 
-**Status:** strategic positioning refined
-**Owner:** Frederick Kruger (COO)
+The pitch is the productized studio capability (OE → Lab → IP), not the individual POC. Strategics see thousands of POCs; they see almost nobody with a productized pipeline.
 
-### Key reframing
-
-The pitch isn't the individual POC. It's the productized studio capability — Platform OS workflow (OE → Lab → IP) as a scouting + de-risking machine. Strategics see thousands of POCs; they see almost nobody with a productized pipeline.
-
-### Tactical priorities (next 90-180 days)
-
-Advisory board build, JPM 2027 prep starting October 2026, quarterly portfolio update launch, lead with Spiro Wave, innovation arms first for younger portcos.
+**Tactical priorities:** advisory board build, JPM 2027 prep, quarterly portfolio update, lead with Spiro Wave, innovation arms first for younger portcos.
 
 ---
 
 ## Session 005 — 2026-06-07 — Stage-by-stage capital strategy correction
 
-**Status:** major correction; deck restructured, operational playbook produced
-**Owner:** Frederick Kruger (COO)
-
-### What happened
-
-Frederick caught a misframing in Slide 5 of `capital-strategy.html`: it positioned placement agents as the channel for portfolio company primary raises generally. **Placement agents only work at Series A+ ($10M+ deal sizes). Pre-seed and seed portcos are funded through entirely different channels.**
-
-This correction expanded Track 1a from a single-channel strategy into a stage-by-stage capital strategy that maps each portco lifecycle stage to its actual funding sources.
+Frederick caught a misframing in Slide 5 of `capital-strategy.html`: placement agents were positioned as the channel for primary raises generally. Correction: placement agents only work at Series A+ ($10M+ deal sizes).
 
 ### Stage-by-stage strategy (six stages)
 
-Full operational detail in `sales/portco-capital-playbook.md`. Summary:
+Full detail in `sales/portco-capital-playbook.md`. Summary:
 
 | Stage | Capital | Primary channels |
 |---|---|---|
@@ -158,72 +115,90 @@ Full operational detail in `sales/portco-capital-playbook.md`. Summary:
 | Stage 3 — Series A | $5M-$20M | Medtech VCs, large CVCs, **placement agents emerge** |
 | Stage 4 — Series B | $15M-$50M | Growth VCs, all big-eight CVCs, **placement agents central** |
 | Stage 5 — Series C / Growth | $30M-$100M+ | Late-stage / growth equity, crossover, full-service IBs |
-| Stage 6 — Exit | Variable | M&A bankers (Edgemont et al.), strategic acquirers, IPO underwriters |
+| Stage 6 — Exit | Variable | M&A bankers, strategic acquirers, IPO underwriters |
 
-### Deck restructured (capital-strategy.html, 17 slides)
-
-- Slide 5: Stage Map (5-column visual)
-- Slide 6: Pre-Seed and Seed Playbook (NEW)
-- Slide 7: Series A and Beyond Playbook (refined original slide)
-- Slides 8-17: renumbered from original 6-15
+Deck restructured to 17 slides with stage-aware Track 1a section.
 
 ---
 
 ## Session 006 — 2026-06-07 — Network buildout: who can help
 
-**Status:** new dimension added — the network construction problem alongside the strategy
+Produced `sales/network-buildout.md` capturing five leverage sources for building the named investor and buyer network:
+
+1. Internal warm sources (portco investors, board members, team networks)
+2. Paid external help (fractional advisor, advisory board, fundraising agency, placement agent retainer)
+3. Industry events and accelerators (MedTech Innovator, JPM, AdvaMed)
+4. Strategic introductions via portco boards (quarterly ask)
+5. Direct outreach (LinkedIn / cold email)
+
+**Top three moves:** fractional Head of Capital Strategy hire (highest leverage), ex-strategic-exec advisory board recruitment, portco-investor-map first.
+
+**6-month end-state target:** 50+ named investor relationships across stages, 5+ secondary buyer relationships, 3+ ex-strategic execs on advisory board, fractional advisor active, JPM 2027 calendar full.
+
+---
+
+## Session 007 — 2026-06-07 — RedZone & Validose seed capital plans (no placement agents)
+
+**Status:** strategy confirmed + per-portco plans produced for two active seed-stage portcos
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
 
-Frederick asked the meta-question: who can actually help 10XBeta build out the pre-seed, seed, Series A, Series B, and secondary buyer network the strategy requires? Session 005 produced the *what* (stages and channels); Session 006 produces the *who* (specific connectors, hires, and resources).
+Frederick asked: can we not use investment banks or placement agents for the current seed raises of RedZone and Validose?
 
-Produced `sales/network-buildout.md` capturing the full answer.
+Confirmed: yes, correct strategy. Placement agents don't work at seed stage (established in Sessions 005-006). Produced per-portco capital plans for both RedZone and Validose using the playbook's stage-appropriate channels.
 
-### Five leverage sources for network construction
+### RedZone capital plan summary
 
-1. **Internal warm sources** — existing portco investors, board members, team networks. Free, highest quality, slow. Probably 30-60 named relationships already accessible from existing portco boards.
-2. **Paid external help** — fractional advisors, ex-strategic-exec advisory board, fundraising agencies, placement agents on retainer. Fast scale, costs equity or cash.
-3. **Industry events and accelerators** — MedTech Innovator (alumni network of 500+), JPM Healthcare Conference (highest-leverage annual), AdvaMed, MedTech Strategist events.
-4. **Strategic introductions via portco boards** — 7 portcos × 5 board members × 50 networkable contacts = ~1,750 potential intros. Quarterly ask.
-5. **Direct outreach** — LinkedIn / cold email. Free, slowest, lowest hit rate. Already covered by Session 001 materials.
+- **Stage:** Seed, $1.5M-$4M target (verify)
+- **Existing structure:** AngelList syndicate (10XBeta) with RedZone SPV underneath; 506(b) private; multiple-close mechanics TBC with AngelList
+- **Existing federal traction:** DoD SOCOM, ARPA-H engagement
 
-### Top three highest-leverage moves
+**Five-tier channel approach:**
+1. Non-dilutive (continue maxing): ARPA-H, SBIR Phase II, BARDA, DoD CDMRP/AFWERX/SOFWERX/NavalX, DIU
+2. Defense-tech VCs: Founders Fund, 8VC, Lux Capital, Marlinspike Partners, Razor's Edge Ventures, Shield Capital, A* Capital, General Catalyst (defense)
+3. Medtech-defense crossover: J&J Innovation, BD Strategic Investments, F-Prime Capital
+4. Defense prime CVCs: Lockheed Martin Ventures, RTX Ventures, Boeing HorizonX, L3Harris, Northrop Grumman Ventures, BAE Systems
+5. AngelList SPV close (vehicle already configured)
 
-1. **Fractional Head of Capital Strategy.** Ex-VP at healthcare investment bank (Leerink, HC Wainwright, Piper Sandler), or ex-Partner at medtech VC. $8-15K/month for 1-2 days/week. Unlocks 100+ warm investor relationships day one.
-2. **Ex-strategic-exec advisory board recruitment** (Session 004 priority, elevated). 2-3 from Medtronic, J&J, Stryker, Boston Scientific at 0.25-0.5% equity each. Plus 1 ex-medtech VC + 1 ex-healthcare banker for cross-network coverage.
-3. **Portco investor map first.** `portco-investor-map.md` listing every existing investor in every portco with current contact status. Reveals which stages already have density vs. real gaps. Free, fastest, gates everything else.
+Full plan: `sales/portco-plans/redzone-seed-plan.md`
 
-### Stage-specific network targets (full lists in `network-buildout.md`)
+### Validose capital plan summary
 
-| Stage | Target # | Key connector |
-|---|---|---|
-| Pre-Seed / Seed | 25-30 | MedTech Innovator alumni network, fractional advisor, J&J Innovation as early-strategic anchor |
-| Series A | 15-20 | Outcome Capital as the hub, existing portco boards, ex-medtech-VC advisor |
-| Series B | 10-15 | Series A investors (natural follow-on), Leerink / Piper Sandler / Jefferies |
-| Secondary buyers | 5-10 | Edgemont → Revelation in motion, M&A advisors, existing portco VCs |
+- **Stage:** Seed, $1.5M-$4M target (verify)
+- **Indication:** drug adherence / drug delivery (specific lead indication to confirm)
 
-**End-state target at 6 months:** 50+ named investor relationships across stages, 5+ secondary buyer relationships, 3+ ex-strategic execs on advisory board, 1 active fractional advisor, JPM 2027 calendar full.
+**Five-tier channel approach:**
+1. **Pharma corporate VCs (priority channel):** Pfizer Ventures, Eli Lilly Ventures, GSK Ventures, Novartis Venture Fund, Sanofi Ventures, AbbVie Ventures, Merck GHIF, Bayer Leaps, AstraZeneca Innovation, Boehringer Ingelheim Venture Fund
+2. Drug-delivery / medtech device seed VCs: BioInnovation Capital, F-Prime, DCVC Bio, Sofinnova (early-stage), Sands Capital, Lux Capital, Andera Partners, Polaris Partners
+3. Strategic medtech CVCs: BD Strategic Investments (highest fit), J&J Innovation, Olympus Innovation Fund, Insulet corp dev, Tandem corp dev
+4. Non-dilutive: NIH SBIR Phase I/II (institute depends on indication), ARPA-H (adherence is stated priority), foundation grants by indication (JDRF, Helmsley, ADA, AHA)
+5. Angels: pharma execs, drug-delivery industry operators, indication-specific angels
 
-### Open items going forward
-
-1. **Build `portco-investor-map.md`** — every existing investor in every portco with current status. Gates everything else.
-2. **Hire decision** — fractional advisor vs fundraising agency vs direct hire for primary capital-strategy resource. Default recommendation: fractional advisor.
-3. **Advisory board recruitment** — identify 5-10 candidates for ex-strategic-exec advisory board.
-4. **Verify firms in `network-buildout.md`** — some may have merged, rebranded, or shifted focus since training cutoff.
-5. **Network metrics cadence** — monthly review of # named relationships, # active conversations, # warm intros pending.
-6. **Carry forward Sessions 001-005 open items** still active.
+Full plan: `sales/portco-plans/validose-seed-plan.md`
 
 ### Decisions and constraints locked this session
 
-- **Network construction is its own workstream**, parallel to the strategy work. Strategy says "raise from pre-seed VCs" — network buildout says "here's how you actually meet them."
-- **A fractional Head of Capital Strategy is the single highest-leverage external hire.** One person with the right background unlocks 100+ relationships in weeks vs. months of direct outreach.
-- **Existing portco boards are an underutilized intro asset.** Systematic quarterly ask across all portco boards should be added to operating cadence.
-- **MedTech Innovator alumni access is a high-leverage entry point**, even if 10XBeta itself doesn't need acceleration.
-- **Don't build the network all at once.** Map internal first — 30-60 names already exist before paying for any external help.
+- **No placement agents or investment banks for seed-stage raises.** Confirmed for RedZone and Validose. Applies to all future seed raises across the portfolio.
+- **AngelList SPV is the right close mechanism for RedZone** given existing configuration.
+- **Pharma corporate VCs are the priority channel for Validose** given drug-delivery's direct pharma adjacency. This is a different investor universe than the medtech-device CVCs that anchor other portcos.
+- **Per-portco capital plans live in `sales/portco-plans/`** with one file per portco. Filename pattern: `{portco-name}-{stage}-plan.md`.
+- **For RedZone specifically: federal grants are not a sidecar; they are a primary channel.** Given DoD SOCOM and ARPA-H traction, grant capital may extend runway enough to reduce the equity target.
+
+### Open items going forward
+
+1. Verify current raise target sizes for RedZone and Validose (placeholders used in plans).
+2. Audit RedZone's federal grants pipeline — applied / pending / next-6-month calendar.
+3. Confirm Validose's lead clinical indication (drives which NIH institute and foundation grants fit).
+4. Verify AngelList multiple-close mechanics for RedZone SPV.
+5. Produce capital plans for remaining 5 portcos (Spiro Wave, K-O2, PARADIGM, Cryo Medica, Gynocular) following the same pattern.
+6. Draft outreach materials for the new investor categories:
+   - **Defense-tech VCs** (RedZone) — different framing than placement-agent or generic medtech-VC message
+   - **Pharma corporate VCs** (Validose) — emphasize molecule-franchise extension, adherence outcomes data, pharma commercial fit
+7. Carry forward Session 006 open items: build `portco-investor-map.md`, decide on fractional Head of Capital Strategy hire, advisory board recruitment.
 
 ### Frederick's preferences re-confirmed this session
 
-- Asks meta-questions that expand the framework ("who can help" expanded the strategy from what-to-do to how-to-execute).
-- Wants specific named candidates and firms, not generic categories. Three-tier framework with named firms in each tier.
-- Verification responsibility stays with Frederick; Claude flags uncertainty rather than overclaiming.
+- Asks direct, practical questions about specific portcos. Wants per-portco answers, not just strategy frameworks.
+- "Don't use X" framing is a useful validation pattern. Confirming an absence is sometimes the most valuable decision.
+- Per-portco capital plans (open item from Session 005) become the primary unit of work for the next phase.
