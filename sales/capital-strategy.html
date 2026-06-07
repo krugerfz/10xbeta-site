@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10XBeta Capital Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #061A2E;
+  --navy-2: #0A2440;
+  --blue: #0387D1;
+  --white: #FFFFFF;
+  --text: #1F2D3F;
+  --muted: #6B7785;
+  --dim: #9BA3AB;
+  --dim2: #CDD1D5;
+  --border: #E6E8EA;
+  --sunken: #F4F8FC;
+  --head: 'Barlow', system-ui, sans-serif;
+  --body: 'Inter', system-ui, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--body); color: var(--text); background: var(--navy); overflow: hidden; height: 100vh; -webkit-font-smoothing: antialiased; }
+.deck { position: relative; width: 100vw; height: 100vh; }
+.slide { position: absolute; inset: 0; padding: 64px 88px; display: none; flex-direction: column; background: var(--white); overflow: auto; }
+.slide.active { display: flex; }
+.slide.dark { background: var(--navy); color: var(--white); }
+.slide.cover { background: var(--navy); color: var(--white); justify-content: center; position: relative; overflow: hidden; }
+.chevron-bg { position: absolute; top: 0; right: 0; width: 50%; height: 100%; opacity: 0.35; pointer-events: none; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin-bottom: 22px; }
+.eyebrow.muted { color: var(--muted); }
+h1 { font-family: var(--head); font-weight: 800; font-size: 80px; line-height: 1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 24px; }
+.dark h1, .cover h1 { color: var(--white); }
+h2 { font-family: var(--head); font-weight: 800; font-size: 44px; line-height: 1.08; letter-spacing: -0.015em; color: var(--navy); margin-bottom: 24px; }
+.dark h2 { color: var(--white); }
+h3 { font-family: var(--head); font-weight: 700; font-size: 24px; line-height: 1.2; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.01em; }
+.dark h3, .cover h3 { color: var(--blue); }
+p { font-size: 17px; line-height: 1.6; margin-bottom: 14px; }
+p.lede { font-size: 22px; line-height: 1.5; color: var(--muted); margin-bottom: 24px; font-weight: 400; }
+.dark p.lede { color: var(--dim); }
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 24px; }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+.track-card { border-left: 4px solid var(--blue); padding: 22px 26px; background: var(--sunken); border-radius: 0 8px 8px 0; }
+.dark .track-card { background: var(--navy-2); }
+.track-card .label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.track-card h3 { font-size: 22px; margin-bottom: 10px; }
+.dark .track-card h3 { color: var(--white); }
+.track-card p { font-size: 14px; line-height: 1.55; margin-bottom: 0; color: var(--text); }
+.dark .track-card p { color: var(--dim2); }
+.layer-cake { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+.layer { background: rgba(10, 36, 64, 0.7); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 22px 28px; color: var(--white); }
+.layer .meta { font-size: 11px; color: var(--blue); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+.layer h4 { font-family: var(--head); font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+.layer p { font-size: 14px; color: var(--dim2); margin: 0; line-height: 1.5; }
+.nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(6, 26, 46, 0.92); color: var(--white); padding: 10px 18px; border-radius: 24px; font-family: var(--body); font-size: 13px; font-weight: 600; z-index: 100; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
+.nav button { background: transparent; border: none; color: var(--white); cursor: pointer; padding: 4px 10px; font-size: 18px; transition: color 0.15s; }
+.nav button:hover { color: var(--blue); }
+.nav .counter { min-width: 56px; text-align: center; letter-spacing: 0.05em; }
+.nav .hint { color: var(--dim); font-size: 11px; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.15); margin-left: 4px; }
+@media print { body { background: white; overflow: visible; height: auto; } .deck { height: auto; } .slide { position: static !important; display: flex !important; page-break-after: always; width: 100%; height: 100vh; } .nav { display: none; } }
+.logo { position: absolute; top: 32px; right: 36px; font-family: var(--head); font-weight: 800; font-size: 22px; letter-spacing: -0.04em; color: var(--navy); }
+.dark .logo, .cover .logo { color: var(--white); }
+.logo .x { color: var(--blue); }
+.slide-num { position: absolute; bottom: 32px; right: 36px; font-size: 12px; color: var(--muted); font-family: var(--body); font-weight: 600; letter-spacing: 0.1em; }
+.dark .slide-num, .cover .slide-num { color: var(--dim); }
+table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; }
+th { background: var(--sunken); text-align: left; padding: 14px 16px; font-family: var(--body); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--blue); }
+td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+td strong { color: var(--navy); font-weight: 700; }
+.dark th { background: var(--navy-2); color: var(--blue); }
+.dark td { color: var(--dim2); border-color: rgba(255,255,255,0.08); }
+.dark td strong { color: var(--white); }
+ul.checklist { list-style: none; margin-top: 12px; }
+ul.checklist li { position: relative; padding-left: 24px; margin-bottom: 9px; font-size: 16px; line-height: 1.5; }
+ul.checklist li::before { content: '\203A'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 20px; top: -3px; }
+.dark ul.checklist li { color: var(--dim2); }
+.dark ul.checklist li strong { color: var(--white); font-weight: 700; }
+.numbered { counter-reset: item; list-style: none; }
+.numbered li { counter-increment: item; position: relative; padding-left: 56px; margin-bottom: 18px; font-size: 16px; line-height: 1.55; }
+.numbered li::before { content: counter(item, decimal-leading-zero); position: absolute; left: 0; top: -2px; font-family: var(--head); font-weight: 800; font-size: 22px; color: var(--blue); letter-spacing: -0.02em; }
+.dark .numbered li { color: var(--dim2); }
+.dark .numbered li strong { color: var(--white); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 32px; }
+.stat { border-left: 3px solid var(--blue); padding-left: 16px; }
+.stat .num { font-family: var(--head); font-weight: 800; font-size: 42px; line-height: 1; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
+.dark .stat .num { color: var(--white); }
+.stat .lbl { font-size: 12px; color: var(--muted); line-height: 1.45; }
+.dark .stat .lbl { color: var(--dim); }
+.timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 56px; position: relative; }
+.timeline::before { content: ''; position: absolute; top: 8px; left: 5%; right: 5%; height: 2px; background: var(--blue); opacity: 0.3; }
+.timeline-item { text-align: center; position: relative; z-index: 1; padding: 0 6px; }
+.timeline-dot { width: 18px; height: 18px; background: var(--blue); border-radius: 50%; margin: 0 auto 18px; border: 4px solid var(--navy); box-shadow: 0 0 0 2px var(--blue); }
+.timeline-label { font-family: var(--head); font-weight: 700; font-size: 14px; color: var(--blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+.timeline-content { font-size: 13px; color: var(--dim2); line-height: 1.5; }
+.callout { background: var(--sunken); border-left: 4px solid var(--blue); padding: 20px 24px; margin-top: 28px; border-radius: 0 8px 8px 0; }
+.dark .callout { background: var(--navy-2); }
+.callout p { margin: 0; font-size: 15px; color: var(--text); font-style: italic; line-height: 1.55; }
+.dark .callout p { color: var(--dim2); }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- Slide 1: Cover -->
+  <section class="slide cover active">
+    <svg class="chevron-bg" viewBox="0 0 400 600" preserveAspectRatio="none"></svg>
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div style="position: relative; z-index: 2;">
+      <div class="eyebrow">Capital Strategy &middot; 2026-2028</div>
+      <h1>Three tracks.<br>One studio.</h1>
+      <p style="font-size: 22px; color: var(--dim); max-width: 760px; margin-top: 28px; line-height: 1.5;">
+        How 10XBeta funds the work, recycles equity into new ventures, and earns the right to a fund.
+      </p>
+      <p style="font-size: 12px; color: var(--blue); margin-top: 64px; letter-spacing: 0.16em; font-weight: 700; text-transform: uppercase;">
+        Frederick Kruger, COO &middot; June 2026
+      </p>
+    </div>
+    <div class="slide-num">01 / 15</div>
+  </section>
+
+  <!-- Slide 2: Executive Summary -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow muted">Executive Summary</div>
+    <h2>Three parallel tracks. Each on its own timeline.</h2>
+    <div class="cols-3" style="margin-top: 40px;">
+      <div class="track-card">
+        <div class="label">Track 1 &middot; Now</div>
+        <h3>Portfolio Capital</h3>
+        <p>Raise primary capital for portfolio companies. Sell mature studio positions. Build strategic relationships for exit optionality.</p>
+      </div>
+      <div class="track-card">
+        <div class="label">Track 2 &middot; 12 months</div>
+        <h3>10XBeta Priced Round</h3>
+        <p>Capitalize the studio itself for the next 24 to 36 months of operations, lab expansion, and follow-on portfolio capital.</p>
+      </div>
+      <div class="track-card">
+        <div class="label">Track 3 &middot; 24-36 months</div>
+        <h3>10XBeta Fund I</h3>
+        <p>Institutional fund to back portfolio companies at scale. Requires signal first: exit, major partnership, or anchor LP.</p>
+      </div>
+    </div>
+    <p style="margin-top: 44px; font-size: 17px; color: var(--muted); max-width: 920px;">
+      Tracks 1 and 2 run in parallel through 2026-2027. Track 3 activates once 1 and 2 produce signal.
+    </p>
+    <div class="slide-num">02 / 15</div>
+  </section>
+
+  <!-- Slide 3: Capital Architecture -->
+  <section class="slide dark">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">The Capital Architecture</div>
+    <h2>Three layers. Each unlocks the next.</h2>
+    <div class="layer-cake" style="margin-top: 36px;">
+      <div class="layer">
+        <div class="meta">Track 3 &middot; Future</div>
+        <h4>10XBeta Fund I</h4>
+        <p>Institutional fund. Backs portfolio companies at scale. Activates when Tracks 1 and 2 produce signal.</p>
+      </div>
+      <div class="layer">
+        <div class="meta">Track 2 &middot; Next</div>
+        <h4>10XBeta Priced Round</h4>
+        <p>Studio-level equity. Funds operations, lab expansion, talent, Platform OS, follow-on portco capital.</p>
+      </div>
+      <div class="layer">
+        <div class="meta">Track 1 &middot; Now</div>
+        <h4>Portfolio Capital</h4>
+        <p>Primary raises for portfolio companies. Secondaries on studio positions. Strategics engagement.</p>
+      </div>
+    </div>
+    <p style="font-size: 17px; color: var(--dim); margin-top: 24px; max-width: 920px;">
+      Each layer is independent in execution but interconnected in signal. Portfolio wins fund the studio's pitch. The studio raise validates the fund prospect. The fund accelerates portfolio output.
+    </p>
+    <div class="slide-num">03 / 15</div>
+  </section>
+
+  <!-- Slide 4: Track 1 Overview -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 1 &middot; Portfolio Capital</div>
+    <h2>Three sub-tracks running in parallel.</h2>
+    <div class="cols-3" style="margin-top: 40px;">
+      <div class="track-card">
+        <div class="label">1a</div>
+        <h3>Primary Raises</h3>
+        <p>Place portcos with VCs through boutique placement agents. Outcome Capital, Leerink, HC Wainwright lead.</p>
+      </div>
+      <div class="track-card">
+        <div class="label">1b</div>
+        <h3>Secondaries</h3>
+        <p>Sell the studio's mature equity positions through dedicated secondary buyers. Revelation Partners is priority target.</p>
+      </div>
+      <div class="track-card">
+        <div class="label">1c</div>
+        <h3>Strategics</h3>
+        <p>Build relationships with the big-eight medtech strategics. Innovation arms first. Option creation, not selling.</p>
+      </div>
+    </div>
+    <p style="margin-top: 44px; font-size: 17px; color: var(--muted); max-width: 920px;">
+      All three serve portfolio companies. Each has different firm types, different messaging, different cadence.
+    </p>
+    <div class="slide-num">04 / 15</div>
+  </section>
+
+  <!-- Slide 5: Track 1a Primary -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 1a &middot; Primary Raises</div>
+    <h2>Boutique placement agents as the channel.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div>
+        <h3>The play</h3>
+        <p style="margin-top: 10px; color: var(--text);">
+          Boutique investment banks and placement agents introduce portcos to qualified VCs and growth equity funds. Build the relationships before any portfolio company has a live raise.
+        </p>
+        <h3 style="margin-top: 28px;">Priority firms</h3>
+        <ul class="checklist">
+          <li><strong>Outcome Capital</strong> &middot; explicit medtech device coverage</li>
+          <li><strong>Leerink Partners</strong> &middot; major medtech specialist</li>
+          <li><strong>HC Wainwright</strong> &middot; healthcare capital markets</li>
+          <li><strong>Edgemont</strong> &middot; reclassified, exit advisor only</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Approach</h3>
+        <ul class="checklist">
+          <li>Targeted LinkedIn connections at VP / Director, Medical Devices</li>
+          <li>Warm intros where possible (board members, mutual investors)</li>
+          <li>Contact-form fallback with corrected positioning message</li>
+          <li>2 to 3 contacts per firm, sends staggered across 3-4 days</li>
+        </ul>
+        <h3 style="margin-top: 28px;">Goal in 12 months</h3>
+        <p style="margin-top: 10px; color: var(--text);">
+          2 to 3 active placement-agent relationships, at least one with a portfolio company mandate in process.
+        </p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 15</div>
+  </section>
+
+  <!-- Slide 6: Track 1b Secondaries -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 1b &middot; Secondaries</div>
+    <h2>Two lanes. Use both depending on the position.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div class="track-card">
+        <div class="label">Lane 1 &middot; Incubated Companies</div>
+        <h3>Standalone Secondaries</h3>
+        <p><strong>10XBeta majority equity.</strong> Large positions, deep unrealized gains, can absorb 10-20% discount in exchange for liquidity certainty and timing flexibility.</p>
+        <p style="margin-top: 12px;"><strong>Buyers:</strong> Revelation Partners (priority via Edgemont intro), Industry Ventures, NewView Capital.</p>
+      </div>
+      <div class="track-card">
+        <div class="label">Lane 2 &middot; Minority Positions</div>
+        <h3>Integrated Tender</h3>
+        <p><strong>Smaller stakes, later positions.</strong> Pricing tied to round valuation, no discount. Capped percentage of round (10-20%). Best at Series B+ with traction.</p>
+        <p style="margin-top: 12px;"><strong>Mechanism:</strong> Negotiate into primary round terms with lead investor approval.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p>The discount cost on Lane 1 is the price of timing certainty and recycling capital into new ventures. Lane 2 protects primary-investor relationships at younger stages.</p>
+    </div>
+    <div class="slide-num">06 / 15</div>
+  </section>
+
+  <!-- Slide 7: Track 1c Strategics -->
+  <section class="slide dark">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 1c &middot; Strategics</div>
+    <h2>Big-eight medtech. Innovation arms first.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div>
+        <h3>Target strategics</h3>
+        <ul class="checklist">
+          <li>Medtronic (Ventures + Hugo Innovation)</li>
+          <li>Johnson &amp; Johnson (JJDC + JLABS)</li>
+          <li>Boston Scientific (Investments + Connected)</li>
+          <li>Stryker (Investments + Connected)</li>
+          <li>Abbott (Strategic Investments)</li>
+          <li>BD / Becton Dickinson</li>
+          <li>Edwards Lifesciences</li>
+          <li>Baxter International</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Engagement order</h3>
+        <ol class="numbered">
+          <li><strong>Innovation arms</strong><br/><span style="font-size: 14px;">JLABS, Stryker Connected, Medtronic Hugo. Lower bar. No "are you selling" signal.</span></li>
+          <li><strong>Direct outreach</strong><br/><span style="font-size: 14px;">Frederick to corporate dev and strategic ventures at the right strategics.</span></li>
+          <li><strong>Through a banker</strong><br/><span style="font-size: 14px;">Non-deal roadshow via Outcome Capital once that relationship exists.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout">
+      <p>The pitch is not the individual POC. The pitch is the studio capability and the Platform OS workflow. Most common outcome of strategic engagement: partnerships, licensing, OEM, strategic-funded de-risking. Acquisitions are the exception, not the rule.</p>
+    </div>
+    <div class="slide-num">07 / 15</div>
+  </section>
+
+  <!-- Slide 8: Track 2 Overview -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 2 &middot; 10XBeta Priced Round</div>
+    <h2>Capitalize the studio itself.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div>
+        <h3>What it funds</h3>
+        <ul class="checklist">
+          <li>24 to 36 months of studio operations</li>
+          <li>Brooklyn Navy Yard lab expansion</li>
+          <li>Hires across hardware, software, regulatory, AI</li>
+          <li>Platform OS continued development</li>
+          <li>Follow-on capital for portcos at studio's pro-rata</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The pitch differentiator</h3>
+        <p style="margin-top: 10px;">
+          Not "we build medtech." Most studios say that.
+        </p>
+        <p style="margin-top: 8px;">
+          <strong>10XBeta has a productized R&amp;D engine.</strong> Opportunity Engine identifies gaps. Lab tools build POCs in weeks. IP module files claims. The system runs 3 to 5 times per year.
+        </p>
+        <p style="margin-top: 8px;">
+          16 years. 150+ products. The studio is the asset.
+        </p>
+      </div>
+    </div>
+    <div class="stats" style="margin-top: 36px;">
+      <div class="stat">
+        <div class="num">16 yrs</div>
+        <div class="lbl">Operating history</div>
+      </div>
+      <div class="stat">
+        <div class="num">150+</div>
+        <div class="lbl">Products developed</div>
+      </div>
+      <div class="stat">
+        <div class="num">$40M+</div>
+        <div class="lbl">Raised by portfolio companies</div>
+      </div>
+      <div class="stat">
+        <div class="num">30 days</div>
+        <div class="lbl">Concept to FDA EUA (Spiro Wave)</div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 15</div>
+  </section>
+
+  <!-- Slide 9: Track 2 Target Investors -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 2 &middot; Target Investors</div>
+    <h2>Who backs venture studios.</h2>
+    <div class="cols-3" style="margin-top: 28px;">
+      <div>
+        <h3 style="font-size: 20px;">Studio-focused capital</h3>
+        <ul class="checklist" style="margin-top: 12px;">
+          <li>Atomic</li>
+          <li>Bolt VC</li>
+          <li>Day One Ventures</li>
+          <li>Hangar Ventures</li>
+          <li>Founders X Studio</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 14px; line-height: 1.5;">
+          Funds that specifically invest in studios. Smaller pool but ideal lead-investor fit.
+        </p>
+      </div>
+      <div>
+        <h3 style="font-size: 20px;">Strategic CVCs</h3>
+        <ul class="checklist" style="margin-top: 12px;">
+          <li>J&amp;J Innovation (JJDC)</li>
+          <li>Medtronic Ventures</li>
+          <li>BD Strategic Investments</li>
+          <li>Boston Scientific Strategic Investments</li>
+          <li>Stryker Strategic Investments</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 14px; line-height: 1.5;">
+          Will take non-controlling stakes in studios for first-look access to pipeline.
+        </p>
+      </div>
+      <div>
+        <h3 style="font-size: 20px;">Family offices &amp; angels</h3>
+        <ul class="checklist" style="margin-top: 12px;">
+          <li>Medtech founders</li>
+          <li>Ex-strategic execs</li>
+          <li>Healthcare-focused family offices</li>
+          <li>Mission-aligned LPs</li>
+          <li>Defense / resilience aligned capital</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 14px; line-height: 1.5;">
+          Higher conviction, smaller checks, faster decisions. Fills out the round.
+        </p>
+      </div>
+    </div>
+    <div class="callout">
+      <p>Lead investor most likely comes from studio-focused capital. Strategic CVCs and angels fill out the round. Anchor commitments from a CVC double as Track 3 signal.</p>
+    </div>
+    <div class="slide-num">09 / 15</div>
+  </section>
+
+  <!-- Slide 10: Track 3 Future Fund -->
+  <section class="slide dark">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 3 &middot; 10XBeta Fund I</div>
+    <h2>The fund earns the right to exist.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div>
+        <h3>Why a fund eventually</h3>
+        <p style="color: var(--dim2);">
+          At scale, the studio needs more capital than its balance sheet can deploy across portcos. A fund unlocks institutional LP capital that follows portcos through Series B, C, and beyond.
+        </p>
+        <h3 style="margin-top: 28px;">Why not now</h3>
+        <p style="color: var(--dim2);">
+          Institutional LPs require signal: DPI, named exits, or a recognized anchor commitment. Raising too early forces a punishing cost of capital and stalls operating momentum.
+        </p>
+      </div>
+      <div>
+        <h3>Target LP types when activated</h3>
+        <ul class="checklist">
+          <li>University endowments</li>
+          <li>Healthcare-focused fund-of-funds</li>
+          <li>Foundations (mission alignment)</li>
+          <li>Sovereign wealth in select cases</li>
+          <li>Strategic LP commitments from CVCs</li>
+          <li>Large family offices (anchor checks)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">10 / 15</div>
+  </section>
+
+  <!-- Slide 11: Track 3 Signal -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Track 3 &middot; Signal Requirements</div>
+    <h2>What "signal" looks like.</h2>
+    <p class="lede" style="max-width: 920px;">
+      Any one of these unlocks fund conversations. Two or three together makes it easy.
+    </p>
+    <table style="margin-top: 18px;">
+      <thead>
+        <tr>
+          <th style="width: 24%;">Signal Type</th>
+          <th style="width: 36%;">What Counts</th>
+          <th style="width: 40%;">Most Likely Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Realized exit</strong></td>
+          <td>Acquisition or major licensing deal with cash to studio</td>
+          <td>Cryo Medica, Validose, or Spiro Wave transaction</td>
+        </tr>
+        <tr>
+          <td><strong>Strategic partnership</strong></td>
+          <td>$10M+ commercial deal with a big-eight medtech</td>
+          <td>Outcome of Track 1c strategics engagement</td>
+        </tr>
+        <tr>
+          <td><strong>Anchor LP commitment</strong></td>
+          <td>Named institutional or strategic LP committing 20-30% of Fund I</td>
+          <td>Strategic CVC from Track 2 priced round</td>
+        </tr>
+        <tr>
+          <td><strong>Quantitative track record</strong></td>
+          <td>DPI greater than 1.0 from portfolio realizations</td>
+          <td>3+ secondary or M&amp;A exits combined</td>
+        </tr>
+        <tr>
+          <td><strong>Institutional validation</strong></td>
+          <td>Major federal contract, designation, or platform partnership</td>
+          <td>ARPA-H, DoD scaling on RedZone or PARADIGM</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="slide-num">11 / 15</div>
+  </section>
+
+  <!-- Slide 12: Timeline -->
+  <section class="slide dark">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Sequencing</div>
+    <h2>18-month execution timeline.</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Q3 2026</div>
+        <div class="timeline-content">Track 1 active. Placement agents, Revelation intro via Edgemont, innovation-arm applications.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Q4 2026</div>
+        <div class="timeline-content">Advisory board build with ex-strategic execs. Track 2 materials drafted. JPM 2027 meetings booked.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Q1 2027</div>
+        <div class="timeline-content">JPM Healthcare Conference. 15-20 strategic meetings. Track 2 soft circulation begins.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Q2-Q3 2027</div>
+        <div class="timeline-content">10XBeta priced round formal launch and close. Track 3 LP scouting begins.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">2028</div>
+        <div class="timeline-content">Signal accumulated. Fund I formal launch with anchor LP.</div>
+      </div>
+    </div>
+    <p style="margin-top: 80px; font-size: 16px; color: var(--dim); font-style: italic; max-width: 920px;">
+      Aggressive but achievable if Track 1 produces at least one realized exit or major strategic partnership during 2026-2027.
+    </p>
+    <div class="slide-num">12 / 15</div>
+  </section>
+
+  <!-- Slide 13: Risks -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Risks &amp; Tradeoffs</div>
+    <h2>The things that could break this.</h2>
+    <div class="cols-2" style="margin-top: 28px;">
+      <div>
+        <h3>Strategic risks</h3>
+        <ul class="checklist">
+          <li><strong>Premature shopping signal.</strong> Talking to strategics too early can hurt primary fundraising for portcos.</li>
+          <li><strong>Studio raise dilution.</strong> Priced round dilutes founders' studio equity. Term-sheet quality matters more than headline valuation.</li>
+          <li><strong>Fund timing miss.</strong> Raising Fund I before signal forces high cost of capital and stalled operating momentum.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Execution risks</h3>
+        <ul class="checklist">
+          <li><strong>Verification debt.</strong> Some firms in the target list may not have current medtech device coverage. Verify before burning the relationship.</li>
+          <li><strong>Capacity dilution.</strong> Three workstreams require disciplined sequencing or none get done well.</li>
+          <li><strong>Domain credibility gap.</strong> Studio needs ex-Medtronic, ex-J&amp;J, ex-Stryker advisors to translate the pitch to corporate dev.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <p>Mitigation: confidence framing in every conversation, advisory board build in Q4 2026, signal-first discipline on Fund I.</p>
+    </div>
+    <div class="slide-num">13 / 15</div>
+  </section>
+
+  <!-- Slide 14: Next Actions -->
+  <section class="slide dark">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">Next Actions</div>
+    <h2>First 90 days.</h2>
+    <ol class="numbered" style="max-width: 1000px; margin-top: 24px;">
+      <li>
+        <strong>Edgemont to Revelation warm intro.</strong>
+        Single highest-leverage action. Boutique IB referral to a dedicated secondary buyer carries significant weight.
+      </li>
+      <li>
+        <strong>Advisory board build.</strong>
+        Identify and recruit 2 to 3 ex-strategic execs from Medtronic, J&amp;J, Stryker, or Boston Scientific. Domain credibility gap closes here.
+      </li>
+      <li>
+        <strong>JPM 2027 prep.</strong>
+        Start identifying target meetings now. Book in October 2026. The single highest-leverage annual scouting venue.
+      </li>
+      <li>
+        <strong>Quarterly portfolio update.</strong>
+        Launch one-page format distributed to strategic ventures and corp dev at the big-eight. Compounds visibility.
+      </li>
+      <li>
+        <strong>Outcome Capital deepening.</strong>
+        Move from cold target to active relationship. The spine of Track 1a and a credible channel into Track 2 lead investors.
+      </li>
+      <li>
+        <strong>Track 2 materials draft.</strong>
+        Studio pitch deck, use of funds, investor list. Soft circulation begins Q4 2026, formal launch Q1 2027.
+      </li>
+    </ol>
+    <div class="slide-num">14 / 15</div>
+  </section>
+
+  <!-- Slide 15: Closing -->
+  <section class="slide cover">
+    <svg class="chevron-bg" viewBox="0 0 400 600" preserveAspectRatio="none"></svg>
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div style="position: relative; z-index: 2; max-width: 960px;">
+      <div class="eyebrow">The Thesis</div>
+      <h1 style="font-size: 64px;">Each track funds the next.</h1>
+      <p style="font-size: 22px; color: var(--dim); margin-top: 28px; line-height: 1.55;">
+        Portfolio wins fund the studio's pitch. The studio raise validates the fund prospect. The fund accelerates portfolio output. We earn the right to each layer through the one below it.
+      </p>
+      <p style="font-size: 12px; color: var(--blue); margin-top: 64px; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase;">
+        Sixteen years &middot; 150+ products &middot; Three tracks &middot; One studio
+      </p>
+    </div>
+    <div class="slide-num">15 / 15</div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="Previous slide">&lsaquo;</button>
+  <span class="counter"><span id="current">1</span> / <span id="total">15</span></span>
+  <button id="next" aria-label="Next slide">&rsaquo;</button>
+  <span class="hint">&larr; &rarr; to navigate &middot; F for fullscreen &middot; Cmd-P to print</span>
+</div>
+
+<script>
+function drawChev(svg) {
+  let html = '';
+  for (let y = 20; y < 600; y += 30) {
+    for (let x = 20; x < 400; x += 22) {
+      html += '<path d="M' + x + ' ' + y + ' l7 7 l-7 7" stroke="#0387D1" stroke-width="1.5" fill="none"/>';
+    }
+  }
+  svg.innerHTML = html;
+}
+document.querySelectorAll('.chevron-bg').forEach(drawChev);
+
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+document.getElementById('total').textContent = slides.length;
+
+function goTo(i) {
+  if (i < 0 || i >= slides.length) return;
+  slides[current].classList.remove('active');
+  current = i;
+  slides[current].classList.add('active');
+  document.getElementById('current').textContent = current + 1;
+  slides[current].scrollTop = 0;
+}
+
+document.getElementById('prev').addEventListener('click', function() { goTo(current - 1); });
+document.getElementById('next').addEventListener('click', function() { goTo(current + 1); });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goTo(current + 1); }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goTo(current - 1); }
+  if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+  if (e.key === 'End') { e.preventDefault(); goTo(slides.length - 1); }
+  if (e.key === 'f' || e.key === 'F') {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen();
+  }
+});
+</script>
+
+</body>
+</html>
