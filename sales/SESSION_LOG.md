@@ -10,6 +10,9 @@
 > - Default opener from Frederick: `"sales session"` or similar. Treat as cue to read this file top-to-bottom, with extra attention to the most recent session's "Open items" list.
 > - **Tools needed:** GitHub MCP for repo edits. Web search is highly valuable for this workstream (firm verification, deal tracking, named-contact research) — open the session in a Claude.ai surface with web search enabled when possible.
 > - **Operational independence:** Frederick handles all internal communication on his own schedule. Do not insert "consult with [colleague]" or "discuss with [colleague]" as a recommended next step in any session output. Surface frameworks and decisions; Frederick owns who he talks to and when.
+> - **Companion artifacts:**
+>   - `sales/capital-strategy.html` — 17-slide brand-aligned strategy presentation (Tracks 1-3)
+>   - `sales/portco-capital-playbook.md` — stage-by-stage operational playbook for portfolio company capital
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -22,7 +25,9 @@ This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for 
 
 ### Context
 
-Frederick is initiating outbound to boutique investment banks, placement agents, and healthcare/medtech transaction advisors. The goal is to establish relationships with firms that will work with 10XBeta portfolio companies as they progress through capital raises, strategic partnerships, and eventual exits. 10XBeta launches multiple portfolio companies each year, so the play is to build relationships **now** with firms expected to be active partners over the next 2 to 5 years, before any specific transaction is live.
+Frederick is initiating outbound to boutique investment banks, placement agents, and healthcare/medtech transaction advisors. The goal is to establish relationships with firms that will work with 10XBeta portfolio companies as they progress through capital raises, strategic partnerships, and eventual exits. Building relationships now with firms expected to be active partners over the next 2 to 5 years, before any specific transaction is live.
+
+**Session 005 correction:** placement agents are appropriate for Series A and beyond, not pre-seed / seed. See Session 005 and `portco-capital-playbook.md` for the stage-by-stage strategy.
 
 ### Original target list (provided by Frederick)
 
@@ -35,552 +40,205 @@ Frederick is initiating outbound to boutique investment banks, placement agents,
 
 ### Expansion list produced (~20 additional firms)
 
-**Healthcare and medtech transaction boutiques (closest match to original list):**
-- TripleTree (tripletree.com)
-- Provident Healthcare Partners (providenthp.com)
-- Bourne Partners (bournepartners.com)
-- Edgemont Capital Partners (edgemont.com) — *reclassified Session 002, see below*
-- Cassel Salpeter & Co (cassel-salpeter.com)
-- Coker Capital Advisors (cokercapital.com)
-- HT Capital Advisors (htcapital.com)
-- TM Capital (tmcapital.com)
-- Cain Brothers (cainbrothers.com, now part of KeyBanc Capital Markets)
-- Solomon Partners (solomonpartners.com)
-
-**Boutique placement agents (private capital):**
-- Eaton Partners (eaton-partners.com, part of Stifel)
-- Park Hill Group (parkhillgroup.com, Blackstone-affiliated)
-- Asante Capital Group (asantecapital.com)
-- Atlantic-Pacific Capital (apcap.com)
-- Capstone Partners (capstonepartners.com)
-
-**Venture-aligned strategic advisors:**
-- Health Advances (healthadvances.com)
-- DeciBio Consulting (decibio.com)
-- Back Bay Life Science Advisors (bblsciences.com) — **note: possibly same firm as BBL Sciences on original list, verify**
-
-**Optional upmarket tier (larger but strong healthcare specialists):**
-- Leerink Partners (leerink.com)
-- LifeSci Capital (lifescicapital.com)
-- HC Wainwright & Co (hcwco.com)
-
-### Best-guess medtech hardware fit (from training data, REQUIRES verification)
-
-Note: this session was conducted with GitHub MCP only, no live web access. All assessments below are from Claude's training knowledge with a cutoff and must be verified before outreach.
-
-**High confidence — strong fit for medtech hardware:**
-- Outcome Capital
-- Leerink Partners
-- HC Wainwright
-- Edgemont Capital Partners — *Session 002 update: confirmed to be 80% M&A, see Session 002*
-
-**Likely weak fit for hardware specifically (healthcare-adjacent but biotech/services/pharma lean):**
-- Locust Walk (biotech licensing focus)
-- TripleTree (healthcare services / IT focus)
-- Provident Healthcare Partners (services focus)
-- Bourne Partners (pharma services)
-- Cain Brothers (services lean)
-- LifeSci Capital (biotech capital markets)
-- Castle Placement (generalist)
-- Most generalist placement agents (Eaton, Park Hill, Asante, Atlantic-Pacific, Capstone)
-
-**Unknown — not enough training data:**
-- Ceros Capital Markets
-- BBL Sciences
-- NewHarbor VP
-- Cassel Salpeter, Coker Capital, HT Capital, TM Capital, Solomon Partners (all generalist healthcare)
-- Health Advances, DeciBio, Back Bay (these lean strategy consulting more than placement)
+Full list retained in earlier version of this session log. Key priority firms for **Series A+ portco raises** are Outcome Capital, Leerink Partners, HC Wainwright. Edgemont reclassified to M&A / exit advisor (Session 002).
 
 ### Verification checklist (run on every firm before contacting)
 
 For each firm, check four things on their website. Firm needs to clear at least 2 of 4 to be worth time. 3 or 4 = priority.
 
-1. **Recent transactions / deals / tombstones page.** Look for medical device companies in the last 24 months. None = weak fit, 3+ = strong fit.
-2. **Sectors / focus / practices page.** Does it explicitly list medical devices, medtech, or diagnostics as a vertical? Generic "healthcare" or "life sciences" with no device callout usually means biotech focus.
-3. **Team page.** Scan senior bankers' backgrounds. Look for prior roles at Medtronic, J&J, BD, Boston Scientific, Stryker, Abbott, or notable medtech VCs (HealthQuest, Lux Health, .406 Ventures, F-Prime, Sofinnova medtech). 2+ bankers with that background = real device coverage.
-4. **News / press / blog.** Filter for "device", "hardware", "medtech". Thought leadership on regulated hardware = they care about the space.
-
-### The deeper question to ask each firm
-
-When the conversation happens: *"Of your last five medical device transactions, who were the lead investors?"* If their answer includes strategic CVCs (Medtronic Ventures, J&J Innovation, Boston Scientific Strategic Investments, Stryker, Abbott, BD) or medtech-focused VCs (HealthQuest, Polaris Healthcare, F-Prime, Versant, Sofinnova), real fit. If they can't name five, that itself is the answer.
+1. **Recent transactions / deals / tombstones page.** Medical device companies in the last 24 months. 3+ = strong fit.
+2. **Sectors / focus / practices page.** Explicit medical devices, medtech, or diagnostics listing.
+3. **Team page.** Senior bankers with prior roles at Medtronic, J&J, BD, Boston Scientific, Stryker, Abbott, or notable medtech VCs.
+4. **News / press / blog.** Thought leadership on regulated hardware.
 
 ### Outreach materials produced this session
 
-**Contact-form messages** (replaces the earlier "banking relationship" framing, which was Claude's incorrect first read):
+*Note: these are stage-appropriate only for Series A+ portcos. For pre-seed and seed portcos, see `portco-capital-playbook.md` for the correct channels.*
 
-*Short (~500 chars, for tight forms):*
-> Hi, Frederick Kruger here, COO of 10XBeta. We're a vertically integrated medtech venture studio in the Brooklyn Navy Yard. 16 years, 150+ products shipped in regulated environments. We launch multiple new portfolio companies each year that move through capital raises, strategic partnerships, and eventual exits. I'd like to introduce 10XBeta and explore whether your firm and our pipeline are a fit. frederick.kruger@10xbeta.com / +1 917 573 6502.
+**Contact-form messages (~500 char and ~1100 char versions), LinkedIn connection requests (Direct / Curious / Specific variants)** — retained in earlier version. Use for placement-agent firms (Series A+ context). Pre-seed / seed channels need different outreach materials (open item).
 
-*Standard (~1100 chars, for typical forms):*
-> Hi,
->
-> I'm Frederick Kruger, COO of 10XBeta, a vertically integrated medtech venture studio in the Brooklyn Navy Yard. For 16 years we've built and shipped products in regulated environments (medtech, defense, resilience hardware), 150+ to date. We launch multiple new portfolio companies each year that move from seed through institutional rounds, partnerships, and eventual exits.
->
-> I'm reaching out to introduce 10XBeta and explore whether your firm could be a strategic transaction partner for the companies we launch. Our portfolio typically needs capital placement, introductions to corporate partners, and eventually M&A or licensing advisory. We're building relationships now with the firms we expect to work with over the next several years.
->
-> A 15 to 20 minute introductory call would be the easiest way to find out if there's a fit on both sides.
->
-> Frederick Kruger
-> COO, 10XBeta
-> frederick.kruger@10xbeta.com
-> +1 917 573 6502
-> 63 Flushing Ave, Bldg 303, Ste 807, Brooklyn NY 11205
-> www.10xbeta.com
+### Open items from Session 001 still active
 
-**LinkedIn connection requests (300 char hard cap):**
-
-*Direct:*
-> Hi [first name], I'm COO of 10XBeta, a medtech venture studio in Brooklyn. We launch hardware companies that will need transaction advisors over the next few years. Would like to connect and find a moment to introduce what we're building.
-
-*Curious (lower pressure):*
-> Hi [first name], saw your work at [Firm]. I'm COO of 10XBeta, a medtech venture studio in Brooklyn building hardware companies. Would like to connect and learn more about how your team works with early-stage device companies.
-
-*Specific (when you can name a deal of theirs):*
-> Hi [first name], saw [Firm]'s work on the [Company] deal. I run ops at 10XBeta, a medtech venture studio in Brooklyn launching hardware companies. Worth connecting, I think there's overlap.
-
-**Follow-up DM (after LinkedIn accept) — NOT YET DRAFTED.** Open item for next session.
-
-### LinkedIn targeting guidance
-
-**Best targets (Tier A — respond, have authority, motivated to build network):**
-- Vice President, Medical Devices
-- Vice President, Healthcare (if no device-specific role exists)
-- Director, Medtech
-- Principal, Medical Devices
-
-**Also target (business development / origination titles):**
-- Director of Business Development
-- Head of Origination
-- VP, Business Development
-- Head of Sourcing or Head of Coverage
-
-**At small boutiques (under 50 people)** — go senior. Partner / Managing Director / Founder. Hands-on, no gatekeeping. Likely applies to: Outcome Capital, Castle Placement, NewHarbor VP, Ceros, BBL.
-
-**At mid-size to large firms** — stick with VP / Director. Applies to: Leerink, HC Wainwright, TripleTree, Cain Brothers, Solomon Partners, Provident, and similar.
-
-**Skip:**
-- Analysts and Associates (no authority, won't carry message)
-- Founders / CEOs / senior MDs at large firms (gatekept, focused on live deals)
-
-### LinkedIn search syntax
-
-In LinkedIn's people search:
-1. Company filter = [firm name]
-2. Title filter = Vice President OR Director OR Principal
-3. Keyword box = "medical device" OR "medtech" OR "device"
-4. Location = US (or filter further by your preference)
-
-Verify each candidate by clicking into their profile and confirming actual device deals (device company logos or deal mentions in their experience section). Many "Healthcare VPs" only cover pharma services or HCIT.
-
-### Cadence rules
-
-- **2 to 3 connection requests per firm**, not 10. Send to multiple seniority levels for redundancy.
-- **Stagger sends across 3 to 4 days** so the firm doesn't see 5 connections from the same person at once.
-- If 3 people don't respond within 2 weeks, the firm probably isn't a fit. Move on.
-- **Best send timing:** 8 to 10am their timezone, Tuesday through Thursday. Avoid Mondays (overflow) and Fridays (checked out).
-
-### Open items for next session (priority order)
-
-1. **Run verification checklist** on all 26 firms (6 original + 20 expansion). Mark each Verified / Skip / Maybe in a tracking doc. **This is the critical filter before any outreach.** Best done in a Claude.ai surface with web search enabled, or manually via the 4-question checklist.
-2. **Build a tracking sheet** (markdown table at `sales/firm-tracker.md` or actual spreadsheet) with columns: `Firm | URL | Verified | LinkedIn contacts identified | Connection sent date | Response | Form submitted date | Notes`. Claude can stub this template when asked.
-3. **Identify 2-3 named contacts per verified firm** via LinkedIn search using the syntax above. Filter by title and device experience.
-4. **Send LinkedIn connection requests in batches of 5-10 per day**, not all at once. Track sends in the tracking sheet.
-5. **Submit contact-form messages** to firms that don't yield LinkedIn hits, or as second touchpoint after LinkedIn.
-6. **Draft follow-up DM** for after LinkedIn connection acceptance. Frederick asked for this; not yet produced.
-7. **Identify specific named deals** for the "Specific" LinkedIn variant. Substantially improves response rates. Best sources: firm tombstones pages, press releases, PitchBook / Crunchbase (subscription required).
-
-### Decisions and constraints locked this session
-
-- **Outreach framing corrected** from "banking relationship" (Claude's first wrong read) to "strategic transaction partner for portfolio companies." Do not revert to the bank framing in future sessions.
-- **Targets are placement agents and boutique investment banks**, not commercial banks. Different ask, different language.
-- **Volume is small and targeted**, not mass blast. 2-3 contacts per firm, ~25-30 firms total = max ~75-90 connections. This is a relationship-building campaign, not lead-gen.
-- **Verification before outreach.** Don't burn capital on firms that don't actually do medtech hardware.
-- **No live web access** in this session. Frederick should run verification in a tool-enabled session next time. Some training data may be stale (Cain Brothers acquired by KeyBanc, Eaton Partners acquired by Stifel, Petsky Prunier acquired by Canaccord, etc.).
-- **BBL Sciences (Frederick's original) and Back Bay Life Science Advisors (Claude's expansion) may be the same firm.** Verify before contacting both.
-
-### Frederick's preferences observed this session
-
-- Wants brief, conversational outreach, not pitches.
-- Targets at decision-authority level, not analysts.
-- Prefers small targeted volume per firm over mass outreach.
-- Wants actionable output, not long analysis.
-- Single-word approvals ("go", "done"). Expects Claude to sequence next logical step without being asked.
-
-### Suggested opener for next session
-
-```
-sales session. Read sales/SESSION_LOG.md in krugerfz/10xbeta-site and tell me
-where we left off.
-```
-
-If picking up in a Claude.ai surface with web search, the natural first task is the verification pass on all 26 firms. That output goes into the firm tracker (item 2 in Open items).
+1. Run verification checklist on all 26 placement-agent firms.
+2. Build `sales/firm-tracker.md` with stage tags (pre-seed/seed targets vs Series A+ targets).
+3. Identify 2-3 named contacts per verified firm via LinkedIn search.
+4. Send LinkedIn connection requests in staggered batches.
+5. Draft follow-up DM template (after LinkedIn acceptance).
+6. Identify specific named deals for the "Specific" LinkedIn variant.
 
 ---
 
 ## Session 002 — 2026-06-02 — Edgemont call feedback + secondaries pivot
 
-**Status:** intelligence update from first real conversation; strategic question raised for resolution next session
+**Status:** intelligence update from first real conversation
 **Owner:** Frederick Kruger (COO)
 
-### What happened
+### Summary
 
-Frederick spoke with **Edgemont Capital Partners** (the first real conversation from the placement-agent target list). Two pieces of intel emerged that materially change the working model:
+Frederick spoke with Edgemont Capital Partners. Two pieces of intel:
 
-1. **Edgemont is ~80% M&A advisory** (sell-side). They are an **exit advisor**, not a placement agent. This reclassifies them in our firm map.
-2. **Edgemont recommended Revelation Partners** (revelation-partners.com) specifically for **secondaries**. This opens a firm category that was not on the original radar: dedicated secondary buyers who purchase positions from existing shareholders.
+1. **Edgemont is ~80% M&A advisory** (sell-side). They are an exit advisor, not a placement agent. Reclassified.
+2. **Edgemont recommended Revelation Partners** (revelation-partners.com) for secondaries. Opens a new firm category: dedicated secondary buyers.
 
 ### Edgemont reclassification
 
-Move Edgemont from "Healthcare and medtech transaction boutiques" (where Session 001 placed it) to a new **"M&A / exit advisors"** category. They remain a valuable long-term relationship since 10XBeta portfolio companies will eventually exit, but they're not the firm for early-stage capital raises. **Adjust outreach framing for Edgemont** specifically to exit-focused (no longer capital placement / strategic partnership). Keep the warm relationship; loop back when a portfolio company approaches exit readiness.
+Moved from "Healthcare and medtech transaction boutiques" to "M&A / exit advisors." Still a valuable long-term relationship for portco exits. Adjust framing for any future Edgemont outreach to be exit-focused.
 
-### New target: Revelation Partners
+### Revelation Partners and the broader secondary buyer market
 
-- URL: https://revelation-partners.com
-- Recommendation source: Edgemont Capital Partners (warm intro available — ask explicitly when reaching out)
-- Specialty: healthcare-focused secondaries
-- **Verification needed:** confirm they cover medtech device positions specifically, not just biotech/services secondaries
+- **Revelation Partners** — Edgemont's recommendation, top priority (warm intro available)
+- **NewView Capital, Industry Ventures, Saints Capital** — healthcare-exposed secondary buyers
+- **Lexington Partners, Coller Capital, HarbourVest, AlpInvest, Pomona Capital** — generalist large secondaries (hold unless workstream scales)
 
-### New firm category: Secondaries
+### Strategic question raised (resolved in Session 003)
 
-These are dedicated secondary buyers who purchase equity positions from existing shareholders, separate from primary capital rounds. Relevant for 10XBeta because the studio holds equity in portfolio companies and needs liquidity to recycle capital into new ventures without waiting 7-10 years for full exits.
+Path A (integrate secondaries into primary rounds) vs. Path B (standalone secondaries). Resolved Session 003 into two-lane model.
 
-**Healthcare and biotech-focused:**
-- **Revelation Partners** (revelation-partners.com) — Edgemont's recommendation, top priority
-- **NewView Capital** (newviewcap.com) — growth-stage secondaries, healthcare exposure
-- **Industry Ventures** (industryventures.com) — major secondary buyer, broad sector including healthcare
-- **Saints Capital** (saintsvc.com) — direct secondary buyer, growth-stage
+### Open items from Session 002 still active
 
-**Generalist large secondaries (do healthcare among other sectors):**
-- Lexington Partners (lexingtonpartners.com) — largest secondary firm globally
-- Coller Capital (collercapital.com)
-- HarbourVest Partners (harbourvest.com)
-- AlpInvest (alpinvest.com, Carlyle subsidiary)
-- Pomona Capital (pomonacapital.com) — secondary fund of funds
-
-**Recommended outreach order**: lead with Revelation Partners (Edgemont intro). Add Industry Ventures and NewView Capital as parallel outreach. Hold the large generalists unless secondaries become a major workstream.
-
-### Strategic question raised — secondaries vs. primary rounds
-
-The structural issue Frederick is wrestling with: **primary-round investors typically resist seeing their capital leave the company to buy out existing shareholders**. They want their capital to grow the company. This creates tension with 10XBeta's recycle-capital play. Two paths to resolve:
-
-**Path A — Make secondaries acceptable inside the primary round (integrated):**
-- Studio's sale becomes a known, capped, board-approved part of the round
-- Typically 10-20% of round goes to secondary, rest is primary
-- Pricing aligned with round valuation (no discount)
-- Pro: clean, transparent, no separate buyer needed
-- Con: hard at Series A, primary investors push back; works better at Series B+ with traction; requires lead investor buy-in and founder alignment
-
-**Path B — Standalone secondaries (outside the primary round):**
-- Sell positions to dedicated secondary buyers (Revelation et al.) between rounds
-- No interference with primary cap raise timeline
-- Usually priced at 5-20% discount to most recent primary round
-- Needs ROFR waiver from company / board approval
-- Pro: timing flexibility, no investor friction
-- Con: pricing discount; signaling risk if mistimed (looks like studio is bailing)
-
-### Working hypothesis — UPDATED Session 003
-
-Initial Session 002 hypothesis was hybrid. Session 003 refined this with Frederick's equity-concentration insight into a **two-lane model**. See Session 003 below.
-
-### Tailored outreach message needed for secondary buyers
-
-The Session 001 placement-agent message doesn't fit secondary buyers. Secondary buyers want to hear about:
-- Portfolio composition (number of companies, sectors, stages)
-- Holding periods (how long studio has held positions)
-- Willingness to discount and approximate target discount range
-- Expected deal sizes per position
-
-**Open item:** draft secondary-buyer-specific contact-form message and LinkedIn variant. Use the Revelation outreach as the test case.
-
-### Open items for next session (priority order)
-
-1. **Resolve the strategic question.** Lock in 10XBeta's standard play on secondaries (Path A, B, or hybrid). Update the working model accordingly.
-2. **Request warm intro from Edgemont to Revelation Partners.** This is the highest-value next action. Boutique IB → secondary buyer referrals carry significant weight.
-3. **Draft secondary-buyer outreach message** (contact form + LinkedIn variant). The Session 001 placement-agent message doesn't apply directly.
-4. **Update the firm map** (in `sales/firm-tracker.md` once it exists, or as a standalone doc):
-   - Move Edgemont to new "M&A / exit advisors" category
-   - Add "Secondaries" as new category with Revelation, Industry Ventures, NewView Capital, Saints Capital as primary targets
-   - Re-prioritize the overall outreach sequence with secondaries as a parallel workstream
-5. **Verify Revelation's medtech device coverage** (not just biotech). Check tombstones / portfolio for medical device companies specifically.
-6. **Carry forward all Session 001 open items** that remain incomplete: verification pass on all firms, build firm tracker, identify named contacts, send LinkedIn connections, submit forms, draft follow-up DM, identify named deals for "Specific" LinkedIn variant.
-
-### Decisions and constraints locked this session
-
-- **Edgemont is an M&A / exit advisor, not a placement agent.** Long-term relationship valuable but different use case. Do not include them in future capital-placement outreach.
-- **Secondaries are a parallel workstream** to placement-agent outreach, not a replacement. Both need to happen.
-- **Real conversation feedback overrides Claude's training-data assessments every time.** Treat each call as an update to the firm map. Update the log when intel comes in.
-- **Edgemont referral to Revelation is the highest-value next action.** Use the warm intro.
-
-### Frederick's preferences re-confirmed this session
-
-- Strategic ambiguity is fine to surface without immediate resolution — give frameworks; Frederick decides.
-- Real conversation intel beats training-data assessment. Update the log promptly.
-- Multiple parallel workstreams are okay if the categories are kept distinct in the log.
+1. Request warm intro from Edgemont to Revelation Partners. Highest-value next action.
+2. Draft secondary-buyer-specific outreach message (different from placement-agent message).
+3. Verify Revelation's medtech device coverage specifically.
 
 ---
 
-## Session 003 — 2026-06-06 — Equity-concentration insight + strategics engagement play
+## Session 003 — 2026-06-06 — Equity-concentration insight + strategics engagement
 
-**Status:** strategic frameworks expanded, awaiting portfolio readiness review
+**Status:** strategic frameworks expanded
 **Owner:** Frederick Kruger (COO)
 
-### What happened
+### Two-lane secondaries model (resolves Session 002)
 
-Frederick surfaced two distinct insights that materially expand the working model:
+- **Lane 1 — Incubated companies (10XBeta majority equity):** Path B standalone secondaries via Revelation et al. Accept 10-20% discount. Liquidity > pricing optimization given concentration.
+- **Lane 2 — Minority / fund positions:** Path A integrated tender at Series B+. At-round valuation, no discount.
 
-1. **Equity-concentration insight on secondaries.** For incubated companies where 10XBeta holds majority equity from inception, the studio can absorb the discount inherent in standalone secondaries (Path B). Liquidity matters more than every dollar; large positions mean the absolute return is still substantial even at 10-20% discount. Reframes the Session 002 path-selection question.
+### Strategics engagement framework
 
-2. **Strategics engagement question.** Can 10XBeta show what it's building to strategic acquirers and corporate venture arms (Medtronic, J&J, Stryker, etc.) to gauge interest before companies are formally exit-ready? Distinct from secondaries — different goal (optionality, validation, pricing intelligence, partnership pathways), different audience (strategic CVCs and corporate development, not financial secondaries).
+- Play is option-creation, not selling. Frame as "we're building, want to make sure we're building something you'd want to partner with."
+- Three engagement modes: direct outreach, through a banker, through innovation arms.
+- Innovation arms first for early-stage portcos (JLABS, Stryker Connected, Medtronic Hugo Innovation, Boston Scientific Connected, Olympus Innovation).
 
-### Two-lane secondaries model (resolves Session 002 strategic question)
+### Big-eight medtech strategics
 
-With the equity-concentration insight, the secondary path question resolves to two distinct lanes:
+Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards Lifesciences, Baxter. Each has corporate dev / strategic investments and innovation arm.
 
-**Lane 1 — Incubated companies (10XBeta majority equity):**
-- Default path: Path B (standalone secondaries via Revelation et al.)
-- Rationale: large positions, deep unrealized gains, liquidity priority > pricing optimization
-- Acceptable discount: 10-20% to most recent round
-- Best timing: positions held 3+ years where company has clear traction
+### Per-portco strategic mapping
 
-**Lane 2 — Minority / fund positions (10XBeta later investor or smaller stake):**
-- Default path: Path A (integrated tender inside Series B+ primary rounds)
-- Rationale: smaller positions, less room to discount, primary-investor relationships matter more
-- Pricing: at-round valuation, no discount
-- Timing: tied to next primary round
-
-Working model: "we use both, depending on which company and which position."
-
-### Strategics engagement — frameworks
-
-The play is **option-creation, not selling**. Frame every strategic conversation as "we're building, want to make sure we're building something you'd want to partner with." Not "we're exploring exits." Signal management matters — premature exit signals can hurt primary fundraising.
-
-**Three engagement modes (increasing formality):**
-
-1. **Direct personal outreach** — Frederick to corporate dev or strategic ventures contacts at target strategics. Informal, no advisor, no NDA up front. Low cost, low signal risk. Best for early relationship-building.
-
-2. **Through a banker** — placement agent runs "non-deal roadshow" to strategics. Formal but non-binding. Adds credibility but signals "we're paying advisors so this is real." Use once placement-agent relationships are established (Outcome Capital is the leading candidate from Session 001).
-
-3. **Through strategic innovation arms / scouting programs** — strategic-run incubator and pilot programs designed for exactly this:
-   - J&J JLABS (free residency, no equity)
-   - Medtronic Hugo Innovation, Medtronic Eureka
-   - Stryker Connected
-   - Boston Scientific Connected
-   - Olympus Innovation Programs
-   
-   Easier entry, no "are you selling" signal, good for early-stage portfolio companies.
-
-### Strategics target list — big-eight medtech
-
-Eight strategics that warrant ongoing relationships regardless of specific portfolio fit. Each has both corporate dev / strategic investments and an innovation arm:
-
-1. **Medtronic** (Medtronic Ventures, Strategic Investments, Hugo Innovation, Eureka)
-2. **Johnson & Johnson** (JJDC, J&J Innovation, JLABS)
-3. **Boston Scientific** (Strategic Investments, Connected)
-4. **Stryker** (Strategic Investments, Connected)
-5. **Abbott** (Strategic Investments)
-6. **BD / Becton Dickinson** (Strategic Investments)
-7. **Edwards Lifesciences** (Strategic Investments)
-8. **Baxter International** (Baxter Ventures)
-
-### Portfolio company → strategic mapping (rough cuts)
-
-Per-company strategic targeting (Frederick to refine based on actual product-strategic fit):
-
-| Portfolio company | Primary strategic targets |
+| Portco | Primary strategic targets |
 |---|---|
-| Spiro Wave (respiratory) | ResMed, Philips, Drager, Vyaire, Medtronic |
-| K-O2 (oxygen, global health) | Philips, GE HealthCare, Drager, Hillrom/Baxter |
-| PARADIGM (mobile care, federal) | Medtronic, Philips, Baxter, federal primes |
-| Cryo Medica (oncology) | Medtronic, J&J, Boston Scientific, Stryker |
-| Validose (drug adherence) | Pharma cos, BD, Insulet, Tandem |
-| Gynocular (women's health) | Hologic, Cooper Companies, BD |
-| RedZone (defense / field medicine) | DoD primes, North Atlantic Industries, emergency med OEMs |
+| Spiro Wave | ResMed, Philips, Drager, Vyaire, Medtronic |
+| K-O2 | Philips, GE HealthCare, Drager, Baxter |
+| PARADIGM | Medtronic, Philips, Baxter, federal primes |
+| Cryo Medica | Medtronic, J&J, Boston Scientific, Stryker |
+| Validose | Pharma cos, BD, Insulet, Tandem |
+| Gynocular | Hologic, Cooper Companies, BD |
+| RedZone | DoD primes, North Atlantic Industries, emergency med OEMs |
 
-### Strategics sequencing (recommended)
+### Three-workstream picture
 
-1. Pick 1-2 portfolio companies most ready. "Ready" means clinical or commercial validation exists, the product is distinct, and the team can speak confidently about the next 18 months. Likely candidates: Spiro Wave (proven scale), Cryo Medica (clinical-grade manufacturing), or RedZone (defense backing + clear roadmap).
-2. Identify 3-5 strategics per company (per-company, not blanket).
-3. Start with innovation arms (JLABS, Stryker Connected) for earlier-stage companies. Move to corporate dev / strategic investments for more mature ones.
-4. Prepare a confident "what we're building" overview that doesn't ask for anything. Technical details under NDA only after first real conversation.
-5. Track every conversation: who at the strategic, what they're focused on, what they're interested in (or not), follow-up commitments.
-
-### Value beyond acquisition
-
-Even if no acquisition results, strategic conversations produce:
-- **Pricing intelligence** — what would a strategic value this at?
-- **Product roadmap input** — strategics often say "we'd be more interested if you can show X"
-- **Partnership opportunities** — licensing, OEM, co-marketing are far more common than acquisitions
-- **Validation for primary investors** — a defined exit path strengthens Series A pitch substantially
-- **Optionality** — relationships that pay off 18-36 months later when timing is right
-
-### Risks to manage
-
-- **Premature signal**: word that 10XBeta is "shopping" can hurt primary fundraising. Confidence framing matters.
-- **Competitive leakage**: strategics share information internally; competing portfolio companies of theirs may benefit. Selective disclosure.
-- **Time sink**: strategic conversations are slow and ceremonial. Many die in committee. Cap effort per strategic.
-- **Locked-in expectations**: once you've talked to one, others may assume you're "talked out." Sequence carefully.
-
-### The full three-workstream picture
-
-10XBeta's capital strategy now has three distinct, parallel workstreams:
-
-| Workstream | Goal | Firm types | Target firms (priority) |
-|---|---|---|---|
-| **Secondaries** | Recycle existing studio equity to fund new ventures | Dedicated secondary buyers | Revelation Partners (priority), Industry Ventures, NewView Capital |
-| **Strategics** | Validate, create exit paths, build optionality for portfolio companies | Corporate dev, strategic ventures, innovation arms | Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards, Baxter (+ innovation arms) |
-| **Placement agents** | Primary capital raises for portfolio companies as they scale | Boutique IBs, placement agents | Outcome Capital (priority), Leerink, HC Wainwright, plus Session 001 expansion list |
-
-Three workstreams, three sets of firm relationships, all running in parallel. Each workstream has its own message, target titles, and sequencing.
-
-### Open items for next session (priority order)
-
-1. **Pick 1-2 portfolio companies for strategics conversations.** "Ready" = clinical/commercial validation, distinct product, confident 18-month story. Probable candidates: Spiro Wave, Cryo Medica, RedZone.
-
-2. **Prepare strategic engagement materials.** "What we're building" overview per selected company. Confident, technical, doesn't ask for anything. Length: 1-2 pages or 5-7 slides max. NOT a pitch deck.
-
-3. **Identify named contacts at the big-eight strategics.** Strategic ventures / corporate dev leaders at Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards, Baxter. LinkedIn search with title filters.
-
-4. **Identify entry points at innovation arms.** JLABS, Stryker Connected, Medtronic Hugo Innovation, Boston Scientific Connected, Olympus Innovation Programs. Most have application processes or scouting contacts.
-
-5. **Draft strategics-specific outreach message.** Different from placement-agent and secondary-buyer messages. Confidence framing, "what we're building" focus, asks for informational conversation.
-
-6. **Carry forward Session 002 open items** that remain incomplete: warm intro to Revelation via Edgemont, secondary-buyer outreach message, firm tracker, Session 001 verification work, etc.
-
-### Decisions and constraints locked this session
-
-- **Three parallel workstreams.** Secondaries, strategics, placement agents. Distinct firm types, distinct messages, distinct sequencing. Do not conflate.
-- **Strategics engagement is option-creation, not selling.** Framing matters. Confidence over need.
-- **Two-lane secondaries model**: incubated → Path B, minority → Path A.
-- **Innovation arms are easier entry points than corporate dev** for early-stage portfolio companies. JLABS, Stryker Connected, etc.
-- **Per-company strategic targeting**, not blanket lists. Each portfolio company has its own 3-5 strategics worth approaching.
-- **Partnerships are far more common than acquisitions** — licensing, OEM, co-marketing should be valid outcomes of strategic conversations, not consolation prizes.
-
-### Frederick's preferences re-confirmed this session
-
-- Insights from Frederick's own thinking (e.g., equity concentration) integrate into the model — Claude should ingest and reframe, not just acknowledge.
-- Strategic frameworks should be actionable, not academic.
-- Multiple parallel workstreams are okay if categories stay distinct.
-- Frederick iterates strategically across messages — log each iteration so the model evolves coherently.
+| Workstream | Goal | Firms |
+|---|---|---|
+| Secondaries | Recycle studio equity | Revelation, Industry Ventures, NewView |
+| Strategics | Optionality, partnerships, exit paths | Big-eight + innovation arms |
+| Placement agents | Primary capital for portcos at scale | Outcome Capital, Leerink, HC Wainwright |
 
 ---
 
 ## Session 004 — 2026-06-06 — Platform OS workflow enables strategics pitch
 
-**Status:** strategic positioning refined, new tactical priorities identified
+**Status:** strategic positioning refined
+**Owner:** Frederick Kruger (COO)
+
+### Key reframing
+
+The pitch isn't the individual POC. It's the productized studio capability — Platform OS workflow (OE → Lab → IP) as a scouting + de-risking machine. Strategics see thousands of POCs; they see almost nobody with a productized pipeline.
+
+### Realistic strategics assessment
+
+Harder than tech, easier than pharma. Friction sources include multiple gatekeeping layers, slow decision cycles, pre-clinical engagement reluctance, build-vs-buy variance. What works: warm intros, industry events (JPM #1), innovation arms, consistent visibility over 18-36 months.
+
+### 10XBeta-specific assessment
+
+**Working:** studio model is differentiating, 16 years + 150+ products, Brooklyn Navy Yard, ARPA-H + DoD validation, Spiro Wave story unmatched.
+
+**Missing:** domain credibility at strategics (no ex-Medtronic / ex-J&J / ex-Stryker on advisory board), second "ready-ready" portco beyond Spiro Wave.
+
+### Creative deal structures (not consolation prizes)
+
+Strategic-funded de-risking, pipeline subscription / first look, co-development partnerships, licensing / OEM (most common outcome), acquihire.
+
+### Tactical priorities (next 90-180 days)
+
+Advisory board build, JPM 2027 prep starting October 2026, quarterly portfolio update launch, lead with Spiro Wave, innovation arms first for younger portcos.
+
+---
+
+## Session 005 — 2026-06-07 — Stage-by-stage capital strategy correction
+
+**Status:** major correction; deck restructured, operational playbook produced
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
 
-Frederick connected the Platform OS modules (Opportunity Engine, Lab tools, IP module) to the strategics engagement play from Session 003. The question: can the workflow OE → POC → provisional patent → strategics conversation get 10XBeta in the door with big medtech buyers?
+Produced `sales/capital-strategy.html` (15-slide brand-aligned presentation covering the three tracks). Frederick caught a misframing in Slide 5: it positioned placement agents as the channel for portfolio company primary raises generally. **Placement agents only work at Series A+ ($10M+ deal sizes). Pre-seed and seed portcos are funded through entirely different channels.**
 
-### Key reframing
+This correction expands Track 1a from a single-channel strategy into a **stage-by-stage capital strategy** that maps each portco lifecycle stage to its actual funding sources.
 
-**The pitch isn't the individual POC. It's the productized studio capability.**
+### Why the original framing was wrong
 
-A solo founder with one POC and a provisional gets politely deflected by strategics. 10XBeta with a productized R&D workflow (Opportunity Engine → Lab → IP) producing 3-5 de-risked POCs per year is a fundamentally different conversation.
+- Placement agent economics: 5-7% fee on capital raised. On a $2M seed = $120K, barely covers banker time. Most won't engage below ~$10M.
+- Pre-seed and seed portcos are funded by grants, angels, sector-specific seed VCs, accelerators, and strategic CVCs that go early (J&J Innovation primarily).
+- Treating channels as interchangeable wastes relationship capital on firms that can't help and misses real pre-seed/seed opportunities entirely.
 
-The individual POC + provisional becomes a **proof point that the system works**, not the asset being sold. Strategics aren't interested in another POC — they're interested in:
-- **A pipeline of de-risked early-stage assets**
-- **Visibility into emerging gaps before competitors see them**
-- **A trusted partner who can build to their spec**
+### Stage-by-stage strategy (six stages)
 
-The Platform OS workflow is what's interesting. It's a scouting + de-risking machine, and strategics value exactly this kind of capability.
+Full operational detail in `sales/portco-capital-playbook.md`. Summary:
 
-### What the POC + provisional gets you, realistically
-
-| Tier | Requirements | Available now |
+| Stage | Capital | Primary channels |
 |---|---|---|
-| Early conversation (30-min, "let's stay in touch") | Studio credibility + POC + provisional + gap analysis | **YES** |
-| Real engagement (NDA, technical deep-dive, partnership discussion) | Bench data, regulatory pathway, converted utility patents, team credibility | Requires more validation |
-| Acquisition / serious M&A | Clinical data, revenue, FDA clearance, scale | Not the near-term play |
+| **Stage 0 — Pre-formation** | Studio internal | Platform OS workflow (OE → Lab → IP) |
+| **Stage 1 — Pre-Seed** | $250K-$1.5M | Studio equity, sector angels, SBIR Phase I, accelerators (MedTech Innovator) |
+| **Stage 2 — Seed** | $1.5M-$5M | Seed medtech VCs, SBIR Phase II, ARPA-H, J&J Innovation, foundation grants |
+| **Stage 3 — Series A** | $5M-$20M | Medtech VCs, large CVCs, ARPA-H Phase II, **placement agents emerge** |
+| **Stage 4 — Series B** | $15M-$50M | Growth VCs, all big-eight CVCs, **placement agents central**, Lane 2 secondaries possible |
+| **Stage 5 — Series C / Growth** | $30M-$100M+ | Late-stage / growth equity, crossover investors, full-service IBs |
+| **Stage 6 — Exit** | Variable | M&A bankers (Edgemont et al.), strategic acquirers, IPO underwriters |
 
-Early-conversation tier is the realistic goal. The point isn't to close anything — it's to be the studio strategics call when they have a gap they want solved.
+### Cross-cutting strategies
 
-### Realistic assessment of strategics relationships
+- **Non-dilutive capital (grants):** SBIR, ARPA-H, BARDA, DoD, NIH, plus foundations (Gates, Wellcome, RWJF, Helmsley). Highest-leverage capital available. Recommendation: fractional grants writer for the portfolio.
+- **Strategic CVCs across stages:** J&J Innovation goes earliest (sometimes sub-$1M). Most big-eight CVCs are Series A+. JLABS / Stryker Connected / Medtronic Hugo etc. are innovation arms with lower bars.
+- **Studio's angel network:** 15-25 named sector-specific angels who write $25K-$100K checks, kept warm with quarterly updates. Built deliberately, not opportunistically.
+- **Platform OS as capital lever:** reduces pre-seed need, de-risks seed/A, differentiates studio pitch, enables strategic-funded de-risking deals.
 
-**Harder than tech, easier than pharma.**
+### Deck restructuring (capital-strategy.html, commit this session)
 
-**Friction sources:**
-- Multiple gatekeeping layers (corporate dev, strategic ventures, product strategy, R&D leadership, regional management)
-- Slow decision cycles (months to years), risk-averse M&A culture
-- Many strategics won't engage pre-clinical; some require revenue
-- Innovation arms scout but rarely lead acquisitions
-- "Build vs buy" varies by company: Boston Scientific and Stryker are aggressive acquirers, Medtronic builds internally in many divisions
+- Slide 4 (Track 1 overview): Track 1a card description updated to reflect stage-by-stage approach.
+- Slide 5: replaced with **Stage Map** — 5-column visual showing capital range, time, and primary sources for each stage.
+- New Slide 6: **Pre-Seed and Seed Playbook** — grants, angels, early VCs, early CVCs, accelerators.
+- New Slide 7: **Series A and Beyond Playbook** — placement agents (refined version of original Slide 5).
+- Slides 8-17: renumbered from original 6-15.
+- Deck grew from 15 to 17 slides.
 
-**What works:**
-- **Warm intros beat cold by ~10x.** Bankers, board members, mutual investors, advisors are the high-leverage path. Placement-agent relationships (especially Outcome Capital from Session 001) double as strategic-introducer relationships.
-- **Industry events as venues** where strategics expect to be approached. JPMorgan Healthcare Conference in January is the single highest-leverage (15-20 strategics in 4 days). AdvaMed, MedTech Innovator, RSNA, AAOS by specialty.
-- **Innovation arms first** (JLABS, Stryker Connected, Medtronic Hugo Innovation). Lower bar, designed for this kind of pipeline, no "are you selling" signal.
-- **Specific senior people** reachable via LinkedIn — easier than gatekept corp dev queues. Title patterns: "VP, Strategic Ventures", "Director, Corporate Development [Specialty]", "Head of External Innovation".
-- **Consistent visibility** over time compounds. Strategics watch portfolio companies 18-36 months before serious engagement. Quarterly newsletter, lab visits, JPM meetings.
+### Open items going forward
 
-### 10XBeta-specific assessment
-
-**Working in 10XBeta's favor:**
-- Studio model unusual in medtech (differentiating)
-- 16 years + 150+ products = real credibility
-- Brooklyn Navy Yard location reads as serious hardware
-- ARPA-H + DoD SOCOM on RedZone = institutional validation
-- **Spiro Wave story is unmatched credibility** (FDA EUA in 30 days, 3,000 ventilators). Lead with this in every initial conversation, even when the meeting is about something else.
-
-**Likely missing:**
-- **Domain credibility at strategics.** No ex-Medtronic / ex-J&J / ex-Stryker exec on advisory board or as venture partner. Strategics talk to people who used to be them. Two or three is enough to close this gap.
-- **Second "ready-ready" portfolio company beyond Spiro Wave.** Need to identify which portfolio company is the lead story for each strategic conversation in 2026.
-
-### Creative deal structures (often more achievable than acquisitions)
-
-These are realistic outcomes of strategic engagement for an early-stage studio. Plan for these as wins, not consolation prizes:
-
-1. **Strategic-funded de-risking.** Strategic pays 10XBeta to build POC #X with right of first refusal or option to acquire at preset valuation. Essentially commissioned R&D with an exit ramp. Medtronic does this.
-2. **Pipeline subscription / first look.** Strategic gets quarterly visibility into 10XBeta pipeline before others. Low commitment, compounds relationship over time.
-3. **Co-development partnerships.** 10XBeta + strategic build together, share IP and outcomes. Common when the gap is adjacent to the strategic's core business.
-4. **Licensing / OEM.** Strategic licenses tech, brings to market under their brand. **Most common outcome of strategic engagement** and often more valuable than acquisition because 10XBeta keeps building.
-5. **Acquihire of specific portfolio team.** When strategic wants the team but not the full company structure.
-
-### Tactical priorities (next 90-180 days)
-
-1. **Identify and recruit ex-strategic execs to advisory board.** Two or three from Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD.
-2. **Plan for JPMorgan Healthcare Conference (January 2027).** Start booking meetings in October 2026. Reach out to existing network for warm intros to specific strategics. Single highest-leverage annual venue.
-3. **Launch quarterly portfolio update** (one page, no fluff). Distribute to strategic ventures and corp dev contacts at the big-eight. What's new, what's progressing, what hit milestones. Compounds visibility.
-4. **Lead with Spiro Wave** in every initial conversation as credibility anchor.
-5. **Sequence portfolio companies by maturity:**
-   - **Innovation arms first** for younger companies (Cryo Medica, Validose, RedZone)
-   - **Corporate dev / strategic ventures** for mature stories (Spiro Wave, K-O2)
-6. **Use Platform OS workflow as the pitch differentiator**, not the individual POCs. The story is "we have a productized R&D engine" not "we built X."
-
-### Open items for next session (priority order)
-
-1. **Resolve:**
-   - Confirm Platform OS workflow as the strategic differentiator in the pitch
-   - Identify 2-3 ex-strategic exec candidates for advisory board recruitment
-   - Confirm portfolio company sequencing (which goes to which strategic, in what order)
-   
-2. **Plan JPM 2027 (January).** Start now. Identify target meetings, book in October. Reach out to existing networks for warm intros to specific strategics.
-
-3. **Draft strategics outreach materials:**
-   - **One-page "What 10XBeta is building" overview** — studio capability + Platform OS workflow + portfolio summary. Confidence framing, doesn't ask for anything.
-   - **Per-portfolio-company technical brief** (1-2 pages each, for under NDA)
-   - **Quarterly portfolio update template** (one-page format for ongoing visibility)
-
-4. **Identify named contacts at big-eight strategics.** Strategic ventures / corporate dev leaders at Medtronic, J&J, Boston Scientific, Stryker, Abbott, BD, Edwards, Baxter. Plus innovation arm contacts (JLABS, Stryker Connected, Medtronic Hugo Innovation, etc.).
-
-5. **Carry forward:**
-   - Session 001 verification work and firm tracker
-   - Session 002 Revelation warm intro request
-   - Session 003 two-lane secondaries play
+1. **Per-portco capital plans.** Take each of the 7 portcos through the playbook and produce a 1-page capital plan for the next 12 months. Validates the current stage mapping in the playbook.
+2. **Stage tags in firm tracker.** When `sales/firm-tracker.md` gets built (Session 001 open item), include stage tags (pre-seed, seed, Series A+, etc.) so the right firm is approached for the right portco.
+3. **Grants strategy resource.** Identify and onboard a fractional grants writer or advisor. SBIR + ARPA-H pipeline systematization.
+4. **Angel network systematization.** Build the named list of 15-25 sector-aligned angels. CRM or markdown file. Quarterly cadence.
+5. **Pre-seed / seed outreach materials.** The Session 001 placement-agent outreach message doesn't apply to early-stage VCs, angels, or CVC seed teams. Different framing needed for each channel.
+6. **Verify the firms listed in the playbook.** Some pre-seed/seed VCs and CVCs may have merged, rebranded, or shifted focus since Claude's training cutoff. Standard verification pass before initiating outreach.
 
 ### Decisions and constraints locked this session
 
-- **The pitch is the studio capability + Platform OS workflow, not the individual POC.** Frame this way in every strategic conversation.
-- **Early-conversation tier is the realistic goal**, not deal tier. Relationship-building, not transactions.
-- **Spiro Wave leads every initial conversation** as credibility anchor.
-- **Creative deal structures are valid outcomes**, not consolation prizes. Licensing, OEM, strategic-funded de-risking, pipeline subscription, co-development.
-- **JPM Healthcare Conference is the highest-leverage annual venue.** Plan starts six months ahead.
-- **Innovation arms first for younger portfolio companies, corporate dev for mature ones.**
-- **Domain credibility at strategics matters.** Identify ex-strategic execs for advisory board recruitment.
+- **Stage matters more than firm type.** A firm that's perfect for a Series A portco is wrong for a pre-seed portco. Track 1a is now stage-aware, not firm-type-aware.
+- **Non-dilutive capital is core, not supplementary.** Especially for defense/biodefense/public-health indications (RedZone, PARADIGM model). Recommend grants writer resource for the studio.
+- **Studio angel network is a strategic asset.** Build it deliberately with named angels and quarterly cadence. Not just opportunistic outreach.
+- **Placement agents are Series A+ only.** Do not pitch them as the channel for portco fundraising generally.
+- **Original Track 1a outreach (Session 001) remains valid** — placement-agent relationships built now pay off when portcos hit Series A scale. Just don't conflate that with pre-seed/seed capital.
 
 ### Frederick's preferences re-confirmed this session
 
-- Connects insights across workstreams (Platform OS → Sales) — Claude should integrate, not silo.
-- Strategic ambition with operational realism. Wants the framework but also wants the realistic friction acknowledged.
-- Looking for compounding tactics (advisory board, JPM cadence, quarterly updates) not one-off plays.
+- Catches strategic misframing quickly and pushes back hard. Treat every Claude framing as provisional until tested.
+- Wants operational playbooks (the `.md` companion) not just strategic decks.
+- Three deliverables in parallel (deck restructure + playbook + log) is the right scope, not too much.
