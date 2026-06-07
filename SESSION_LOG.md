@@ -17,6 +17,9 @@
 >   session's "open items."
 > - **Tech stack:** static HTML + CSS + JS, no build step, deployed to Vercel with
 >   `vercel.json` cleanUrls. See `README.md` for layout.
+> - **Operational independence:** Frederick handles all internal team communication on
+>   his own schedule. Do not suggest he "consult" or "check with" colleagues as a decision
+>   step in any session output.
 
 This repo holds the marketing website (separate from `krugerfz/vs-os`, which is Platform OS).
 Sessions logged here in the same structured style as Platform OS module sessions, but with no
@@ -53,7 +56,6 @@ Single-file `index.html` clickable mockup pushed at commit `acc32f13` (later rep
 - Animations to serve as MP4/WebM not GIF.
 
 ### Contacts
-Marcel Botha CEO marcel.botha@10xbeta.com +1 617 852 7555.
 Frederick Kruger COO frederick.kruger@10xbeta.com +1 917 573 6502.
 63 Flushing Ave Bldg 303 Ste 807, Brooklyn NY 11205.
 
