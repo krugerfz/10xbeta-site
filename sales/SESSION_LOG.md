@@ -2,20 +2,22 @@
 
 > **READ FIRST IF YOU ARE A NEW CLAUDE SESSION**
 >
-> - This is the **sales / business development outreach** workstream for 10XBeta.
-> - Tracks outreach to placement agents, boutique investment banks, healthcare/medtech transaction advisors, secondary buyers, and strategic acquirers / corporate venture arms.
+> - This is the **sales / business development** workstream for 10XBeta. Spans both **capital strategy** (raising for portcos) and **lab revenue** (paying external clients for lab services).
 > - **Separate workstream** from the marketing site work (root-level `SESSION_LOG.md` covers that).
 > - **No database. No Supabase. No backend.** This markdown file IS the durable session record.
 > - **Do NOT query the vs-os Supabase project.** This is not Platform OS work.
 > - Default opener from Frederick: `"sales session"` or similar. Treat as cue to read this file top-to-bottom, with extra attention to the most recent session's "Open items" list.
 > - **Tools needed:** GitHub MCP for repo edits. Web search is highly valuable for this workstream — open the session in a Claude.ai surface with web search enabled when possible.
 > - **Operational independence:** Frederick handles all internal communication on his own schedule. Do not insert "consult with [colleague]" or "discuss with [colleague]" as a recommended next step in any session output. Surface frameworks and decisions; Frederick owns who he talks to and when.
-> - **Operational focus (Session 008):** short-term execution is seed close for active portcos. Strategic CVCs at seed. Grants for incubation, not market-race portcos. Everything else is medium-to-long-term.
+> - **Operational focus (Session 008):** short-term capital execution is seed close for active portcos. Strategic CVCs at seed. Grants for incubation, not market-race portcos. Everything else is medium-to-long-term.
+> - **Lab revenue workstream (Session 009):** parallel to capital. Four channels: universities with VC funds, early-stage medtech VCs, large medtech outsourcing development, defense tech companies. Sells lab capability, not equity.
 > - **Companion artifacts:**
->   - `sales/capital-strategy.html` — 17-slide brand-aligned strategy presentation (Tracks 1-3, long-term)
->   - `sales/portco-capital-playbook.md` — stage-by-stage operational playbook
+>   - `sales/capital-strategy.html` — 17-slide brand-aligned capital strategy presentation (Tracks 1-3, long-term)
+>   - `sales/portco-capital-playbook.md` — stage-by-stage operational capital playbook
+>   - `sales/short-term-capital-focus.html` — internal 6-slide deck (RedZone + Validose seed close)
 >   - `sales/network-buildout.md` — who can help build the named investor and buyer network
 >   - `sales/portco-plans/` — per-portco capital plans (one file per portco)
+>   - `sales/lab-revenue-strategy.md` — lab revenue (external client) strategy across four channels
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -67,67 +69,63 @@ Confirmed: no placement agents or investment banks for seed-stage raises. Per-po
 
 ## Session 008 — 2026-06-07 — Strategic refocus: seed close as short-term priority
 
-**Status:** strategic refocus; multiple artifacts updated
+Three corrections: (1) short-term focus is seed close; (2) strategics belong at seed, not just later; (3) grants are for incubation, not market-race portcos. RedZone plan restructured equity-first. Validose plan reframed pharma CVCs as strategics-at-seed. Playbook updated with short-term operational focus section and grants reframe. Short-term capital focus deck produced (`short-term-capital-focus.html`), iterated to 6-slide form with per-portco firm tables, deep investor profiles (top 4 firms per portco with fit score, timeline, requirements, decision process).
+
+---
+
+## Session 009 — 2026-06-08 — Lab revenue workstream initiated
+
+**Status:** workstream foundation; first strategy artifact produced
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
 
-Frederick took a step back and pushed back on three points of framing in the existing artifacts:
+Frederick initiated the lab revenue workstream by surfacing his thinking on four channels for generating paying lab work from non-portco clients:
 
-1. **Short-term focus is seed close.** Everything else (placement agents, Track 2, Track 3) is medium-to-long-term strategy. Operational execution right now is just getting RedZone and Validose closed.
-2. **Strategics belong at seed, not just later stages.** Strategic CVCs (J&J Innovation, BD Strategic Investments, pharma CVCs, defense prime CVCs) write seed checks. They serve as anchor investors AND future-relationship builders simultaneously. Promote them in the tier structures — they're active seed-stage targets, not just Track 1c long-term relationship work.
-3. **Grants are for incubation, not market-race portcos.** 6-12 month application cycles don't fit a portco trying to close in 3-4 months. Where existing grant relationships are producing (RedZone's ARPA-H / SOCOM), they continue as runway extension. Don't TIME the round to grants. Grants belong at Stage 0 incubation and early Stage 1 pre-seed (when patient), not at active seed.
+1. Universities with VC funds (de-risk early-stage ideas they invest in)
+2. VCs who invest in early-stage medtech (de-risk their portcos)
+3. Large medtech companies that outsource development
+4. Defense tech companies that need medical / hardware development
 
-### Corrections applied
+The unifying buyer profile: someone who needs medtech engineering execution and isn't a portco 10XBeta is incubating. Pure services revenue, no dilution, no equity capture from this workstream (except in rare equity-for-services exceptions).
 
-**RedZone seed plan (`portco-plans/redzone-seed-plan.md`):**
-- Restructured: equity-first instead of grants-first
-- New Tier 1: Defense-tech VCs (primary equity workhorse)
-- New Tier 2: Strategic CVCs at seed (defense prime CVCs + J&J Innovation + BD) — promoted from "long-term acquirer"
-- New Tier 3: Medtech-defense crossover VCs
-- New Tier 4: Angels via SPV close
-- Existing federal grants reframed as background / runway extension, not primary capital channel
-- AngelList SPV confirmed as close mechanism (already configured)
+### Strategy artifact produced
 
-**Validose seed plan (`portco-plans/validose-seed-plan.md`):**
-- Pharma CVCs (Tier 1) reframed as "strategics at seed" — explicit recognition that pharma CVCs collapse Track 1c into Track 1a for Validose
-- Tier 2 strategic medtech CVCs (BD, J&J Innovation, Olympus) elevated similarly
-- SPV close mechanism added explicitly
-- Non-dilutive section moved to background (NIH SBIR in parallel only, don't time round to it)
+`sales/lab-revenue-strategy.md` covers:
 
-**Playbook (`portco-capital-playbook.md`):**
-- New "Short-term operational focus" section at top: seed closes are priority 1, strategics-at-seed is priority 2, Series A+ relationships are background work
-- Grants section reframed: where they fit (Stage 0, patient Stage 1, existing in-flight relationships, milestone funding at later stages) vs where they don't (active market-push seed portcos, Series B+ as primary)
-- Strategic CVCs across stages table expanded with seed-stage check ranges; J&J Innovation, pharma CVCs, BD, defense prime CVCs called out as active seed-stage investors
-- Grants writer recommendation refined: for studio incubation pipeline, not for active seed-close work
+- Why this workstream exists (lab capacity utilization, revenue de-risking)
+- How it connects to (and stays distinct from) capital strategy
+- Per-channel detail: target profile, why 10XBeta fits, named targets, engagement mechanics, pricing range, sales cycle, engagement model options
+- What differentiates 10XBeta from traditional dev firms (Sagentia, Cambridge Consultants, TTP, Veranex, Velentium, Battelle, Smithwise)
+- Channel sequencing recommendation (universities first, VCs in parallel, large medtech long-cycle, defense tech opportunistic)
+- Engagement model breakdown (fixed-scope, T&M, equity-for-services, option-to-license)
+- Open decisions to lock + open items
 
-**Deck (`capital-strategy.html`):**
-- Not updated this session. The deck is the long-term strategy artifact (Tracks 1-3, 24-36 month plan). Corrections in Session 008 are about execution priority and channel-weighting within Track 1a, which are captured in the playbook and per-portco plans where they belong.
+### Key strategic framing locked this session
 
-### Decisions and constraints locked this session
-
-- **Operational priority ordering for execution:** (1) active seed closes, (2) strategics-at-seed relationships, (3) Series A+ relationship-building, (4) Track 2 prep, (5) Track 3 prep.
-- **Strategic CVCs at seed are now first-class seed investors**, not just long-term relationship targets. Promote in all tier structures.
-- **Grants belong at Stage 0 incubation and early Stage 1 when patient.** Existing in-flight grant relationships continue, but new grant applications don't drive seed-round timing for market-push portcos.
-- **SPV close mechanism applies across pre-seed and seed portcos**, not just RedZone. Pattern: 506(b) private, 10XBeta AngelList syndicate or law-firm structured, known-LP self-certification, single close then wire.
-- **Active portcos for short-term capital work (as of Q2 2026):** RedZone, Validose. Plans live in `sales/portco-plans/`.
+- **Three buckets of lab work:** studio incubation (in-house, equity), portco follow-on (mixed), external client (pure revenue). This doc covers the third.
+- **Coordination rule:** contacts that span capital + lab strategy (F-Prime, J&J Innovation, BD Strategic Investments, Lockheed Martin Ventures, etc.) get one conversation at a time. Don't pitch both at the same meeting.
+- **Differentiation focus:** compete on speed and productized R&D capability (Platform OS), not on price. Price competition against Veranex / Sagentia / Cambridge Consultants is a losing game.
+- **NYC-proximate universities first:** Brooklyn Navy Yard location is a real advantage for Columbia / Cornell / NYU / Mount Sinai outreach. Lab tour lands when geography supports it.
+- **Defense tech channel is opportunistic** until RedZone has clearer market signal (federal milestones, seed close, clinical data). The defense story sharpens as RedZone matures.
 
 ### Open items going forward
 
-1. Verify current raise target sizes for RedZone and Validose.
-2. Confirm Validose's lead clinical indication (drives which strategic CVCs apply).
-3. Identify whether 10XBeta's existing network has paths to J&J Innovation, BD Strategic Investments, Lockheed Martin Ventures, RTX Ventures — these are the priority strategics-at-seed targets for both portcos.
-4. AngelList multiple-close mechanics confirmation.
-5. Outreach materials for the new investor categories:
-   - Defense-tech VCs (RedZone)
-   - Pharma corporate VCs (Validose)
-   - Defense prime CVCs (RedZone)
-6. Per-portco capital plans for remaining 5 portcos (Spiro Wave, K-O2, PARADIGM, Cryo Medica, Gynocular).
-7. Carry forward Session 006 open items: build `portco-investor-map.md`, decide on fractional Head of Capital Strategy hire, advisory board recruitment.
+1. Lab capacity quantification: how many engineer-months/quarter are available for external work after studio incubation needs?
+2. Pricing model finalized: T&M day rates, fixed-scope ranges by engagement type
+3. Case study one-pagers (3-5 prior projects) prepared as sales collateral
+4. Lab tour script + standard pitch deck for external clients (distinct from investor pitch)
+5. Channel-by-channel named target list with priority ranking within each channel
+6. Sales process definition: inbound qualification, scoping, SOW + MSA templates
+7. Sales pipeline tracker as durable record (`sales/lab-revenue-pipeline.md` mirroring capital workstream pattern)
+8. Coordination protocol for capital + lab overlapping contacts (single decision-tree: which conversation is closer to landing, lead with that)
+9. ITAR / security-clearance posture for defense-tech channel
+10. University outreach kickoff: Columbia, Cornell, NYU, Mount Sinai as first wave (NYC-proximate)
+11. Decision on sales lead: dedicated BD hire vs fractional vs Frederick personally for early outreach
+12. Equity-for-services policy: confirmed as exception, not default
 
 ### Frederick's preferences re-confirmed this session
 
-- Takes strategic refocus calls when the work has drifted from operational priority. "Take a step back" is a meaningful instruction; treat it as license to restructure rather than incrementally adjust.
-- Pushes back hard on framing that overstates one channel's importance (grants as "most leveraged capital" was the kind of overstatement that needed correction).
-- Wants the strategics-at-seed insight reflected throughout all artifacts, not just the active portco plans.
-- Operational focus on the immediate work (seed closes) trumps comprehensive coverage of every stage in real time.
+- Surfaces channels and gets out of the way: gave four bullets, expects Claude to structure into a coherent strategy without prompting for what to add.
+- Operational distinction matters: lab work = paying external clients, NOT studio incubation work. Worth being precise on this in all future references.
+- Parallel workstreams are okay if categories stay distinct: capital strategy + lab revenue strategy can both run simultaneously without competing for the same execution attention.
