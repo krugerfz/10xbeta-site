@@ -10,14 +10,15 @@
 > - **Tools needed:** GitHub MCP for repo edits. Web search is highly valuable for this workstream — open the session in a Claude.ai surface with web search enabled when possible.
 > - **Operational independence:** Frederick handles all internal communication on his own schedule. Do not insert "consult with [colleague]" or "discuss with [colleague]" as a recommended next step in any session output. Surface frameworks and decisions; Frederick owns who he talks to and when.
 > - **Operational focus (Session 008):** short-term capital execution is seed close for active portcos. Strategic CVCs at seed. Grants for incubation, not market-race portcos. Everything else is medium-to-long-term.
-> - **Lab revenue workstream (Session 009):** parallel to capital. Four channels: universities with VC funds, early-stage medtech VCs, large medtech outsourcing development, defense tech companies. Sells lab capability, not equity.
+> - **Lab revenue workstream (Session 009 + 010):** parallel to capital. Four channels: universities with VC funds, early-stage medtech VCs, large medtech outsourcing development, defense tech companies. Sells lab capability, not equity. Studio needs $500K/month break-even from this workstream. SA + Poland engineering teams provide cost advantage. Frederick personally runs sales for now.
 > - **Companion artifacts:**
 >   - `sales/capital-strategy.html` — 17-slide brand-aligned capital strategy presentation (Tracks 1-3, long-term)
 >   - `sales/portco-capital-playbook.md` — stage-by-stage operational capital playbook
 >   - `sales/short-term-capital-focus.html` — internal 6-slide deck (RedZone + Validose seed close)
 >   - `sales/network-buildout.md` — who can help build the named investor and buyer network
 >   - `sales/portco-plans/` — per-portco capital plans (one file per portco)
->   - `sales/lab-revenue-strategy.md` — lab revenue (external client) strategy across four channels
+>   - `sales/lab-revenue-strategy.md` — lab revenue strategy across four channels
+>   - `sales/lab-revenue-pipeline.md` — (to be created) durable record of active lab revenue conversations
 
 This file lives in the marketing-site repo (`krugerfz/10xbeta-site/sales/`) for convenience since no dedicated business-ops repo exists yet. If sales work scales, consider spinning out to its own repo.
 
@@ -51,81 +52,80 @@ The pitch is the productized studio capability (OE → Lab → IP), not the indi
 
 ## Session 005 — 2026-06-07 — Stage-by-stage capital strategy correction
 
-Placement agents only at Series A+ ($10M+). Six-stage capital strategy established with stage-appropriate channels at each stage. Deck restructured to 17 slides with stage-aware Track 1a section. `portco-capital-playbook.md` produced.
+Placement agents only at Series A+ ($10M+). Six-stage capital strategy established. `portco-capital-playbook.md` produced.
 
 ---
 
 ## Session 006 — 2026-06-07 — Network buildout: who can help
 
-Five leverage sources for building the named investor and buyer network. Top three moves: fractional Head of Capital Strategy (single highest-leverage hire), ex-strategic-exec advisory board, portco-investor-map first. `network-buildout.md` produced.
+Five leverage sources for building investor and buyer network. `network-buildout.md` produced.
 
 ---
 
-## Session 007 — 2026-06-07 — RedZone & Validose seed capital plans (no placement agents)
+## Session 007 — 2026-06-07 — RedZone & Validose seed capital plans
 
-Confirmed: no placement agents or investment banks for seed-stage raises. Per-portco capital plans produced for RedZone (defense-tech VCs + federal grants + AngelList SPV) and Validose (pharma CVCs + drug-delivery VCs + BD Strategic Investments). Plans in `sales/portco-plans/`.
+No placement agents at seed. Per-portco plans produced in `sales/portco-plans/`.
 
 ---
 
 ## Session 008 — 2026-06-07 — Strategic refocus: seed close as short-term priority
 
-Three corrections: (1) short-term focus is seed close; (2) strategics belong at seed, not just later; (3) grants are for incubation, not market-race portcos. RedZone plan restructured equity-first. Validose plan reframed pharma CVCs as strategics-at-seed. Playbook updated with short-term operational focus section and grants reframe. Short-term capital focus deck produced (`short-term-capital-focus.html`), iterated to 6-slide form with per-portco firm tables, deep investor profiles (top 4 firms per portco with fit score, timeline, requirements, decision process).
+Three corrections: short-term focus is seed close; strategics belong at seed, not just later; grants are for incubation, not market-race portcos. RedZone equity-first restructure. Validose pharma CVCs reframed as strategics-at-seed. Short-term capital focus deck produced and iterated to 6-slide form with deep investor profiles.
 
 ---
 
 ## Session 009 — 2026-06-08 — Lab revenue workstream initiated
 
-**Status:** workstream foundation; first strategy artifact produced
+Four channels identified: universities with VC funds, early-stage medtech VCs, large medtech outsourcing, defense tech companies. `sales/lab-revenue-strategy.md` produced.
+
+---
+
+## Session 010 — 2026-06-08 — Lab revenue operational realities surfaced
+
+**Status:** strategy doc substantially updated with operational facts
 **Owner:** Frederick Kruger (COO)
 
 ### What happened
 
-Frederick initiated the lab revenue workstream by surfacing his thinking on four channels for generating paying lab work from non-portco clients:
+Frederick surfaced three critical operational realities that reshape the lab revenue strategy:
 
-1. Universities with VC funds (de-risk early-stage ideas they invest in)
-2. VCs who invest in early-stage medtech (de-risk their portcos)
-3. Large medtech companies that outsource development
-4. Defense tech companies that need medical / hardware development
+1. **$500K/month break-even target.** Studio needs $6M/year of recurring external client revenue to break even. Currently zero paying clients.
+2. **South Africa + Poland engineering teams.** 10XBeta has offshore engineering capacity in addition to Brooklyn. Provides material cost advantage versus US-only competitors (Veranex, Sagentia, Cambridge Consultants, etc.). Need to calibrate rates against the market.
+3. **Frederick runs it.** No fractional or dedicated BD hire. Frederick personally owns lab revenue sales for now.
 
-The unifying buyer profile: someone who needs medtech engineering execution and isn't a portco 10XBeta is incubating. Pure services revenue, no dilution, no equity capture from this workstream (except in rare equity-for-services exceptions).
+### Strategy doc updates
 
-### Strategy artifact produced
+`sales/lab-revenue-strategy.md` substantially updated:
 
-`sales/lab-revenue-strategy.md` covers:
+- **Break-even reality section added near top.** Revenue volume math (~6 active T&M engagements at $83K/month each, or mix), realistic build curve from zero (months 1-15), cash runway implication (lab revenue races Track 2 studio raise against studio runway).
+- **Competitive position section rebuilt.** SA + Poland cost structure table (US senior ~$200K-$300K/yr, Poland senior ~$80K-$120K, SA senior ~$50K-$80K). Competitor rate intel for Veranex / Sagentia / Cambridge Consultants / TTP / Velentium / Battelle / Smithwise. Three pricing approaches (undercut / match / hybrid recommended). ITAR / clearance constraint flagged for defense channel (offshore teams excluded from ITAR work).
+- **Sales lead section added.** Frederick personally owns the workstream. ~15-20 active conversations sustainable. Pipeline tracking via simple markdown file.
+- **Channel sequencing updated** to emphasize fast-cycle channels (universities, early-stage medtech VCs) first given break-even clock.
+- **Defense channel updated** with ITAR matrix: defense-tech operators often non-ITAR (offshore OK), defense primes / DoD-direct usually ITAR (US-only team).
 
-- Why this workstream exists (lab capacity utilization, revenue de-risking)
-- How it connects to (and stays distinct from) capital strategy
-- Per-channel detail: target profile, why 10XBeta fits, named targets, engagement mechanics, pricing range, sales cycle, engagement model options
-- What differentiates 10XBeta from traditional dev firms (Sagentia, Cambridge Consultants, TTP, Veranex, Velentium, Battelle, Smithwise)
-- Channel sequencing recommendation (universities first, VCs in parallel, large medtech long-cycle, defense tech opportunistic)
-- Engagement model breakdown (fixed-scope, T&M, equity-for-services, option-to-license)
-- Open decisions to lock + open items
+### Key strategic implications locked this session
 
-### Key strategic framing locked this session
-
-- **Three buckets of lab work:** studio incubation (in-house, equity), portco follow-on (mixed), external client (pure revenue). This doc covers the third.
-- **Coordination rule:** contacts that span capital + lab strategy (F-Prime, J&J Innovation, BD Strategic Investments, Lockheed Martin Ventures, etc.) get one conversation at a time. Don't pitch both at the same meeting.
-- **Differentiation focus:** compete on speed and productized R&D capability (Platform OS), not on price. Price competition against Veranex / Sagentia / Cambridge Consultants is a losing game.
-- **NYC-proximate universities first:** Brooklyn Navy Yard location is a real advantage for Columbia / Cornell / NYU / Mount Sinai outreach. Lab tour lands when geography supports it.
-- **Defense tech channel is opportunistic** until RedZone has clearer market signal (federal milestones, seed close, clinical data). The defense story sharpens as RedZone matures.
+- **Lab revenue races studio runway.** $500K/month break-even is 12-15 months out at realistic build curve. Track 2 studio priced round is the parallel capital path. Both running in parallel is the right move; whichever lands first wins the race.
+- **First close is the gate.** First engagement closing in months 5-6 is the most important milestone. If first close slips to month 8, break-even pushes to 18+ months. Speed-to-first-close matters more than size of first contract.
+- **Hybrid pricing recommended** ($250-$300/hr blended for most channels, $200-$250 for strategic anchors, $350-$400 for premium positioning). Below US competitors but enough margin to invest in growth.
+- **Offshore advantage is real but ITAR-constrained.** Channels 1-3 benefit fully from SA + Poland cost advantage. Channel 4 (defense) is bifurcated: non-ITAR defense-tech operators benefit; primes and DoD-direct are US-only.
+- **One $1M-$2M annual retainer with a VC firm or strategic CVC = 20-40% of break-even alone.** Anchor relationships disproportionately important.
+- **First-wave outreach prioritized:** universities (Columbia, Cornell, NYU, Mount Sinai for NYC-proximate ease) + early-stage medtech VCs (F-Prime, Catalyst Health, BioInnovation Capital, Bolt VC, Hardware Club).
 
 ### Open items going forward
 
-1. Lab capacity quantification: how many engineer-months/quarter are available for external work after studio incubation needs?
-2. Pricing model finalized: T&M day rates, fixed-scope ranges by engagement type
-3. Case study one-pagers (3-5 prior projects) prepared as sales collateral
-4. Lab tour script + standard pitch deck for external clients (distinct from investor pitch)
-5. Channel-by-channel named target list with priority ranking within each channel
-6. Sales process definition: inbound qualification, scoping, SOW + MSA templates
-7. Sales pipeline tracker as durable record (`sales/lab-revenue-pipeline.md` mirroring capital workstream pattern)
-8. Coordination protocol for capital + lab overlapping contacts (single decision-tree: which conversation is closer to landing, lead with that)
-9. ITAR / security-clearance posture for defense-tech channel
-10. University outreach kickoff: Columbia, Cornell, NYU, Mount Sinai as first wave (NYC-proximate)
-11. Decision on sales lead: dedicated BD hire vs fractional vs Frederick personally for early outreach
-12. Equity-for-services policy: confirmed as exception, not default
+1. **Pipeline tracker file creation** (`sales/lab-revenue-pipeline.md`) - low effort, high operational value. Likely next session.
+2. **First-wave outreach materials**: capability one-pager, lab tour deck, case study one-pagers (Spiro Wave, RedZone, one drug-delivery example).
+3. **Pricing tier lock** with verification against current competitor rate intel.
+4. **Lab capacity quantification** (engineer-months by region per quarter).
+5. **MSA + SOW template** legal-ready.
+6. **ITAR posture decision** - what defense work do we take US-only, what do we decline.
+7. **First-wave named target list** with priority ranking (Frederick's 15-20 active conversations for the first 90 days).
+8. **Equity-for-services policy** confirmed as exception, not default.
+9. **Trigger point for BD hire** identified (likely $1M+ qualified pipeline real).
 
 ### Frederick's preferences re-confirmed this session
 
-- Surfaces channels and gets out of the way: gave four bullets, expects Claude to structure into a coherent strategy without prompting for what to add.
-- Operational distinction matters: lab work = paying external clients, NOT studio incubation work. Worth being precise on this in all future references.
-- Parallel workstreams are okay if categories stay distinct: capital strategy + lab revenue strategy can both run simultaneously without competing for the same execution attention.
+- Surfaces operational facts in compact form: three bullets with the critical reality. Expects Claude to integrate them into strategy without prompting.
+- Owns workstreams personally when scale doesn't yet justify a hire. Operator-level founder mode.
+- Hard numbers matter: $500K/month, no clients. Strategy frameworks have to land against the actual operational state, not a hypothetical one.
