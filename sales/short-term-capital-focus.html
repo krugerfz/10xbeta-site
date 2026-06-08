@@ -62,19 +62,25 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
 .detail-block ul li strong { color: var(--navy); font-weight: 700; }
 .detail-block p { font-size: 13px; margin: 0; color: var(--text); line-height: 1.5; }
 .detail-block.muted-block p { color: var(--muted); font-style: italic; }
-.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
-.action-card { background: var(--sunken); padding: 18px 22px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; }
-.dark .action-card { background: var(--navy-2); }
-.action-card .role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 700; margin-bottom: 6px; }
-.action-card h3 { font-size: 17px; margin-bottom: 8px; }
-.dark .action-card h3 { color: var(--white); }
-.action-card p { font-size: 13px; margin: 0; line-height: 1.5; color: var(--text); }
-.dark .action-card p { color: var(--dim2); }
-.numbered { counter-reset: item; list-style: none; }
-.numbered li { counter-increment: item; position: relative; padding-left: 48px; margin-bottom: 14px; font-size: 15px; line-height: 1.55; }
-.numbered li::before { content: counter(item, decimal-leading-zero); position: absolute; left: 0; top: -2px; font-family: var(--head); font-weight: 800; font-size: 22px; color: var(--blue); letter-spacing: -0.02em; }
-.dark .numbered li { color: var(--dim2); }
-.dark .numbered li strong { color: var(--white); }
+.investor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; flex: 1; min-height: 0; }
+.investor-card { background: var(--sunken); padding: 14px 18px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; display: flex; flex-direction: column; }
+.investor-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
+.investor-header h3 { font-size: 17px; margin-bottom: 2px; letter-spacing: -0.01em; }
+.investor-type { font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.fit-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; padding: 4px 9px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; font-family: var(--head); }
+.fit-high { background: var(--blue); color: var(--white); }
+.fit-medium { background: transparent; color: var(--blue); border: 1px solid var(--blue); padding: 3px 8px; }
+.investor-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+.stat-block { border-top: 2px solid var(--blue); padding-top: 6px; }
+.stat-label { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; font-size: 9px; margin-bottom: 2px; }
+.stat-val { font-family: var(--head); font-weight: 700; color: var(--navy); font-size: 13px; letter-spacing: -0.01em; }
+.investor-section { margin-bottom: 10px; }
+.investor-section:last-child { margin-bottom: 0; }
+.section-label { font-size: 10px; color: var(--blue); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 5px; }
+.investor-section ul { list-style: none; padding: 0; }
+.investor-section ul li { font-size: 12px; line-height: 1.4; padding: 2px 0 2px 12px; color: var(--text); position: relative; }
+.investor-section ul li::before { content: '\203A'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 14px; line-height: 1; top: 4px; }
+.investor-section p { font-size: 12px; line-height: 1.45; margin: 0; color: var(--text); }
 .nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: rgba(6, 26, 46, 0.92); color: var(--white); padding: 10px 18px; border-radius: 24px; font-family: var(--body); font-size: 13px; font-weight: 600; z-index: 100; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
 .nav button { background: transparent; border: none; color: var(--white); cursor: pointer; padding: 4px 10px; font-size: 18px; transition: color 0.15s; }
 .nav button:hover { color: var(--blue); }
@@ -100,7 +106,7 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
       <div class="eyebrow">Short-Term Capital Focus &middot; Q3 2026</div>
       <h1>RedZone.<br>Validose.<br>Seed close.</h1>
       <p style="font-size: 19px; color: var(--dim); max-width: 720px; margin-top: 22px; line-height: 1.5;">
-        Detailed capital sources, check sizes, and execution mechanics for the next 90 days.
+        Detailed capital sources, investor profiles, check sizes, and execution mechanics for the next 90 days.
       </p>
       <p style="font-size: 12px; color: var(--blue); margin-top: 56px; letter-spacing: 0.16em; font-weight: 700; text-transform: uppercase;">
         Frederick Kruger, COO &middot; Internal &middot; June 2026
@@ -141,7 +147,7 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
     <div class="slide-num">02 / 06</div>
   </section>
 
-  <!-- Slide 3: RedZone -->
+  <!-- Slide 3: RedZone capital sources overview -->
   <section class="slide">
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
     <div class="eyebrow">RedZone &middot; Seed Close</div>
@@ -152,9 +158,9 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
         <table class="firm-table">
           <tr><td>Founders Fund</td><td>$1M-$5M</td><td>Anduril relationship; dual-use thesis. Warm intro via ex-Anduril operators now at VCs.</td></tr>
           <tr><td>8VC</td><td>$500K-$2M</td><td>Active defense-tech investor; sector pattern match.</td></tr>
-          <tr><td>Lux Capital</td><td>$1M-$3M</td><td>Deep tech + defense; can lead a seed.</td></tr>
-          <tr><td>Shield Capital</td><td>$250K-$1M</td><td>Pure defense focus; smaller checks but signaling value.</td></tr>
-          <tr><td>Marlinspike Partners</td><td>$500K-$1.5M</td><td>Explicitly defense-focused fund.</td></tr>
+          <tr><td>Lux Capital</td><td>$1M-$3M</td><td>Deep tech + defense; can lead.</td></tr>
+          <tr><td>Shield Capital</td><td>$250K-$1M</td><td>Pure defense focus.</td></tr>
+          <tr><td>Marlinspike Partners</td><td>$500K-$1.5M</td><td>Defense-focused fund.</td></tr>
           <tr><td>Razor's Edge Ventures</td><td>$500K-$2M</td><td>Defense-tech specialist.</td></tr>
         </table>
 
@@ -186,7 +192,7 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
             <li>AngelList SPV under 10XBeta syndicate</li>
             <li>506(b) private, known-LP self-certification</li>
             <li>Single close, then wire</li>
-            <li>SPV already configured; verify multiple-close mechanics</li>
+            <li>Verify multiple-close mechanics</li>
           </ul>
         </div>
         <div class="detail-block">
@@ -201,8 +207,8 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
           <div class="detail-label">Warm Intro Paths</div>
           <ul>
             <li>Ex-Anduril operators at VC funds (5+ active)</li>
-            <li>ARPA-H program officers (existing relationship)</li>
-            <li>DoD SOCOM contacts (existing relationship)</li>
+            <li>ARPA-H program officers (existing)</li>
+            <li>DoD SOCOM contacts (existing)</li>
             <li>Hardware Club / Founders Fund alumni</li>
           </ul>
         </div>
@@ -211,7 +217,130 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
     <div class="slide-num">03 / 06</div>
   </section>
 
-  <!-- Slide 4: Validose -->
+  <!-- Slide 4: RedZone investor detail -->
+  <section class="slide">
+    <div class="logo">10X<span class="x">&times;</span>BETA</div>
+    <div class="eyebrow">RedZone &middot; Top Investor Profiles</div>
+    <h2>Four targets. Lead conversations here first.</h2>
+    <div class="investor-grid">
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>Founders Fund</h3>
+            <div class="investor-type">Defense-tech VC &middot; Lead candidate</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$1M-$5M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">4-8 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Lead</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Dual-use thesis: defense + commercial path</li>
+            <li>Founding team credentials (mil / hardware)</li>
+            <li>Federal traction signal (RedZone has)</li>
+            <li>Defense market sizing</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Partner-led conviction. 1-2 meetings, then term sheet. Warm intro via ex-Anduril operator network essential. Cold gets ignored.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>Lockheed Martin Ventures</h3>
+            <div class="investor-type">Defense prime CVC &middot; Strategic anchor</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$500K-$2M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">8-16 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Anchor</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Alignment with LM product roadmap</li>
+            <li>Dual-use commercial path</li>
+            <li>IP portfolio strength</li>
+            <li>Regulatory pathway clarity</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Scout team review &rarr; partner pitch &rarr; investment committee. 2-3 meetings minimum. Direct outreach available. Slowest process of the four but highest strategic signal.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>J&amp;J Innovation</h3>
+            <div class="investor-type">Medtech CVC &middot; Sub-$1M writer</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$500K-$2M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">6-12 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Co-investor</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Trauma / emergency medicine relevance</li>
+            <li>IP claims that don't conflict with J&amp;J product space</li>
+            <li>Regulatory pathway (510(k) most likely)</li>
+            <li>Demonstrated execution velocity</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Partner pitch &rarr; IC review &rarr; term sheet. JLABS residency option as parallel gateway. Only big-eight CVC that writes sub-$1M consistently.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>8VC</h3>
+            <div class="investor-type">Defense-tech VC &middot; Lead potential</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$500K-$2M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">6-10 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Lead or co</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Active defense-tech thesis match</li>
+            <li>Founder credibility and execution signal</li>
+            <li>Clear market opportunity sizing</li>
+            <li>Federal customer momentum</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Partner-led process, more structured than Founders Fund. Typically 2 meetings then term sheet. Warm intro from a portfolio founder accelerates.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </section>
+
+  <!-- Slide 5: Validose capital sources overview -->
   <section class="slide">
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
     <div class="eyebrow">Validose &middot; Seed Close</div>
@@ -227,7 +356,7 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
           <tr><td>Novartis Venture Fund</td><td>$2M-$10M</td><td>More selective but does early-stage delivery.</td></tr>
           <tr><td>AbbVie Ventures</td><td>$1M-$5M</td><td>Pharma CVC seed activity.</td></tr>
           <tr><td>Sanofi Ventures</td><td>$1M-$5M</td><td>Pharma CVC; drug delivery thesis fit.</td></tr>
-          <tr><td>Boehringer Ingelheim VF</td><td>$500K-$2M</td><td>Pharma CVC, often smaller early checks.</td></tr>
+          <tr><td>Boehringer Ingelheim VF</td><td>$500K-$2M</td><td>Pharma CVC, smaller early checks.</td></tr>
         </table>
 
         <div class="tier-label">Strategic Medtech CVCs</div>
@@ -241,7 +370,7 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
         <table class="firm-table">
           <tr><td>F-Prime Capital</td><td>$1M-$5M</td><td>Strong drug delivery presence.</td></tr>
           <tr><td>BioInnovation Capital</td><td>$500K-$1.5M</td><td>Seed medtech specialist.</td></tr>
-          <tr><td>DCVC Bio</td><td>$1M-$5M</td><td>Deep-tech bio; drug delivery candidate.</td></tr>
+          <tr><td>DCVC Bio</td><td>$1M-$5M</td><td>Deep tech bio; drug delivery candidate.</td></tr>
           <tr><td>Andera Partners</td><td>$500K-$2M</td><td>Drug delivery focus, sometimes seed.</td></tr>
         </table>
       </div>
@@ -274,9 +403,9 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
         <div class="detail-block">
           <div class="detail-label">Warm Intro Paths</div>
           <ul>
-            <li>Pharma CVC partners (accessible directly on LinkedIn at partner level)</li>
-            <li>BD Strategic Investments (direct outreach worthwhile given fit)</li>
-            <li>Pharma operator network (ex-Insulet, ex-Tandem, ex-DexCom)</li>
+            <li>Pharma CVC partners (LinkedIn at partner level)</li>
+            <li>BD Strategic Investments (direct outreach)</li>
+            <li>Pharma operator network (Insulet, Tandem, DexCom alumni)</li>
             <li>Indication-specific operator community</li>
           </ul>
         </div>
@@ -286,64 +415,128 @@ p.lede { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 
         </div>
       </div>
     </div>
-    <div class="slide-num">04 / 06</div>
-  </section>
-
-  <!-- Slide 5: Team functions needed -->
-  <section class="slide dark">
-    <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div class="eyebrow">Cross-Cutting Needs</div>
-    <h2>What each function delivers.</h2>
-    <div class="action-grid">
-      <div class="action-card">
-        <div class="role">Engineering &amp; Lab</div>
-        <h3>DD readiness on 48-hour notice</h3>
-        <p>One-page technical brief per portco that translates engineering to investor-readable terms. Demo prep when calls land. RedZone needs combat-medicine context; Validose needs adherence outcomes data.</p>
-      </div>
-      <div class="action-card">
-        <div class="role">Brand &amp; Design</div>
-        <h3>Pitch deck + data room lock</h3>
-        <p>Per-portco pitch deck (12-15 slides each) and investor data room presentation. Brand-consistent across both. Standard format so RedZone and Validose pitches read as the same studio.</p>
-      </div>
-      <div class="action-card">
-        <div class="role">Operations &amp; Finance</div>
-        <h3>SPV mechanics + data room</h3>
-        <p>SPV legal structure (AngelList for RedZone, structure TBD for Validose). Subscription docs, side-letter templates, financial models per portco. Cap table tracking. AngelList multiple-close mechanics verified.</p>
-      </div>
-      <div class="action-card">
-        <div class="role">Portco Leadership</div>
-        <h3>Investor voice on substance</h3>
-        <p>Lead investor calls on technical and commercial questions. Materials review and approval. Frederick runs process; portco CEOs run the substance. Be available for 60-90 minute investor calls.</p>
-      </div>
-      <div class="action-card">
-        <div class="role">Every Team Member</div>
-        <h3>Network paths to priority firms</h3>
-        <p>Check LinkedIn for any connection at: Founders Fund, Lockheed Martin Ventures, RTX Ventures, J&amp;J Innovation, BD Strategic Investments, Pfizer Ventures, Lilly Ventures, GSK Ventures, Novartis VF. Surface to Frederick. One warm intro is worth weeks of cold outreach.</p>
-      </div>
-      <div class="action-card">
-        <div class="role">Frederick (COO)</div>
-        <h3>Process owner, weekly review</h3>
-        <p>Capital outreach lead, SPV coordination across both closes, weekly Monday capital review (30 min). Single point of accountability. Status reported weekly.</p>
-      </div>
-    </div>
     <div class="slide-num">05 / 06</div>
   </section>
 
-  <!-- Slide 6: Decisions to lock this week -->
-  <section class="slide cover">
-    <svg class="chevron-bg" viewBox="0 0 400 600" preserveAspectRatio="none"></svg>
+  <!-- Slide 6: Validose investor detail -->
+  <section class="slide">
     <div class="logo">10X<span class="x">&times;</span>BETA</div>
-    <div style="position: relative; z-index: 2; max-width: 1040px;">
-      <div class="eyebrow">Lock This Week</div>
-      <h1 style="font-size: 56px;">Six decisions.</h1>
-      <ol class="numbered" style="margin-top: 28px;">
-        <li><strong style="color: var(--white);">RedZone target raise size.</strong> Lock at $1.5M, $2M, $3M, or $4M. Drives lead-investor profile and syndicate sizing.</li>
-        <li><strong style="color: var(--white);">Validose target raise size.</strong> Same lock. Drives whether pharma CVCs co-invest or one CVC leads outright.</li>
-        <li><strong style="color: var(--white);">Validose lead clinical indication confirmed.</strong> Drives which pharma CVCs are highest-fit (diabetes pulls Lilly + Novo, oncology pulls Pfizer + Merck, etc.).</li>
-        <li><strong style="color: var(--white);">RedZone lead-investor priority list (top 3).</strong> Out of the defense-tech VC list, pick the three to lead with for first-conversation outreach.</li>
-        <li><strong style="color: var(--white);">Validose lead-investor priority list (top 3).</strong> Same, from the pharma CVC list. BD Strategic Investments runs parallel as strategic anchor.</li>
-        <li><strong style="color: var(--white);">AngelList multiple-close mechanics confirmed.</strong> Direct conversation with AngelList. Affects whether we run a single close or staged closes for RedZone SPV.</li>
-      </ol>
+    <div class="eyebrow">Validose &middot; Top Investor Profiles</div>
+    <h2>Four targets. BD first; pharma CVCs in parallel.</h2>
+    <div class="investor-grid">
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>BD Strategic Investments</h3>
+            <div class="investor-type">Strategic medtech CVC &middot; Highest fit</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$1M-$3M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">8-12 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Lead or co</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Drug delivery innovation that BD doesn't already have</li>
+            <li>Adherence outcomes data (bench or clinical)</li>
+            <li>IP positioning that complements, not conflicts with BD</li>
+            <li>Regulatory pathway clarity (510(k) preferred)</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Strategic VP scouting &rarr; corporate dev review &rarr; IC. Relationship can extend beyond capital (potential supply, distribution, co-development). Direct outreach worthwhile.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>Pfizer Ventures</h3>
+            <div class="investor-type">Pharma CVC &middot; Lead candidate</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$1M-$5M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">12-20 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Lead</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Scientific validation (bench or preclinical data)</li>
+            <li>Clinical pathway with credible regulatory plan</li>
+            <li>IP strength on adherence-mechanism claims</li>
+            <li>Team scientific credibility</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Scientific review &rarr; portfolio fit assessment &rarr; investment committee &rarr; term sheet. Multiple touches required. Slower than VC but higher conviction once committed.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>Eli Lilly Ventures</h3>
+            <div class="investor-type">Pharma CVC &middot; Indication-aligned</div>
+          </div>
+          <div class="fit-badge fit-high">High Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$1M-$5M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">12-16 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Lead or co</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Indication fit with Lilly franchises (diabetes / obesity strongest)</li>
+            <li>Scientific validation</li>
+            <li>IP claims that extend Lilly molecule franchises</li>
+            <li>Regulatory pathway clarity</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Scientific + commercial review. Particularly strong if Validose lead indication aligns with Lilly therapeutic areas. Decision speed similar to Pfizer but more decisive when fit lands.</p>
+        </div>
+      </div>
+
+      <div class="investor-card">
+        <div class="investor-header">
+          <div>
+            <h3>J&amp;J Innovation</h3>
+            <div class="investor-type">Medtech CVC &middot; Broad fit</div>
+          </div>
+          <div class="fit-badge fit-medium">Medium Fit</div>
+        </div>
+        <div class="investor-stats">
+          <div class="stat-block"><span class="stat-label">Check</span><span class="stat-val">$500K-$2M</span></div>
+          <div class="stat-block"><span class="stat-label">Timeline</span><span class="stat-val">6-12 wks</span></div>
+          <div class="stat-block"><span class="stat-label">Role</span><span class="stat-val">Co-investor</span></div>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">What they need to see</div>
+          <ul>
+            <li>Clinical relevance to J&amp;J therapeutic spaces</li>
+            <li>IP claims, regulatory pathway, team execution</li>
+            <li>Less drug-delivery focused than pharma CVCs above</li>
+            <li>Demonstrated commercial path</li>
+          </ul>
+        </div>
+        <div class="investor-section">
+          <div class="section-label">Process</div>
+          <p>Partner pitch &rarr; IC. JLABS residency option as alternative or parallel gateway. Faster process than pharma CVCs. Useful as co-investor; less likely to lead a drug-delivery round.</p>
+        </div>
+      </div>
+
     </div>
     <div class="slide-num">06 / 06</div>
   </section>
